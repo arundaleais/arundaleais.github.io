@@ -33,7 +33,7 @@ background-color: #ffffff; width: 95%; }	/*White*/
 
 <!-- begin google tracker -->
 
-<!--   <script src="http://www.google-analytics.com/urchin.js" type="text/javascript"> 
+<!--   <script src="https://www.google-analytics.com/urchin.js" type="text/javascript"> 
 Arundale AIS tracker
   </script>
   <script type="text/javascript"> 

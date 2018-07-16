@@ -12,8 +12,8 @@
                   <li><a href="./yorkshirecoast.kmz" onClick="javascript: pageTracker._trackPageview('/docs/ais/yorkshirecoast.kmz'); ">Google Earth View (KMZ)</a></li>
                   <li><a href="./world.kmz" onClick="javascript: pageTracker._trackPageview('/docs/ais/world.kmz'); ">Google Earth World AIS (1Mb to download)</a></li>
                   <li><a href="./sp_google.html">Google Maps View (XML)</a></li>
-                  <li><a href="http://maps.google.com/maps?q=data.kml?" onClick="javascript: pageTracker._trackPageview('/docs/ais/data.kml'); ">Google Maps Server View (KML)</a></li>
-                  <!-- <li><a href="http://maps.google.com/maps?q=aisDispatcherSnapshot.kml?" onClick="javascript: pageTracker._trackPageview('/docs/ais/aisDispatcherSnapshot.kml'); ">AisDispatcher KML View</a></li> -->
+                  <li><a href="https://maps.google.com/maps?q=data.kml?" onClick="javascript: pageTracker._trackPageview('/docs/ais/data.kml'); ">Google Maps Server View (KML)</a></li>
+                  <!-- <li><a href="https://maps.google.com/maps?q=aisDispatcherSnapshot.kml?" onClick="javascript: pageTracker._trackPageview('/docs/ais/aisDispatcherSnapshot.kml'); ">AisDispatcher KML View</a></li> -->
                   <li><a href="./sp_list.html">HTML List of Ships</a></li>
                 <li><a href="./ais_station.html">How to Receive AIS</a></li>
                   <li><a href="./sr162_nasa.html">AIS Receiver Comparisons</a></li>
