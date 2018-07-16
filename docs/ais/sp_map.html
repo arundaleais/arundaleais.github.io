@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
   <head>
@@ -6,7 +9,7 @@
     <meta content="AIS, Ships, Yorkshire, Scarborough, Bridlington">
     <meta name="description" content="Ships off the Yorkshire Coast">
     <title>Ships off the Yorkshire Coast</title>
-    <!--#include virtual="aishead.htmlf" -->
+    {% include_relative aishead.htmlf %}
     <style>#overlay img {position: absolute; left:100px;}</style><!-- for shipais view -->
     <script type="text/javascript">
  	width=700; //the width of the embedded map in pixels or percentage
@@ -118,7 +121,7 @@ style="border: 0pt none ; font-family: arial,sans-serif; font-size: 13px;">
 
 
  -->
-    <!--#include virtual="navbar.htmlf" -->
+    {% include_relative navbar.htmlf %}
     <div style="text-align: center;">
       <h2>Yorkshire Coast AIS from Scarborough</h2>
       <small><span style="font-weight: bold;"> Brought to you by Neal

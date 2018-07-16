@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -8,13 +11,13 @@
  content="AIS, Ships, Vessels, Yorkshire, Scarborough, Bridlington">
   <meta name="description" content="Ships off the Yorkshire Coast">
   <title>Ships off the Yorkshire Coast - Google Maps View</title>
-<!--#include virtual="aishead.htmlf" -->
+{% include_relative aishead.htmlf %}
   <script
  src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAbKrAnPgRnyLVBCMzYuqffRTtIDN88clTnzI5Op30TpcItBXyRxQRjHzxoQOhRLiL-lR-E3pawQy6fA"
  type="text/javascript"></script>
 </head>
 <body onunload="GUnload()">
-<!--#include virtual="navbar.htmlf" --><!-- you can use tables or divs for the overall layout -->
+{% include_relative navbar.htmlf %}<!-- you can use tables or divs for the overall layout -->
 <table border="1">
   <tbody>
     <tr>

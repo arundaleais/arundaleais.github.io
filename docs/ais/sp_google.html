@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
 <head>
@@ -5,7 +8,7 @@
  <meta content="AIS, Ships, Yorkshire, Scarborough, Bridlington">
   <meta name="description" content="Ships off the Yorkshire Coast">
   <title>Ships off the Yorkshire Coast</title>
-<!--#include virtual="aishead.htmlf" -->
+{% include_relative aishead.htmlf %}
 <style type="text/css" media="screen">
 v\:* {
   behavior:url(#default#VML);
@@ -428,7 +431,7 @@ if (!GBrowserIsCompatible()) {
 </script>
 </head>
 <body bgcolor="#FFFFCC" onload="onLoad();" onunload="GUnload()">
-<!--#include virtual="navbar.htmlf" -->
+{% include_relative navbar.htmlf %}
 
 <img src="http://www.google.com/mapfiles/marker.png" style="display:none" alt="precache"/>
 <img src="http://www.google.com/mapfiles/shadow50.png" style="display:none" alt="precache"/>
