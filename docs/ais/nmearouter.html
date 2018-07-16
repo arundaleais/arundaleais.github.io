@@ -1,0 +1,1155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <!--#include virtual="aishead.htmlf" -->
+  <meta name="keywords"
+  content="NmeaRouter, AIS Router, NMEA, AIS,       TCP, TCP Multi-Client Server, UDP, Serial, Virtual Com       Port(VCP),RS232, File, USB, HTTP, TTY, Internet, Download">
+  <meta name="keywords"
+  content="AIS to Serial, Serial to Serial,       Serial to TCP, Serial to UDP, Serial to File, Serial to USB,       Display Serial">
+  <meta name="keywords"
+  content="AIS to TCP, TCP to Serial, TCP to       TCP, TCP to UDP, TCP to File, TCP to USB, Display TCP">
+  <meta name="keywords"
+  content="AIS to UDP, UDP to Serial, UDP to       TCP, UDP to UDP, UDP to File, UDP to USB, Display UDP">
+  <meta name="keywords"
+  content="AIS to File, File to Serial, File to       TCP, File to UDP, File to File, File to USB, Display File">
+  <meta name="keywords"
+  content="AIS to USB, USB to Serial, USB to       TCP, USB to UDP, USB to File, USB to USB, Display USB">
+  <meta name="description"
+  content="Routes NMEA and AIS sentences       between Serial, UDP, TCP, USB, Internet, Files or TTY Windows">
+  <title>NMEA Router</title>
+</head>
+
+<body style="font-family: Verdana; font-size: small;">
+<br>
+<!--#include virtual="navbar.htmlf" --> 
+
+<div style="text-align: center; font-family: Verdana;">
+<h2><span class="descr"><img alt="NmeaRouter" src="NmeaRouter_110x20.jpg"
+width="110" height="20"></span> <small>by Neal Arundale</small></h2>
+
+<div style="text-align: left;">
+
+<div style="text-align: center;">
+<span style="color: rgb(255,             102, 102); font-weight: bold;"><span
+style="color: rgb(0, 0,               0);">Routes AIS and other NMEA sentences
+between Serial, UDP, TCP, USB, Internet, Log Files, TTY Display
+Windows</span></span><br>
+<span style="color: rgb(255, 102, 102); font-weight: bold;"><span
+style="color: rgb(0, 0, 0);"></span></span></div>
+<span style="color: rgb(255, 102, 102); font-weight: bold;"><span
+style="color: rgb(0, 0, 0);"><br>
+</span>I would be pleased receive comments, suggestions or bugs </span><span
+style="color: rgb(255, 102, 102);           font-weight: bold;">(See Contact
+Me)</span><span
+style="color:           rgb(255, 102, 102); font-weight: bold;">.<br>
+</span> <br>
+<span style="font-weight: bold;"></span><span style="font-weight: bold;"><br>
+</span><span style="font-weight: bold;">AIS/NMEA Router </span><span
+style="font-weight: bold;">Latest Version <a
+href="./ais_decoder_v3_downloads.html"><img alt=""
+src="download.gif#NmeaRouter" width="88" height="16" border="0"></a> 
+</span><br>
+<br>
+
+
+<div style="text-align: left;">
+<span style="font-weight: bold;">Overview</span><br>
+</div>
+NmeaRouter routes NMEA sentences from a <span
+style="font-weight: bold;">Source</span> (for example an AIS Receiver Serial
+Port) to a <span style="font-weight: bold;">Destination</span> (for example a
+Local Network Ethernet).<br>
+A Source or a Destination is called a <span
+style="font-weight:           bold;">Connection</span>.<br>
+Connections can be External to the PC (for example a Serial/USB or Network) or
+Internal (for example a File or a Display Window).<br>
+A Source is linked to a Destination by a <span
+style="font-weight: bold;">Route</span> (for example the data from an AIS
+Receiver being routed to an AIS Chart Display). <br>
+The program has been developed with AIS data in mind, AIS data is encapsulated
+within one type of NMEA sentence.<br>
+There are hundreds of different NMEA sentences of which AIS and GPS data are
+but two, so the Router should handle any data conforming to NMEA standards.<br>
+<br>
+<span style="font-weight: bold;">Get Started</span><br>
+After installation, when run you will see this window displayed (initially with
+no entries in the tables).<br>
+<br>
+<img alt="" src="nmearouter_frmRouter.gif" width="676" height="309"><br>
+<br>
+The Menu Bar has four options - File, Configure, View and Help.<br>
+<br>
+
+
+<table style="text-align: left; width: 100%;" cellspacing="2" cellpadding="2"
+border="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">1.</td>
+      <td style="vertical-align: top;">Make a <span
+        style="font-weight: bold;">Connection</span> to a data <span
+        style="font-weight: bold;">Source</span><br>
+        Configure &gt; Connection &gt; New &gt; Select the type of connection
+        &gt; Select <span
+        style="font-weight:                   bold;">Input</span>.<br>
+         If data is currently being received (<span
+        style="font-weight: bold;">1&gt;</span>) from the Source you will see
+        the data in the lower pane.</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">2. <br>
+      </td>
+      <td style="vertical-align: top;">Make a <span
+        style="font-weight: bold;">Connection</span> to a <span
+        style="font-weight: bold;">Destination</span><br>
+        Configure &gt; Connection &gt; New &gt; Select the type of connection
+        &gt; Select <span
+        style="font-weight:                   bold;">Output</span>.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">3. <br>
+      </td>
+      <td style="vertical-align: top;">Make a <span
+        style="font-weight: bold;">Route</span> between the Source and the
+        Destination<br>
+        Configure &gt; Route &gt; New &gt; Select the Source and Destination
+        added in steps 1 and 2.<br>
+        If the Route has been added successfully you will see the data being
+        output (<span style="font-weight: bold;">&lt;2</span>) in the lower
+        pane. </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><span
+style="font-weight:             bold;"><span style="font-weight: bold;"><br>
+Connections</span></span></span><br>
+Connections may be Input, Output or both.<br>
+You can name the connection to your own name, but once named cannot rename it
+without deleting and re-creating the Connection<br>
+Not all options are applicable to all types of connection.<br>
+Connections may be disabled.<br>
+<br>
+All Data input is Time Stamped as soon as it is received into NmeaRouter. The
+time stamp uses the UNIX time format which is defined as the number of seconds
+that have elapsed since midnight Coordinated Universal Time (UTC), January 1,
+1970. This is the same as the time stamp used by IEC 61162-1.<br>
+<br>
+Data may optionally be output with the Time stamp, Source and Destination
+added. This is done in accordance with the IEC 61162-1 standard which is the
+standard for NMEA, AIS and GPS using the PC's UTC time, and the name you have
+given to the Source and Destination Connections.<br>
+Comment blocks are decoded by AisDecoder.<br>
+For example:<br>
+\c:1336737548,d:Data Input Log,s:SR162
+Receiver*4A\!AIVDM,1,1,,A,33MUhl?00pOwQgfOAU;oJmqn0000,0*2A<br>
+<br>
+Selecting Only NMEA will remove any data preceding the <big><b>$</b></big> or
+<big><b>!</b></big> on any NMEA sentence.  Any NMEA comment block (including
+the IEC 61162-1 comment block) will also be removed. It will also remove any
+proprietary time stamp information which may precede the NMEA sentence and is
+sometimes added by base stations.<br>
+<br>
+If you tick neither output option, the data output to the destination will be
+the data that has been received at the source.<br>
+<br>
+Ticking either box has no effect on any data being input (if any) on the
+connection.<br>
+<br>
+<img alt="" src="nmearouter_socketcfg.gif" width="300" height="278"><br>
+<br>
+If you enter an MMSI in OwnShip MMSI any AIS sentence from this MMSI will be
+changed from AIVDM to AIVDO.<br>
+This will be interpreted by chart plotters as being your own vessel. In
+addition the last position sentence received will be repeated every 2 seconds
+for 2 minutes, or until another position report for you vessel is received.
+This has the effect of "spoofing" your own vessel when a PC does not have a
+direct connection to the vessel's own network data. This only affects data
+being sent to an Output Destination.  <br>
+<br>
+
+
+<table style="text-align: left; width: 100%;" cellspacing="2" cellpadding="2"
+border="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">UDP/TCP<br>
+      </td>
+      <td style="vertical-align: top;">A TCP/IP Network or Internet
+        Connection<br>
+        Options vary dependent on UDP or TCP and if TCP whether the Connection
+        is acting as a Client or a Server.<br>
+        To setup for Data Streamed over the internet use TCP Client - for an
+        example try hd-sf.com IP 207.7.148.21 Port 9009 (see image below)<br>
+        Multi-Client TCP connections are now handled. You must set the maximum
+        concurrent connections you will allow to the same port.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Serial<br>
+      </td>
+      <td style="vertical-align: top;">A connection made to a Windows Com
+        Port.<br>
+        All currently enabled Serial and USB Com ports should be listed. If you
+        do not see the Port/Device you are trying to connect to try<br>
+        View &gt; Serial Ports which will list all the Ports NmeaRouter knows
+        about.<br>
+        If you still cannot see the Port/Device, look at the windows device
+        manager. Start &gt; Control Panel &gt; System &gt; Hardware &gt; Device
+        Manager &gt; Ports (Com &amp; LPT).<br>
+        Note that USB ports are allocated by the actual USB device you are
+        using, which is set by the Device Driver supplied with the actual USB
+        device and not by Windows. Particularly with low priced USB devices,
+        these drivers are not always reliable and the Com port allocated to a
+        device can change. Most USB Devices use either the FDTI chip or the
+        Prolific chip. The FDTI appears much more reliable in particular
+        because the Prolific chip has been extensively "cloned" and if you
+        upgrade the driver, you may find the cloned chip stops working. For
+        further information see <a
+        href="http://www.prolific.com.tw">Prolific</a> and <a
+        href="http://www.ftdichip.com/">FDTI </a>.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">File<br>
+      </td>
+      <td style="vertical-align: top;">Input from or Output to a File.<br>
+        You cannot have the same file open for both input and output.<br>
+        If Roll Over is selected (only applicable to output files), the file
+        will be named yourname<span
+        style="font-weight: bold;">_YYYYMMDD</span>.yourname<br>
+        At Midnight a new file will be stated with the new date.<br>
+        With Input files you can select the maximum rate at which the sentences
+        will be read from the file. This allows you to slow down the output.
+        You will also be given an option to Pause the input (re-starts from the
+        file position when paused). <br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Display<br>
+      </td>
+      <td style="vertical-align: top;">Opens a separate Display Window to
+        display the data routed to this window<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Loop Back<br>
+      </td>
+      <td style="vertical-align: top;">Allows data to be looped back from the
+        Output of a connection to the Input on the same Connection primarily
+        for testing <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><span
+style="font-weight:             bold;"><span style="font-weight: bold;"><br>
+</span>Routes</span></span><br>
+Right Clicking Enabled or Disabled toggles enabling of disabling the
+route.<span style="font-weight: bold;"><span style="font-weight: bold;"><br>
+<br>
+Menu Options<br>
+</span></span> 
+
+<table style="text-align: left; width: 100%;" cellspacing="2" cellpadding="2"
+border="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">File<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Test<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Generates Test Sentences</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Exit<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Saves the profile and Quits
+      NmeaRouter</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Configure<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Profile<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">A Profile is a snapshot of your current
+        configuration, which may be restored later<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">New<br>
+      </td>
+      <td style="vertical-align: top;">Start a New Profile<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Open<br>
+      </td>
+      <td style="vertical-align: top;">Close the existing configuration
+        re-starting with a saved profile<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Save<br>
+      </td>
+      <td style="vertical-align: top;">Save the current profile<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Save As<br>
+      </td>
+      <td style="vertical-align: top;">Save the current profile with a new
+        name<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Delete<br>
+      </td>
+      <td style="vertical-align: top;">Delete the current profile<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><a href="#Virtual_Com_Ports">VCP</a><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Virtual Com Ports for use when 2 programs on the same PC
+        require access to the same Com port<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Create<br>
+      </td>
+      <td valign="top">Creates a Com Port pair <br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Remove<br>
+      </td>
+      <td valign="top">Removes a Com Port pair<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Connection<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">New<br>
+      </td>
+      <td style="vertical-align: top;">Opens a new connection for editing the
+        settings<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Open<br>
+      </td>
+      <td style="vertical-align: top;">Open an existing connection for editing
+        the settings<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Delete<br>
+      </td>
+      <td style="vertical-align: top;">Close and remove an existing
+        connection<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Recorder (V50)<br>
+      </td>
+      <td valign="top">
+        <table width="100%" cellspacing="2" cellpadding="2" border="0">
+          <tbody>
+            <tr>
+              <td valign="top">Create<br>
+              </td>
+              <td valign="top">Creates a New Recorder for this Connection<br>
+              </td>
+            </tr>
+            <tr>
+              <td valign="top">Remove<br>
+              </td>
+              <td valign="top">Removes the Recorder on this Connection<br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Route<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">New<br>
+      </td>
+      <td style="vertical-align: top;">Create a new route between two
+        connections<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Open<br>
+      </td>
+      <td style="vertical-align: top;">Open a current route and change the
+        route settings<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Delete<br>
+      </td>
+      <td style="vertical-align: top;">Close and remove an existing route<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><a href="#Filters">Filters</a> (V50)<br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Remove duplicated Sentences from all Sources (Input
+        Connections)<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><a href="#Graph">Graph</a> (V36)<br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Set Range and Period for Excel Graph<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Export<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Export the current configuration to a
+        file<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">View<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Input/Output<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Data<br>
+      </td>
+      <td style="vertical-align: top;">Toggles show/noshow the Data display in
+        the lower window pane<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Connections<br>
+      </td>
+      <td style="vertical-align: top;">Toggles show/noshow the Connections
+        display in the upper window pane<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Routes<br>
+      </td>
+      <td style="vertical-align: top;">Toggles show/noshow the Routes display
+        in the upper window pane</td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Graph (V36)<br>
+      </td>
+      <td valign="top">Toggles show/noshow the Graphical display of sentences
+        by Connection<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Connections<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current
+        Connections<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Routes<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current Routes</td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Forwarding<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current active
+        Forwarding<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">TCP/IP Sockets<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current Network
+        Sockets<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Serial Sockets<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current Serial
+        Connections including Virtual Com Ports<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">File Sockets<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current File
+        Connections<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Display Sockets<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current Display
+        (TTY) Windows<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Event Log<br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Displays the current sessions events (eg Port Opening
+        and errors)<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Registry<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;">Displays details of current Registry
+        settings<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Help<br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+      <td style="vertical-align: top;"><br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Help<br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Display these instructions<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Contact Me<br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Email me &amp; testing Registration option<br>
+      </td>
+    </tr>
+    <tr>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">About<br>
+      </td>
+      <td valign="top"><br>
+      </td>
+      <td valign="top">Copyright notice<br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<span style="font-weight: bold;"><span
+style="font-weight:             bold;"><br>
+Mouse Options<br>
+</span></span> 
+
+<table style="text-align: left; width: 100%;" cellspacing="2" cellpadding="2"
+border="0">
+  <tbody>
+    <tr>
+      <td style="vertical-align: top;">Edit Connections or Routes<br>
+      </td>
+      <td style="vertical-align: top;">To get the New/Open/Delete menu for
+        Connections or Routes, right click on the Connection name or the Route
+        name in the leftmost column of the appropriate display.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Toggle Enabled/Disabled<br>
+      </td>
+      <td style="vertical-align: top;">Right Click on the Enabled/Disable cell
+        on the Connections or Routes display.<br>
+        To Toggle all the Enabled/Disable cells, right click on the heading of
+        the column.<br>
+      </td>
+    </tr>
+    <tr>
+      <td style="vertical-align: top;">Clear Sentence Counters<br>
+      </td>
+      <td style="vertical-align: top;">Right Click on the Sentence count.<br>
+        To Clear all Counters, right click on the heading Sentences.   <br>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<span style="font-weight: bold;">Excel <a name="Graph"></a>Graph of Connection
+Sentences Received (V36)<br>
+</span> <br>
+The graph for all connections is generated automatically if Options &gt; View
+&gt; Input/Output &gt; Graph is ticked.<br>
+It is embedded in an Excel spreadsheet, allowing you to save the Workbook, and
+reformat the graph.<br>
+Before altering the graph, you should stop NmeaRouter and Save the Graph
+(before exiting NmeaRouter), to ensure NmeaRouter is not trying to update at
+the same time as you are trying to alter the Graph, otherwise you may get
+unexpected results.<br>
+<br>
+<img alt="" src="./nmearouter_excel_graph.gif" width="647" height="438"><br>
+<br>
+<br>
+<span style="font-weight: bold;">Connecting to Data Streamed over the
+Internet<br>
+<br>
+</span> Try ais.exploratorium.edu who stream data from San Francisco Bay area
+on TCP port 80<br>
+<br>
+<img style="width: 274px; height: 370px;" alt=""
+src="nmearouter_winsockcfg_stream.gif" width="274" height="370"><br>
+If you are not seeing any data, confirm data is being received by your PC, type
+ais.exploratorium.edu in your browser.<br>
+<br>
+<br>
+<span style="font-weight: bold;">Command Line Options &amp; Minimising to
+System Tray</span> (V41)<br>
+    Click Minimise to send to System Tray<br>
+    Right Click on systray Icon to Restore or Exit<br>
+    If Exit from Icon in systray when re-run application will restart in
+systray<br>
+    If Exit from Graphical User Interface (GUI) when re-run application will
+restart in GUI<br>
+    Command Line Options (not case sensitive) are:-<br>
+        systray        (Overrides profile setting)<br>
+        Profile=ProfileName<br>
+    If ProfileName includes spaces include ProfileName in Double Quotes<br>
+    Separate Command Line options with Forward Slash (/) (do not use / in
+profile name)<br>
+    Example:  dos Prompt&gt; NmeaRouter.exe  systray/profile="TCP Client 1"<br>
+<br>
+<span style="font-weight: bold;">Command Line Options &amp; To Start NmeaRouter
+Automatically on startup </span> (V41) <br>
+
+
+<div class="">
+<ol class="ordered_dec">
+  <li class="step">
+    <div class="para">
+    Click the <span class="ui">Start</span> button, click <span class="ui">All
+    Programs</span>, right-click the <span class="ui">Startup</span> folder,
+    and then click <span class="ui">Open</span>.</div>
+  </li>
+  <li class="step"><p class="para">Using Windows Explorer, locate  C:\Program
+    Files\Arundale\NmeaRouter\NmeaRouter.exe.</p>
+  </li>
+  <li class="step"><p class="para">Right-click NmeaRouter.exe, and then click
+    <span class="ui">Create Shortcut</span>. The new shortcut appears in the
+    same location as the original item.</p>
+  </li>
+  <li class="step"><p class="para">Drag the shortcut into the Startup
+    folder.</p>
+  </li>
+  Additionally to Start NmeaRouter in the system tray and/or to Specify a
+  Profile (otherwise the latest profile will be used). <br>
+  <br>
+</ol>
+<ul>
+  <li class="step">Right-click the shortcut, and then click properties.<br
+    clear="all">
+  </li>
+  <li class="step">At the end of Target<br clear="all">
+    Add <font color="#3333ff">/systray/profile="My Profile Name"</font></li>
+</ul>
+    The Window will contain "C:\Program
+Files\Arundale\NmeaRouter\NmeaRouter.exe" <font
+color="#3333ff">/systray/profile="My Profile Name"</font><br>
+    There is a space after .exe and if your profile name contains spaces, it
+must be enclosed in quotes.<br>
+    <img alt="" src="./nmearouter_startup_taget.gif" width="339"
+height="36"><br>
+
+<ol class="ordered_dec">
+</ol>
+</div>
+</div>
+
+<div align="left">
+<b>    </b>To stop the Program Exit Query use the Command Line Option <font
+color="#3366ff">/dontqueryexit</font><br>
+<br>
+<b>Understanding UDP &amp; TCP<br>
+</b><br>
+AisDecoder will not output TCP data only UDP<br>
+Nmea Router will output TCP and UDP data acting as either a Client or a
+Server.<br>
+For the sake of clarity, both append a CRLF (this is part of the NMEA
+spec)<b><br>
+<br>
+UDP</b> is a connectionless protocol, which means you just send the data (like
+a radio broadcast) and you are not interested in whether the recipient receives
+the data or not.<br>
+The data is One Way only.<br>
+<br>
+<b>TCP</b> guarantees receipt of the data by the recipient by confirming back
+to the sender as "chunks" of the data have been received. TCP is therefore Two
+Way, data can and does flow in both directions and receipt is guaranteed. For
+example an internet connection between your web browser and a web server
+actually uses TCP, enabling you to both send and receive data. FTP and HTTP
+also use TCP.<br>
+<br>
+Although TCP itself uses UDP, you cannot use TCP at one end and UDP at the
+other.<br>
+<br>
+Assuming you are trying to make a TCP connection, you need to be clear as to
+who is going to make the initial connection. Think of a telephone, one party
+makes the initial connection by calling the other party. In internet
+terminology the called party "listens" and is the Server, the calling party,
+initiates the connection and is the Client. Like a telephone, once both parties
+have picked up the phone, the conversation (data) can travel in either or both
+directions.<br>
+<br>
+Both a TCP Server and a TCP Client can send data to another party. Whether you
+are the Server or the Client depends on who is making the first contact. Are
+they waiting for their phone to ring, or, are you waiting for their call to you
+?<br>
+<br>
+<b>NmeaRouter setup if you are the Client and they are the server</b><br>
+You will note that if you are the Client, you must enter <b>their</b> IP
+Address and <b>their</b> Port.<br>
+They will give you an IP address (or URL) and a port on which to make contact,
+AND<b>their</b> firewall must allow an <b>incoming </b>TCP connection from your
+IP address on their port.<br>
+<img alt="" src="nmearouter_tcp_client.gif" width="274" height="414"><br>
+<br>
+<b>NmeaRouter setup if you are the Server and they are the Client</b><br>
+You will note that if you are the Server, you only enter the Port <b>you</b>
+wish to use.<br>
+You will tell them this Port, AND<b>your</b> firewall must allow
+an<b>i</b><b>ncoming</b> TCP connection from their IP address on your port.<br>
+Your Router must also forward incoming TCP on this port to your PC<br>
+<img alt="" src="nmearouter_tcp_server.gif" width="274" height="414"><br>
+<br>
+In both cases the data direction is Output, because you are sending them the
+data.<br>
+The direction is only used by NmeaRouter for sentence routing, it is not
+relevant for the actual TCP connection between the Client and Server.<br>
+<br>
+Continuing with the telephone analogy, each party wishing to talk to one
+another can use multiple phone lines in order to conduct several conversations
+at the same time. These are the "Ports". Both parties must us the same port,
+otherwise they will not actually be a connection between themselves. Similarly
+three or more parties cannot use the same port, otherwise the conversations
+would be jumbled on top of one another. <br>
+<br>
+So how do more than two Clients receive the same data from one Server ?<br>
+The Server actually uses One port as a "Listening Port", the initial connection
+is made on this port, but having made this initial connection the Client and
+Server negotiate a mutually agreed port that is available on both Client and
+Server, then switch the connection from this Listening Port, to the mutually
+agreed port, on which the actual data transfer continues.<br>
+This allows another Client to make a second connection to the Server.<br>
+NmeaRouter makes the port switching and re-routing transparent to you. <br>
+<br>
+This is the same procedure as is used in radio communications between Ships or
+Aircraft. All Parties listen on the "Calling Channel". The initial contact is
+made on the "Calling Channel", the parties agree a "Working Channel" and both
+then move to the Working Channel.<br>
+</div>
+
+<div align="left">
+<p style="line-height:1em;"><span style="font-weight: bold;"><br>
+TCP Multi-Client Server</span> (V43)<br>
+This enables you to distribute data received by one PC to multiple PC's either
+locally or remotely via the internet.<br>
+When you set a TCP server port (eg 11367), this port is set a a "listening"
+port, awaiting a TCP connection request.<br>
+If Client tries to make a connection to the Server on this port (eg 11367), the
+Server will "spawn" another connection.<br>
+The spawned connection inherits the routeing of the "Listening" port.<br>
+The server recommences "listening" on the port (11367) allowing it to set up
+another connection to a second Client, should it be requested. This will
+continue up to the limit of Maximum Concurrent Connection set when the Server
+was configured.<br>
+This enables multiple Clients to be given the same socket to connect to the
+Server on which to receive the data.<br>
+<img alt="TcpServer" src="./nmearouter_tcpserver.gif" width="650"
+height="1546"><br>
+You you can set up another instance of NmeaRouter on the same PC to try this -
+set the remote host IP as 127.0.0.1 which translates to the local PC. <br>
+<span style="font-weight: bold;"><br>
+Routing to a Program which only accepts Serial Data</span> - <b>Virtual Com
+Ports</b><br>
+Some programs (note <a href="http://opencpn.org/">OpenCPN</a> now accepts
+network data) will only accept serial data, or possibly proprietary network
+data such as Garmin or Json as well. These programs expect your PC to be
+physically connected to serial or USB port.<br>
+If you attempt to connect two programs to the <i>same</i> physical port (eg
+COM4) at the same time, your PC will prevent this, and you will receive an
+error message such as “port in use”.<br>
+From V46, you can overcome this problem by creating a Virtual Com Port Pair
+(VCP) with Connection &gt; New &gt; VCP &gt; Create<br>
+You can see the created VCP with View &gt; Serial Sockets<br>
+<img alt="" src="nmearouter_view_serial_vcp.gif" width="305" height="302"><br>
+The Serial Socket CNCA0 is linked to COM15<br>
+A Serial Connection called OpenCPN is created using Port CNCA0<br>
+A Route is created between the incoming data (AIS Data) and OpenCPN<br>
+Data arriving on the Connection AIS Data will appear to be Output on COM15.<br>
+If the OpenCPN Chart Plotting program is started using COM15 as the Input, the
+AIS Data will displayed on the OpenCPN program.<br>
+<img alt="" src="nmearouter_frmRouter_vcp.gif" width="625" height="190"><br>
+For more details see <a href="./virtualports.pdf">Guideline on installing and
+connecting NmeaRouter on a Windows computer with OpenCPN or any other program
+only accepting Serial Data</a>.<br>
+<br>
+<span style="font-weight: bold;"><a name="Filters"
+id="Filters"></a>Filters</span><br>
+<b>Remove duplicated Sentences from all Sources</b> (V53)<br>
+The main purpose is to reduce network bandwidth when NmeaRouter is used to
+combine several differing Sources of data.<br>
+This filter monitors the input from all source connections. If an identical
+sentence is received, possibly/probably from a different source, the duplicated
+sentence is rejected and not passed forward to any Destination.<br>
+The previous 6 minutes of received sentences are compared with each received
+sentence.. <br>
+Multi-part messages are subject to additional "special" handling.<br>
+<br>
+To insert this filter click Configure &gt; Filters and Tick the box. <br>
+<img alt="" src="nmearouter_frmFilter_none.gif" width="389" height="181"><br>
+<br>
+All sentences filtered out are sent to a Demiliterized Zone (DMZ), in a similar
+manner to an internet router.<br>
+These sentences can be forwarded to any existing Output Connection. For
+example, you can set up a File Output Connection to write the duplicated
+sentences to a Log file.<br>
+<br>
+<img alt="" src="nmearouter_frmFilter.gif" width="389" height="181"><br>
+<br>
+In addition you can see the Source of the duplicated sentences by adding IEC
+61162 comments to the output.<br>
+<img alt="" src="nmearouter_file_iec.gif" width="300" height="278"><br>
+The Log File will contain the commented sentences<br>
+<small>\c:1369230289,d:File Output,s:Home
+TCP*30\!AIVDM,1,1,,B,35DrjF5000Ow5M8NdHD2Mb9T0000,0*12<br>
+\c:1369230289,d:File Output,s:Home
+TCP*30\!AIVDM,1,1,,A,33P;J:03A@P1Ku@O6&lt;bu0bQV0000,0*27<br>
+\c:1369230289,d:File Output,s:Home
+TCP*30\!AIVDM,1,1,,B,34VgUR0OhA01nk8NsH&lt;dVrIV0000,0*68<br>
+</small><span style="font-weight: bold;"><br>
+Output Recorder</span> Currently on test - <a href="./recorder.pdf">for further
+details click</a><br>
+    <br>
+<span style="font-weight: bold;">Other Information</span><br>
+I intend integrating <a href="./ais_decoder.html">AisDecoder</a> with
+NmeaRouter in the future by plugging in AisDecoder into NmeaRouter.<br>
+This requires re-writing AisDecoder as a stand alone module, with the ability
+to plug-in to other software.<br>
+<br>
+There is a limit of 10 on most of the options. This is because I may release an
+unrestricted (commercial) version of NmeaRouter in the future.<br>
+<br>
+<b><br>
+Version History<br>
+</b>V67<br>
+         W7 Source<br>
+V3.66<br>
+        If downloaded new version setup fails to execute (virus checker), do
+not terminate NmeaRouter<br>
+V66    Copyright notice changed to keep lawyer's happy<br>
+          Overflow error on 32bit CPU ticks [hopefully fixed)<br>
+V65    Overflow error on 32bit CPU ticks [fixed)<br>
+V64    Optional accept single &lt;LF&gt; or &lt;CR&gt; or missing as Nmea
+Terminator on network connection <br>
+V63    Changes to support optional suppression of Nmea Terminator error
+message<br>
+        Windows could prompt on exit after system forced exit [fixed]<br>
+        "dontqueryexit" command removed<br>
+V62    If New Connection created when STOPped, New Connection was not Stopped
+[fixed]    <br>
+        Serial Input synchronised with AisDecoder<br>
+        MSINET.OCX now included in setup distribution<br>
+V61    Moved to arundale.com website<br>
+        New Command Line Argument "dontqueryexit"<br>
+V60   Font changed to fix formatting on recent windows installations  <br>
+       OwnShip not copied to TCP server socket [fixed]<br>
+        Partial UFO filtering on output<br>
+V59    Unix Time Stamp 1 day short [fixed]<br>
+        Not always retaining current profile setting [fixed]<br>
+V58    Changes to links and email for new web server<br>
+V57  Deleting Route could select non-existent route [fixed]      <br>
+        Scroll bars on Sockets/Routes could disappear when a Socket enabled
+[fixed]<br>
+        Routes/Sockets could not be Enabled/Disabled when clicked in scrolled
+off region [fixed]   <br>
+        Message display synchronised with AisDecoder<br>
+V56    Asynchronous user message display implemented<br>
+        Detect NMEA sentence delimiter error <br>
+        Possible to set New Route to non existent socket [fixed]<br>
+V55    Option to filter out one MMSI<br>
+V54    Changes to De-dupe routine<br>
+V53  Not !**VDM input filter added<br>
+        De-dupe now looks at previous 6 minutes of received data<br>
+        DMZ added additional terminator [fixed]<br>
+V52    Split Source sentences now re-assembled (where possible) <br>
+V51    Rejected Filtered sentences sent to DMZ<br>
+        DMZ routed to any Output connection added<br>
+V50    Remove duplicated sentences option added<br>
+    Output Recorder on test (settings not retained)<br>
+    Possible error when installed on non system disk [fixed]<br>
+    Configuring Graph when not visible caused error [fixed]<br>
+V49<br>
+    MyShip output option - Converts !AIVDM to !AIVDO for one MMSI <br>
+    IEC 61162-1 Output option CRC error [fixed]<br>
+V48    Option to enable/disable graph series added<br>
+    All Serial ports not always enumerated [fixed]<br>
+    Enable/Disable Graph series by Connection added     <br>
+V47    Graphs now on separate Excel sheet<br>
+    Local Time option on Graphs<br>
+    Connections with no Sentences not graphed<br>
+    TCP Client graphed by Remote IP address<br>
+V46    TCP Routes Forwarding &lt;--&gt; could be displayed incorrectly
+[fixed]<br>
+    Graphs failed with Multiple TCP Clients [fixed]<br>
+    Installation of <a href="http://com0com.sourceforge.net/">com0com</a>
+Virtual Com Ports (VCP) added (not all Windows platforms have been tested)<br>
+    Enable/Disable Route to VCP could cause error [fixed]<br>
+V45    Bug fix, router may not start<br>
+V44    Redesigned GUI<br>
+    User can set max streams per Client IP address<br>
+    Improvements to TCP Server &amp; Client error recovery &amp; reporting<br>
+    Improved System Tray handling<br>
+    User Registration Testing<br>
+V43    TCP Multi-Client Server bug fixes<br>
+V42    Enumerate Virtual Com Ports<br>
+V41    Click Minimise to send to System Tray<br>
+    Right Click on systray Icon to Restore or Exit<br>
+    If Exit from Icon in systray when re-run application will restart in
+systray<br>
+    If Exit from GUI when re-run application will restart in GUI<br>
+    Command Line Options (not case sensitive) are:-<br>
+        systray        (Overrides profile setting)<br>
+        Profile=ProfileName<br>
+    If ProfileName includes spaces include in Double Quotes<br>
+    Separate Command Line options with Forward Slash (/) (do not use / in
+profile name)<br>
+Example:  dos Prompt&gt; NmeaRouter.exe  systray/profile="Tcp Client"<br>
+    Graphs timer was not stopped on close, could cause Object no found error
+<br>
+V40-V36<br>
+    TCP multi-client Server development<br>
+V35<br>
+    Added ExcelChart module (no code to use it added yet)<br>
+    Fixed not writing View/InputOutput ticks to registry<br>
+    This probably caused the main display to not always restart<br>
+    with a new profile displayed properly.<br>
+    TTY's Window settings not being saved properly either- fixed<br>
+V34<br>
+    TTY window not opening when Start pressed<br>
+    TTY Windows not closed properly<br>
+    Cleaned up TTY window handling<br>
+V33<br>
+    Tidied up Event Log<br>
+    Repeat counter added<br>
+V32<br>
+    Command options added<br>
+<br>
+<b>Download</b><br>
+<br>
+</p>
+
+<div align="left">
+<font size="-1"><span style="font-family:               Verdana;">Download
+from</span></font> <a
+href="http://software.informer.com/search/nmearouter"><img alt=""
+src="./logo_si.png"
+style="border: 0px solid ;               width: 120px; height: 34px;"></a><br>
+</div>
+<b><br>
+</b><br>
+</div>
+</div>
+</body>
+</html>

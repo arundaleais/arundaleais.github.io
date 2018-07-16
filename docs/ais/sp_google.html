@@ -1,0 +1,469 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+<title>Ships off the Yorkshire Coast</title>
+ <meta content="AIS, Ships, Yorkshire, Scarborough, Bridlington">
+  <meta name="description" content="Ships off the Yorkshire Coast">
+  <title>Ships off the Yorkshire Coast</title>
+<!--#include virtual="aishead.htmlf" -->
+<style type="text/css" media="screen">
+v\:* {
+  behavior:url(#default#VML);
+}
+.gpopup { 
+  width:190px;
+}
+
+.gpopup table {
+  padding:0px;
+  border-collapse:collapse;
+  border:0;
+  font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+  font-size: 9px;
+  text-align:left;
+  color: black;
+  background: white;
+}
+
+#tooltip span {
+  color:black;
+  background:white;
+  font-weight:bold;
+  font-size: 10pt;
+  font-family: Verdana, Arial, Helvetica, sans-serif, "MS sans serif";
+  white-space: nowrap;
+}
+</style>
+<!-- Get an API key from http://www.google.com/apis/maps/ -->
+<script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=ABQIAAAAbKrAnPgRnyLVBCMzYuqffRTtIDN88clTnzI5Op30TpcItBXyRxQRjHzxoQOhRLiL-lR-E3pawQy6fA" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+function loadup() {
+map = new GMap2(document.getElementById("map"));
+map.addControl(new GLargeMapControl());
+map.addControl(new GMapTypeControl());
+map.addControl(new GScaleControl());
+map.setCenter(new GLatLng(54.262, 0.402), 8); // Change these to your own part of the world
+
+// ====== set up marker mouseover tooltip div ======
+tooltip = document.createElement("div");
+map.getPane(G_MAP_FLOAT_PANE).appendChild(tooltip);
+tooltip.style.visibility="hidden";
+
+icon_k = myicon("http://labs.google.com/ridefinder/images/mm_20_black.png");
+icon_b = myicon("http://labs.google.com/ridefinder/images/mm_20_blue.png");
+icon_a = myicon("http://labs.google.com/ridefinder/images/mm_20_gray.png");
+icon_g = myicon("http://labs.google.com/ridefinder/images/mm_20_green.png");
+icon_r = myicon("http://labs.google.com/ridefinder/images/mm_20_red.png");
+icon_w = myicon("http://labs.google.com/ridefinder/images/mm_20_white.png");
+icon_y = myicon("http://labs.google.com/ridefinder/images/mm_20_yellow.png");
+
+
+autoUpdate();
+}
+
+function ais_type(id)
+{
+  var type1 = new Array('unspecified', 'Reserved', 'Wing In Grnd', '', 'Hi Spd Crft', '', 'Passenger', 'Cargo', 'Tanker', 'Other');
+  var type2 = new Array('', // All ships of this type
+			'Haz A', /* Major Hazard */
+			'Haz B', /* Hazard */
+			'Haz C', /* Minor Hazard */
+			'Haz D', /* Recogniseable Hazard */
+			'',
+			'',
+			'',
+			'',
+			'' // No additional information
+                        );
+
+  type3 =new Array('Fishing', 'Towing', 'Towing', 'Dredger', 'Dive Vessel', 'Military Ops', 'Sail', 'Pleasure Craft', 'Reserved', 'Reserved');
+  type5 =  new Array('Pilot Vessel', 'SAR', 'Tug', 'Port Tender', 'Anti-polution', 'Law enforce', 'Local Vessel', 'Local Vessel', 'Medical Trans', 'Special craft');
+
+  navaid = new	  Array('Default Navaid',
+			'Reference point',
+			'RACON',
+			'Off Shore Structure',
+			'Spare',
+			'Light, without sectors',
+			'Light, with sectors',
+			'Leading Light Front',
+			'Leading Light Rear',
+			'Beacon, Cardinal N',
+			'Beacon, Cardinal E',
+			'Beacon, Cardinal S',
+			'Beacon, Cardinal W',
+			'Beacon, Port hand',
+			'Beacon, Starboard hand',
+			'Beacon, Preferred Channel port hand',
+			'Beacon, Preferred Channel starboard hand',
+			'Beacon, Isolated danger',
+			'Beacon, Safe water',
+			'Beacon, Special mark',
+			'Cardinal Mark N',
+			'Cardinal Mark E',
+			'Cardinal Mark S',
+			'Cardinal Mark W',
+			'Port hand Mark',
+			'Starboard hand Mark',
+			'Preferred Channel Port hand',
+			'Preferred Channel Starboard hand',
+			'Isolated danger',
+			'Safe Water',
+			'Manned VTS', // Special Mark
+			'Light Vessel / LANBY');
+
+  type = Math.floor(id / 10);
+  rem = id % 10;
+  result = '';
+  if (type == 3)
+    result = type3[rem];
+  else if (type == 5)
+    result = type5[rem];
+  else if (id >= 100) {
+    result = navaid[id-100];
+  } else {
+    result = type1[type];
+    if (id < 100 && type2[rem] != '')
+      result = result +' '+type2[rem];
+  }
+  return result;
+}
+
+function getstatus(status) {
+ switch (parseInt(status)) {
+  case 0: return 'Underway';
+   break;
+  case 1: return 'At Anchor';
+   break;
+  case 2: return 'Not Under Command';
+   break;
+  case 3: return 'Restricted Manoeuvrability';
+   break;
+  case 4: return 'Constrained by Her Draught';
+   break;
+  case 5: return 'Moored';
+   break;
+  case 6: return 'Aground';
+   break;
+  case 7: return 'Engaged in Fishing';
+   break;
+  case 8: return 'Underway by Sail';
+   break;
+  case 15: return 'Default (15)';
+   break;
+  default: return status;
+   break;
+  }
+}
+
+function makeinfo(name, type, aisstr) {
+  var ais = aisstr.split('!');
+  var mmsi  = ais[0];
+  var imo   = ais[1];
+  var call  = ais[2];
+  var dest  = ais[3];
+  var eta   = ais[4];
+  var speed = ais[5];
+  var course= ais[6];
+  var status= getstatus(ais[7]);
+  var length= ais[8];
+  var width = ais[9];
+  var draft = ais[10];
+  var mtime = ais[11];
+  if (type < 100) {
+    callstr = '<tr><td>Callsign:</td><td>'+call+'</td></tr>\n';
+    deststr = '<tr><td>Dest:</td><td><i>'+dest+'</i></td></tr>\n';
+    etastr = '<tr><td>ETA:</td><td>'+eta+'</td></tr>\n';
+    spdstr = '<tr><td>Speed/Dir:</td><td>'+speed+' kts / '+course+'</td></tr>\n';
+    sizestr = '<tr><td>Size:</td><td>'+length+'m x '+width+'m x '+draft+'m</td></tr>\n';
+  } else {
+    callstr = '';
+    deststr = '';
+    etastr = '';
+    spdstr = '';
+    sizestr = '';
+  }
+  if (imo > 0) {
+    imostr = '<tr><td>IMO:</td><td>'+imo+'</td></tr>\n';
+  } else {
+    imostr = '';
+  }
+  if (mtime != '') {
+    recstr = '<tr><td>Received:</td><td>'+mtime+'</td></tr>\n';
+  } else {
+    recstr = '';
+  }
+  return '<div class="gpopup"><table cellpadding="0" cellspacing="0">\n'+
+    '<tr><td>Name: </td><td>'+name+'</a></td></tr>\n'+
+    callstr+
+    '<tr><td>MMSI:</td><td>'+mmsi+'</td></tr>\n'+
+    imostr+
+    '<tr><td>Status:</td><td>'+status+'</td></tr>\n'+
+    deststr+
+    etastr+
+    '<tr><td>Type:</td><td>'+ais_type(type)+'</td></tr>\n'+
+    spdstr+
+    sizestr+
+    recstr+
+    '</table></div>\n';
+}
+
+
+
+function addVector(from, deltax, deltay) {
+  if (deltax == 0 && deltay == 0) return null;
+  var to = new GLatLng(from.lat() + deltay, from.lng() + deltax)
+  var polyline = new GPolyline([from, to], "#ffffff", 2);
+  return polyline;
+}
+
+function get_colour(type) {
+  if (type == 52)
+    return icon_k; // "black"
+  if (type > 99)
+    return icon_a; //"gray"
+
+  var itype = Math.floor(type/10);
+  switch (itype) {
+  case 7:
+    ball = icon_g; // "green";
+    break;
+  case 8:
+    ball = icon_r; // "red";
+    break;
+  case 4:
+    ball = icon_w; // "white";
+    break;
+  case 6:
+    ball = icon_b; // "blue";
+    break;
+  default:
+    ball = icon_y; // "yellow";
+    break;
+  }
+  return ball;
+}
+
+function myicon(image) {
+icon = new GIcon();
+icon.iconSize = new GSize(12, 20); 
+icon.iconAnchor = new GPoint(6, 20); 
+icon.infoWindowAnchor = new GPoint(5, 1); 
+icon.shadow = "http://labs.google.com/ridefinder/images/mm_20_shadow.png"; 
+icon.shadowSize = new GSize(22, 20); 
+icon.image = image;
+return icon;
+}
+
+function createMarker(point, name, html, iconz) {
+  var marker = new GMarker(point, iconz);
+  marker.tooltip = '<div id="tooltip"><span>'+name+'</span></div>';
+  GEvent.addListener(marker, "click", function() {
+     marker.openInfoWindowHtml(html);
+  });
+  map.addOverlay(marker);
+
+  GEvent.addListener(marker,"mouseover", function() {
+    showTooltip(marker);
+  });        
+  GEvent.addListener(marker,"mouseout", function() {
+    tooltip.style.visibility="hidden"
+  });        
+
+  return marker;
+}
+
+
+function autoUpdate() {
+GDownloadUrl("data.xml?"+Math.random(), function(data, responseCode) {
+  var xmlDoc = GXml.parse(data);
+  if (!xmlDoc.documentElement) return;
+  var xmlmarker = xmlDoc.documentElement.getElementsByTagName("marker");
+  var movehtml = '';
+  var dockhtml = '';
+  var sepmove = '';
+  var sepdock = '';
+
+  if (!gmarkers)
+    gmarkers = new Array();
+  if (!htmls)
+    htmls = new Array();
+  if (!vectors)
+    vectors = new Array();
+
+  var Lat, Lon, name, deltax, deltay, type, ais, html, icon;
+  for (var i = 0; i < xmlmarker.length; i++) {
+    Lat = parseFloat(xmlmarker[i].getAttribute("lat"));
+    Lon = parseFloat(xmlmarker[i].getAttribute("lon"));
+    name = xmlmarker[i].getAttribute("name");
+    deltax = parseFloat(xmlmarker[i].getAttribute("dx"));
+    deltay = parseFloat(xmlmarker[i].getAttribute("dy"));
+    type = parseInt(xmlmarker[i].getAttribute("type"));
+    htmls[i] = makeinfo(name, type, xmlmarker[i].getAttribute("ais"));
+    icon = get_colour(type);
+
+    if (gmarkers[i]) {
+      GEvent.clearListeners(gmarkers[i], "click");
+      GEvent.clearListeners(gmarkers[i], "mouseover");
+      GEvent.clearListeners(gmarkers[i], "mouseout");
+      map.removeOverlay(gmarkers[i]);
+    }
+
+    var point = new GLatLng(Lat, Lon);
+    gmarkers[i] = createMarker(point, name, htmls[i], icon);
+
+    if (vectors[i]) map.removeOverlay(vectors[i]);
+    vectors[i] = addVector(point, deltax, deltay);
+    if (vectors[i]) map.addOverlay(vectors[i]);
+
+    html = "<a href='javascript:findship("+i+")' onmouseover='mymouseover("+i+")' onmouseout='mymouseout()'>"+name+"</a>";
+    if (Math.abs(deltax) > 0 || Math.abs(deltay) > 0) {
+      movehtml += sepmove + html;
+      sepmove = ", ";
+    } else {
+      dockhtml += sepdock + html;
+      sepdock = ", ";
+    }
+  }
+  var shipmove = document.getElementById("shipmove");
+  if (shipmove)
+    shipmove.innerHTML = movehtml + '.';
+  var shipdock = document.getElementById("shipdocked");
+  if (shipdock)
+    shipdock.innerHTML = dockhtml + '.';
+  var shiptime = document.getElementById("shiptime");
+  if (shiptime) {
+    var currentTime = new Date();
+    // See eg http://www.tizag.com/javascriptT/javascriptdate.php for
+    // fancier time formatting
+    shiptime.innerHTML = "Ship positions last uploaded: " + currentTime + '.';
+  }
+});
+
+// time out after 1hr.
+if (refreshcounter++ < numrefresh)
+  window.setTimeout('countDown()', 1000);
+else {
+  if (document.getElementById("countDownText"))
+    document.getElementById("countDownText").innerHTML = "Press REFRESH to continue updates.";
+}
+}
+
+// ====== This function displays the tooltip ======
+// it can be called from an icon mousover or a sidebar mouseover
+function showTooltip(marker) {
+  tooltip.innerHTML = marker.tooltip;
+  var point=map.getCurrentMapType().getProjection().fromLatLngToPixel(map.fromDivPixelToLatLng(new GPoint(0,0),true),map.getZoom());
+  var offset=map.getCurrentMapType().getProjection().fromLatLngToPixel(marker.getPoint(),map.getZoom());
+  var anchor=marker.getIcon().iconAnchor;
+  var width=marker.getIcon().iconSize.width;
+  var height=tooltip.clientHeight;
+  var pos = new GControlPosition(G_ANCHOR_TOP_LEFT, new GSize(offset.x - point.x - anchor.x + width, offset.y - point.y -anchor.y -height)); 
+  pos.apply(tooltip);
+  tooltip.style.visibility="visible";
+}
+
+// ===== This function is invoked when the mouse goes over an entry in the sidebar =====
+// It launches the tooltip on the icon      
+function mymouseover(i) {
+ showTooltip(gmarkers[i])
+}
+// ===== This function is invoked when the mouse leaves an entry in the sidebar =====
+// It hides the tooltip      
+function mymouseout() {
+ tooltip.style.visibility="hidden";
+}
+
+// Open the info box for the specified marker.
+function findship(i){
+  gmarkers[i].openInfoWindowHtml(htmls[i]);
+}
+
+// Refresh the data after 'refreshInterval' seconds. 
+// It should not be faster than ship.vbs
+var refreshInterval = 60; 
+
+// numrefresh is the number of times to refresh this page before timing out.
+var numrefresh = 120;     
+
+var tooltip;
+var refreshcounter = 0;
+var gmarkers;
+var icon_k;
+var icon_b;
+var icon_a;
+var icon_g;
+var icon_r;
+var icon_w;
+var icon_y;
+var htmls;
+var vectors;
+var map;
+var countDownTime=refreshInterval+1;
+var counter;
+
+function countDown(){
+countDownTime--;
+if (document.getElementById("countDownText"))
+  document.getElementById("countDownText").innerHTML= "Refresh in " + countDownTime + " sec.";
+if (countDownTime<=0){
+  countDownTime=refreshInterval;
+  clearTimeout(counter)
+  autoUpdate()
+  return
+}
+counter=setTimeout("countDown()", 1000);
+}
+
+function onLoad() {
+if (!GBrowserIsCompatible()) {
+  alert("Sorry, the Google Maps API is not compatible with this browser");
+} else {
+  setTimeout(loadup, 250);
+}
+}
+
+//]]>
+</script>
+</head>
+<body bgcolor="#FFFFCC" onload="onLoad();" onunload="GUnload()">
+<!--#include virtual="navbar.htmlf" -->
+
+<img src="http://www.google.com/mapfiles/marker.png" style="display:none" alt="precache"/>
+<img src="http://www.google.com/mapfiles/shadow50.png" style="display:none" alt="precache"/>
+<img src="http://www.google.com/mapfiles/markerTransparent.png" style="display:none" alt="precache"/>
+<img src="http://www.google.com/mapfiles/markerie.gif" style="display:none" alt="precache"/>
+<img src="http://www.google.com/mapfiles/dithshadow.gif" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_shadow.png" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_black.png" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_blue.png" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_gray.png" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_green.png" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_red.png" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_white.png" style="display:none" alt="precache"/>
+<img src="http://labs.google.com/ridefinder/images/mm_20_yellow.png" style="display:none" alt="precache"/>
+
+<p align="center">
+<font color="#FF0000">Google Maps (my data using xml file)</font>
+</p>
+
+<div id="map" style="margin-left: auto; margin-right: auto; width: 979px; height:609px; border: solid #000"></div>
+
+<div style="text-align:center;" id="countDownText"></div>
+
+<h2>Underway</h2>
+<div id="shipmove"></div>
+<h2>Docked</h2>
+<div id="shipdocked"></div>
+
+<div style="text-align:center;" id="shiptime"></div>
+
+<p>Instructions on how to create and use this file are available from the <a
+href="http://groups.yahoo.com/group/shipplotter/files/">Shipplotter</a> Yahoo
+group or for general map questions, see the Google <a href="http://www.google.com/apis/maps/">Maps API</a>.
+</p>
+
+
+</body>
+</html>

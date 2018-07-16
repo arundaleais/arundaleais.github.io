@@ -1,0 +1,99 @@
+28/09/2009 13:27:22 Excel started
+28/09/2009 13:27:22 ******************** System ********************
+28/09/2009 13:27:22 ALLUSERSPROFILE=C:\Documents and Settings\All Users
+28/09/2009 13:27:22 APPDATA=C:\Documents and Settings\jna\Application Data
+28/09/2009 13:27:22 CommonProgramFiles=C:\Program Files\Common Files
+28/09/2009 13:27:22 COMPUTERNAME=JNA-PC2
+28/09/2009 13:27:22 ComSpec=C:\WINDOWS\system32\cmd.exe
+28/09/2009 13:27:22 FP_NO_HOST_CHECK=NO
+28/09/2009 13:27:22 HOMEDRIVE=C:
+28/09/2009 13:27:22 HOMEPATH=\Documents and Settings\jna
+28/09/2009 13:27:22 LOGONSERVER=\\JNA-PC2
+28/09/2009 13:27:22 NUMBER_OF_PROCESSORS=1
+28/09/2009 13:27:22 OS=Windows_NT
+28/09/2009 13:27:22 Path=C:\Program Files\Microsoft Office\Office\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\Program Files\AVG\AVG8
+28/09/2009 13:27:22 PATHEXT=.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH
+28/09/2009 13:27:22 PROCESSOR_ARCHITECTURE=x86
+28/09/2009 13:27:22 PROCESSOR_IDENTIFIER=x86 Family 15 Model 127 Stepping 2, AuthenticAMD
+28/09/2009 13:27:22 PROCESSOR_LEVEL=15
+28/09/2009 13:27:22 PROCESSOR_REVISION=7f02
+28/09/2009 13:27:22 ProgramFiles=C:\Program Files
+28/09/2009 13:27:22 SESSIONNAME=Console
+28/09/2009 13:27:22 SystemDrive=C:
+28/09/2009 13:27:22 SystemRoot=C:\WINDOWS
+28/09/2009 13:27:22 TEMP=C:\DOCUME~1\jna\LOCALS~1\Temp
+28/09/2009 13:27:22 TMP=C:\DOCUME~1\jna\LOCALS~1\Temp
+28/09/2009 13:27:22 USERDOMAIN=JNA-PC2
+28/09/2009 13:27:22 USERNAME=jna
+28/09/2009 13:27:22 USERPROFILE=C:\Documents and Settings\jna
+28/09/2009 13:27:22 windir=C:\WINDOWS
+28/09/2009 13:27:22 Operating System = Windows (32-bit) NT 5.01
+28/09/2009 13:27:22 ******************** Excel ********************
+28/09/2009 13:27:22 Excel Version = Excel 2000
+28/09/2009 13:27:22 Excel Default Path = E:\My Documents
+28/09/2009 13:27:22 Excel Free  Memory = 1048576 Bytes
+28/09/2009 13:27:22 Excel Used  Memory = 778140 Bytes
+28/09/2009 13:27:22 Excel Total Memory = 1826716 Bytes
+28/09/2009 13:27:22 Active Workbook = E:\jna\Arundale\website\docs\ais\shipplotter_kml.xls, Build = 27/09/2009 12:00:00
+28/09/2009 13:27:22 Active Workbook = E:\jna\Arundale\website\docs\ais\shipplotter_kml.xls, Source = 28/09/2009 11:42:12
+28/09/2009 13:27:22 Sheet1 = Graph
+28/09/2009 13:27:22 Sheet2 = Data
+28/09/2009 13:27:22 Sheet4 = Html
+28/09/2009 13:27:22 Sheet6 = Xml
+28/09/2009 13:27:22 Sheet7 = Kml
+28/09/2009 13:27:22 Sheet3 = Summary
+28/09/2009 13:27:22 ******************** Names ********************
+28/09/2009 13:27:22 Data!_FilterDatabase =Data!$A$1:$AI$1
+28/09/2009 13:27:22 Graph!_FilterDatabase =Graph!$E$1:$E$1
+28/09/2009 13:27:22 Time =Graph!$A$2
+28/09/2009 13:27:22 wbAntenna =FALSE
+28/09/2009 13:27:22 wbBuild ="27/09/2009 12:00:00"
+28/09/2009 13:27:22 wbChtBase =1
+28/09/2009 13:27:22 wbChtRng =50
+28/09/2009 13:27:22 wbFilNamData ="data"
+28/09/2009 13:27:22 wbFilNamGraph ="sp_graph"
+28/09/2009 13:27:22 wbFilNamHtml ="data"
+28/09/2009 13:27:22 wbFilNamKml ="data"
+28/09/2009 13:27:22 wbFilNamXml ="data"
+28/09/2009 13:27:22 wbFilTypData ="csv"
+28/09/2009 13:27:22 wbFilTypGraph ="gif"
+28/09/2009 13:27:22 wbFilTypHtml ="html"
+28/09/2009 13:27:22 wbFilTypKml ="kml"
+28/09/2009 13:27:22 wbFilTypList ="html"
+28/09/2009 13:27:22 wbFilTypXml ="xml"
+28/09/2009 13:27:22 wbFtpData =FALSE
+28/09/2009 13:27:22 wbFtpGraph =FALSE
+28/09/2009 13:27:22 wbFtpHtml =FALSE
+28/09/2009 13:27:22 wbFtpKml =FALSE
+28/09/2009 13:27:22 wbFtpList =TRUE
+28/09/2009 13:27:22 wbFtpXml =FALSE
+28/09/2009 13:27:22 wbGetData =TRUE
+28/09/2009 13:27:22 wbGetGraph =TRUE
+28/09/2009 13:27:22 wbGetHtml =TRUE
+28/09/2009 13:27:22 wbGetKml =TRUE
+28/09/2009 13:27:22 wbGetList =TRUE
+28/09/2009 13:27:22 wbGetMsgCount =TRUE
+28/09/2009 13:27:22 wbGetPivot =FALSE
+28/09/2009 13:27:22 wbGetXml =TRUE
+28/09/2009 13:27:22 wbJna =FALSE
+28/09/2009 13:27:22 wbListRange =OFFSET(Data!$A$1,0,0,COUNTA(Data!$A:$A),COUNTA(Data!$1:$1))
+28/09/2009 13:27:22 wbMaxRng =500
+28/09/2009 13:27:22 wbPassword ="*******"
+28/09/2009 13:27:22 wbSchedNow =40084.5113888889
+28/09/2009 13:27:22 wbSource =40084.4876388889
+28/09/2009 13:27:22 wbUpdateCheck =TRUE
+28/09/2009 13:27:22 wbUrlRoot ="my.ftp.domain/myaisdisrectory/"
+28/09/2009 13:27:22 wbUserName ="myusername"
+28/09/2009 13:27:22 wbWaitSecs =30
+28/09/2009 13:27:22 wbWebFileName ="shipplotter_kml.xls"
+28/09/2009 13:27:22 wbWebFilePath ="http://web.arundale.co.uk/docs/ais/"
+28/09/2009 13:27:22 ******************** Logging ********************
+28/09/2009 13:27:22 Rolled over to sp_log_1.log
+28/09/2009 13:28:30 Rolled over to sp_log_1.log
+28/09/2009 13:31:52 Rolled over to sp_log_1.log
+28/09/2009 13:31:52 Closing Workbook
+28/09/2009 13:32:59 Closing Workbook
+28/09/2009 13:43:45 Rolled over to sp_log_1.log
+28/09/2009 13:58:44 Closing Workbook
+29/09/2009 16:00:49 Closing Workbook
+04/10/2009 11:54:44 Closing Workbook

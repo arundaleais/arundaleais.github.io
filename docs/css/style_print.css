@@ -1,0 +1,45 @@
+ 
+/*
+When printing used cars out on ie browser page settings set rh & lh margins to 15mm,
+set bottom margin to 1mm, clear header & footers
+*/
+BODY { margin: 5px; font-family: verdana, arial, helvetica, sans-serif; color: #000000;
+background-color: #FFFFFF; width: 95%; }	/*White*/
+/* note Mozilla does not appear to action many of the BODY comands */
+A:visited { color: #0000FF; }	/*Blue*/
+A:hover { color: #FF0000; }	/*Red*/
+.container { width: 100%; background-color: #FFFFFF; font-size: small; font-family: verdana, arial, helvetica, sans-serif; }
+.header {background-color: #FFFFFF; width: 100%; }
+.breadcrumb { display: none; }
+.navigation { display: none; }
+.topspace { display: none; }
+.marquee { display: none; }
+.page {background-color: #FFFFFF; width: 100%; }
+.pagetitle { margin: 0px; width: 100%; background-color: #FFFFFF; font-size: 200%; color: #000099; font-weight: bold; text-align: center; }
+.section {background-color: #FFFFFF; vertical-align: text-top; width: 100%; }
+.sidebar { display: none; }
+.sidebarcontents { margin: 5px; background-color: #F0FFFF; vertical-align: top; border: 1px solid; }
+.sidebarselect { border-bottom: 1px solid; border-color: #d3d3d3; }
+.content { margin: 5px; background-color: #FFFFFF; vertical-align: top; }
+.noprint { display: none; }
+/* subhead & section title are used on the content pages only */
+.subhead { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11pt; color: #000099 ; font-weight: bold; background-color: #FFFF99}
+.sectiontitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; color: #000099 ; font-weight: bold }
+.basespace { display: none; }
+.footer  { display: none; }
+/* IMG.usedphoto {height: 80%; width: 80%; } */
+.usedcontent { width: 100%; }
+.nodisplay { display: inline; }
+.montage { background-color: #FFFFFF; font-size: xx-small; font-family: verdana, arial, helvetica, sans-serif; width: 100%; }
+.montageexample { display: inline; }
+a.tickl{ display: none; }
+.ticki{ display: none; }
+.ticko{ display: none; }
+.tickls{ display: none; }
+.tickh{ display: none; }
+</style> 
+<style type="text/css" media="print">
+<!--
+/* .breadcrumb { display: none; } */
+-->
+</style>

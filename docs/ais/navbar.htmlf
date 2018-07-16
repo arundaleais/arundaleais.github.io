@@ -1,0 +1,78 @@
+<!-- begin navbar -->
+            <table class="navigation">
+            <tr><td>
+            <div id="navBg">
+            <ul id="nav">
+
+              <li class="topmenu" style="width: 6em;">
+                <a>AIS</a>
+                <ul class="submenu">
+                  <li><a href="./ais_decoder.html">AIS Decoder Guide</a></li>
+                <li><a href="./sp_map.html">Live AIS Yorkshire Coast</a></li>
+                  <li><a href="./yorkshirecoast.kmz" onClick="javascript: pageTracker._trackPageview('/docs/ais/yorkshirecoast.kmz'); ">Google Earth View (KMZ)</a></li>
+                  <li><a href="./world.kmz" onClick="javascript: pageTracker._trackPageview('/docs/ais/world.kmz'); ">Google Earth World AIS (1Mb to download)</a></li>
+                  <li><a href="./sp_google.html">Google Maps View (XML)</a></li>
+                  <li><a href="http://maps.google.com/maps?q=data.kml?" onClick="javascript: pageTracker._trackPageview('/docs/ais/data.kml'); ">Google Maps Server View (KML)</a></li>
+                  <!-- <li><a href="http://maps.google.com/maps?q=aisDispatcherSnapshot.kml?" onClick="javascript: pageTracker._trackPageview('/docs/ais/aisDispatcherSnapshot.kml'); ">AisDispatcher KML View</a></li> -->
+                  <li><a href="./sp_list.html">HTML List of Ships</a></li>
+                <li><a href="./ais_station.html">How to Receive AIS</a></li>
+                  <li><a href="./sr162_nasa.html">AIS Receiver Comparisons</a></li>
+                  <li><a href="./aerial_comparisons.html">AIS Aerial Comparisons</a> </li>
+                </ul>
+              </li>
+
+              <li class="topmenu" style="width: 6em;">
+		<a>Guides</a>
+                <ul class="submenu">
+                  <li><a href="./ais_decoder.html">AIS Decoder Guide</a></li>
+                  <li><a href="./AisDecoderHelp.pdf" onClick="javascript: pageTracker._trackPageview('/docs/ais/AisDecoderHelp.pdf'); ">AIS Decoder Manual</a></li>
+                  <li><a href="./spxl_user_guide.html">AIS Reception Analysis User Guide</a></li>
+                  <li><a href="./nmearouter.html">NMEA & AIS Router Guide</a></li>
+                  <li><a href="./virtualports.pdf">Using OpenCPN & AisDecoder</a></li>
+                  <li><a href="./spxl_website_guide.html">AIS Reception Analysis Website Upload Guide</a></li>
+                  <li><a href="./ais_message_types.html">AIS Message Types</a></li>
+                  <li><a href="./ais_decoder_binary.html">AIS Binary Messages</a></li>
+                  <li><a href="./ais_reporting_rates.html">AIS Reporting Rates</a></li>
+                </ul>
+              </li>
+
+              <li class="topmenu" style="width: 6em;">
+			<a>Antenna</a>
+                <ul class="submenu">
+                <li><a href="./aerial.html">
+Collinear Antenna Construction</a></li>
+                  <li><a href="./aerial_comparisons.html">AIS Aerial Comparisons</a> </li>
+                  <li><a href="./horizon.html">VHF Reception Horizon</a> </li>
+                </ul>
+              </li>
+
+              <li class="topmenu" style="width: 9em;">
+		<a href="./ais_decoder_v3_downloads.html">Downloads</a>
+                <ul class="submenu">
+		<li><a href="./ais_decoder_v3_downloads.html">Downloads</a></li>
+                </ul>
+              </li>
+
+              <li class="topmenu" style="width: 7em;">
+		<a href="./nocontact.html">Contact Me</a>
+                <ul class="submenu">
+		<li><a href="./nocontact.html">Contact Me</a></li>
+
+                </ul>
+              </li>
+
+<!--              <li class="topmenu" style="width: 10em; background-color: white">
+		</li> -->
+            </ul>
+            </div>
+            </td></tr></table>
+<!-- Google Translate -->
+
+<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script><script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- End Google Translate -->
+
+<!-- end navbar -->

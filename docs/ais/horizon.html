@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=ISO-8859-1">
+    <meta name="keywords" content="AIS, Aerial, Antenna, Radio Horizon,
+      VHF, Range, Distance">
+    <meta name="description" content="VHF Radio Horizon Range">
+    <title>VHF Radio Horizon Range</title>
+    <!--#include virtual="aishead.htmlf" -->
+  </head>
+  <body>
+    <!--#include virtual="navbar.htmlf" -->
+    <div style="text-align: center;">
+      <h2>Radio Horizon</h2>
+      <img alt="Geometric Horizon" src="geohoriz.gif"><br>
+      <b>h=Height of aerial above sea level<br>
+        r=Radius of the earth (3440 Nautical miles)<br>
+        d=Distance to Horizon</b><br>
+      Using Pythagoras d&sup2;=(r+h)&sup2;-r&sup2;<br>
+      hence d=&#8730;((r+h)&sup2;-r&sup2;)<br>
+      <br>
+      <h4>Radio Horizon</h4>
+      To calculate the Radio Horizon because of refraction we
+      achieve this by pretending the Earth has a larger radius which we
+      call
+      the equivalent Earth radius R<sub>e</sub> which is normally
+      4/3r in the UK (4587 NM).<br>
+      There are 6076 feet in a Nautical Mile<br>
+      <br>
+      <span style="font-weight: bold;">d</span><sub style="font-weight:
+        bold;">r</sub><span style="font-weight: bold;">=&#8730;((4587+h/6076)&sup2;-4587&sup2;)</span><br>
+      <br>
+      The radio horizon between the transmitter and receiver is the
+      addition
+      of the horizon of both masts.<br>
+      <img alt="horizon" src="horizon.gif"><br>
+      Note the size of the ship makes a considerable difference to the
+      range.<br>
+      Reception beyond this range is caused by <a
+        href="http://www.mike-willis.com/Tutorial/PF6.htm">propagation</a>
+      conditions and will be flukey.
+      <h2>Dip</h2>
+      This was checked to see if a ship could actually be below the
+      aerial
+      horizon.
+      <br>
+      The graph shows the angle down to a ship for different receiving
+      aerial
+      heights. For a ship 1nm from the aerial and the aerial 1000 feet
+      above
+      sea level the angle down would be 10&deg;. From the same aerial
+      the
+      horizon would be under 1&deg;.
+      <br>
+      <img alt="dip" src="dip.gif"><br>
+      <img alt="geodip" src="geodip.gif"><br>
+      <b>&#945;=Dip angle</b><br>
+      To Horizon sin(90-&#945;)=r/(r+h)<br>
+      To 1 nm tan &#945;=h/d<br>
+      <br>
+      &nbsp;This significance is high gain collinear aerials increase
+      horizontal
+      gain at the expense
+      of vertical beam width. The graph shows this could be relevant
+      with a
+      high gain aerial close to and much higher than
+      the ship's aerial ie the ship is "below the radar"<br>
+      <br>
+      <img style="width: 782px; height: 270px;" alt="Elevation"
+        src="elevation.gif"><br>
+      For example the <a
+        href="http://www.cushcraftamateur.com/Product.php?productid=AR-2">Cushcraft
+        Ringo
+        Ranger</a> specification quotes 7dBi gain and a beam width
+      of&nbsp; 7 degrees. The dipole "donut" becomes a "biscuit" !<br>
+      For more technical info see the references on my <a
+        href="./aerial.html">aerial
+        page</a><br>
+      <br>
+      <span style="font-weight: bold;"><span style="font-weight: bold;"></span></span>See
+      also<br>
+      <a href="http://www.mike-willis.com/Tutorial/PF6.htm">Beyond
+        the Horizon Propagation</a> &amp;&nbsp;<a
+        href="http://www.dxinfocentre.com/tropo_nwe.html">Tropospheric
+        Ducting Forecast</a><br>
+      <div style="text-align: center;"><br>
+      </div>
+      <br>
+      <span style="font-weight: bold;"></span><br>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <!--#include virtual="aishead.htmlf" -->
+    <meta name="keywords" content="ShipPlotter, Excel, AIS, reception,
+      performance, graph, compare, Google maps, XML, KML">
+    <meta name="description" content="AIS Reception Data Analysis">
+    <title>ShipPlotter.xls - ShipPlotter AIS Data Extraction, Analysis
+      &amp; Website Upload Spreadsheet/Program</title>
+  </head>
+  <body>
+    <!--#include virtual="navbar.htmlf" -->
+    <div style="text-align: center;">
+      <h2><span class="descr">ShipPlotter AIS Reception Analysis &amp;
+          Website Upload Spreadsheet/Program</span></h2>
+      <h2>User Guide for ShipPlotter.xls&nbsp;<small><small>by Neal
+            Arundale</small></small></h2>
+    </div>
+    <div style="text-align: center;"><span style="font-weight: bold;"></span><big><span
+          style="font-weight: bold;">Creates a list of current ships in
+          CSV and/or HTML and/or XML and/or KML format</span></big><big><span
+          style="font-weight: bold;"><br>
+        </span></big></div>
+    <div style="text-align: center;"><big><span style="font-weight:
+          bold;">Dynamically graphs No of ships, Message rate and
+          Maximum range<br>
+        </span></big><big><span style="font-weight: bold;"></span></big>
+    </div>
+    <div style="text-align: center;"><span style="font-weight: bold;"></span><small><span
+          style="font-weight: bold;"></span></small><big><span
+          style="font-weight: bold;">Uploads any/all of above to a
+          webserver<br>
+          <br>
+        </span></big></div>
+    <span style="font-weight: bold;">Requirements<br>
+    </span>The AIS data must be received by the <a
+      href="http://www.coaa.co.uk/shipplotter.htm">COAA ShipPlotter</a>
+    program.<br>
+    Excel 97, 2000, 2002, 2003 or 2007 must be installed.<br>
+    Windows 98 or later.<br>
+    <span style="font-weight: bold;"><br>
+      Quick Start</span><br>
+    Click <a href="./shipplotter_kml.xls">this link</a>, with
+    ShipPlotter running, open the spreadsheet &amp; enable macros.<br>
+    Excel will display a screen similar to this, but with no points on
+    the graph.<br>
+    <img style="width: 664px; height: 481px;" alt="sp_graph_tab"
+      src="./sp_graph_tab.gif"><br>
+    <br>
+    After 5 minutes (the default setting) the first point on the graph
+    will be plotted and the number of messages received since startup
+    will be listed above the graph.<br>
+    <span style="font-weight: bold;"></span><br>
+    <span style="font-weight: bold;">Features (Click the links to see
+      the current files for Scarborough)</span><br>
+    At a user defined polling interval the COAA ShipPlotter program is
+    interrogated.<br>
+    The polling scheduled is controlled within Excel eliminating the use
+    of the Windows task manager.<br>
+    The AIS data received is displayed in a graphical format.<br>
+    You can choose to list current ships in CSV and/or HTML and/or XML
+    and/or KML format.<br>
+    Any or all of the above formats may be automatically uploaded to a
+    webserver of your choice.<br>
+    The&nbsp;<span style="font-weight: bold;"></span>&nbsp;<a
+      style="font-weight: bold;" href="./sp_graph.gif">Graph</a> may
+    optionally be uploaded to a webserver <br>
+    The&nbsp;<a style="font-weight: bold;" href="./data.csv">CSV</a>
+    list contains all the message data currently being decoded by the
+    COAA ShipPlotter program.&nbsp; &nbsp;&nbsp;&nbsp;
+    (MMSI,Name,Latitude,Longitude,COG,SOG,Heading,Rotation,Status,Accuracy,Type
+of
+Ship,Draught,Length,Destination,Call
+
+
+
+
+
+    sign,IMO no,ETA,Beam,GPS position fwd,GPS position port,Time last
+    message received, Share code ais data,Range,Bearing,CPA &amp; CTA)<br>
+    The&nbsp;<a style="font-weight: bold;" href="./sp_list.html">HTML</a>
+    list can be viewed with a browser on your PC or by users visiting
+    your website. If you wish to display a different subset of the ship
+    data received, this is done by altering the content on one sheet of
+    the Excel workbook. Similarly it is simple to alter the format with
+    a basic knowledge of HTML.<br>
+    The&nbsp;<a style="font-weight: bold;" href="./sp_google.html">XML</a>
+    list may be used to interface with Google maps, click&nbsp;<a
+      href="./sp_google.html">here</a> to view the webpage when rendered
+    by Google maps. The default format I have set up will interface with
+    the HTML sample webpage vbship4.zip which can be downloaded from the
+    files section (vbscripts) of the <a
+      href="http://groups.yahoo.com/group/shipplotter/files/VB%20Scripts/">ShipPlotter
+
+
+
+
+
+      forum</a>. <br>
+    <span style="text-decoration: underline;"><span style="font-weight:
+        bold;"></span></span>The <a style="font-weight: bold;"
+      href="./data.kml">KML</a> list again will interface with Google
+    maps, in this case you can use the Google server to combine the
+    ship's data with a map. This is done by just going to a link
+    directly in this case <a style="font-weight: bold;"
+href="http://maps.google.com/maps?q=http://web.arundale.co.uk/docs/ais/data.kml?">http://maps.google.com/maps?q=http://web.arundale.co.uk/docs/ais/data.kml?</a><br>
+    The default format is almost as simple as it can be so that you can
+    see the wood from the trees.<br>
+    Optionally, you will be informed when you start the program if I
+    have uploaded a new version of the Excel code (Win 2000 on).<br>
+    &nbsp; <span style="font-weight: bold;"><br>
+      Tabs</span><br>
+    If you click on the <small><span style="font-weight: bold;">Data</span></small>
+    tab (at the bottom on the Excel screen) you will see a list of the
+    ships, somthing like below.<br>
+    <img style="width: 808px; height: 481px;" alt=""
+      src="./sp_data_tab.gif"><br>
+    <br>
+    &nbsp; If you click on the <small><span style="font-weight: bold;">Summary</span></small>
+    tab you will see a summary of the data something like this<br>
+    <img alt="" src="./sp_summary_tab.gif"><br>
+    <br>
+    The <small><span style="font-weight: bold;">HTML</span></small>, <small><span
+        style="font-weight: bold;">XML</span></small> and <small><span
+        style="font-weight: bold;">KML</span></small> tabs are used for
+    uploading the data to a website, for more information go to <a
+      href="./spxl_website_guide.html">AIS Data Analysis Website Upload
+      Guide</a><br>
+    <span style="font-family: monospace;"><br>
+    </span><span style="font-weight: bold;">ShipPlotter &gt; Options<br>
+    </span>There are a number of options which affect the way you will
+    see the data being received. These are simply changed by selecting
+    the options box from the Excel menu bar. <br>
+    <img style="width: 482px; height: 164px;" alt=""
+      src="./sp_menubar_options.gif"><br>
+    <br>
+    The Options box will be displayed<br>
+    <span style="font-weight: bold;"><br>
+    </span>
+    <table style="width: 732px; height: 530px;" cellpadding="2"
+      cellspacing="2">
+      <tbody>
+        <tr>
+          <td style="width: 277px;"><img style="width: 325px; height:
+              496px;" alt="" src="./sp_form_options.gif"></td>
+          <td style="vertical-align: top; width: 439px;"><span
+              style="font-weight: bold;">Refresh</span> &nbsp;is the
+            frequency ShipPlotter will be polled and the Graph updated,
+            set to 0&nbsp;stop polling<br>
+            <span style="font-weight: bold;">Graph Range</span> sets the
+            number of points that will be displayed on the time axis of
+            the graph. By default the last 500 entries are kept so you
+            can change this to display a larger number of points
+            retrospectively.<br>
+            <span style="font-weight: bold;">Message Rows</span> are the
+            number of rows of data that will be displayed above the
+            graph. The default is the last 5.<br>
+            <span style="font-weight: bold;">Max Ship Range</span> is
+            the maximum range ships ais data will be loaded into the
+            spreadsheet from the Shipplotter data.&nbsp; This is of use
+            when TCP messages are being received by shipplotter but you
+            are only interested in ships within a certain range from
+            your home location. If set to 0 all ships are loaded.<br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span style="font-weight: bold;">Check for Updates </span>if
+unticked
+
+
+
+
+
+            Excel will not check each time it is started whether there
+            is an updated version on my server.<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <span style="font-weight: bold;">ShipPlotter &gt; Controls<br>
+    </span>There are a choice of the following options<br>
+    &nbsp;&nbsp;&nbsp; <small><span style="font-weight: bold;">Start</span></small>&nbsp;&nbsp;&nbsp;&nbsp;
+Restarts
+the
+
+
+
+
+
+    scheduler - if you have stopped it<br>
+    &nbsp;&nbsp;&nbsp; <small><span style="font-weight: bold;">Stop</span></small>&nbsp;&nbsp;&nbsp;&nbsp;
+Stops
+the
+
+
+
+
+
+    scheduler - if running<br>
+    &nbsp;&nbsp;&nbsp; <small><span style="font-weight: bold;">Purge</span></small>&nbsp;&nbsp;
+Clears
+all
+
+
+
+
+
+    the data obtained from ShipPlotter<br>
+    <img style="width: 486px; height: 157px;" alt=""
+      src="./sp_menubar_controls.gif"><br>
+    <span style="font-weight: bold;"><br>
+      ShipPlotter &gt; Help<br>
+    </span>Will display this page<br>
+    <img style="width: 485px; height: 151px;" alt=""
+      src="./sp_menubar_help.gif"><br>
+    <span style="font-weight: bold;"><br>
+      ShipPlotter &gt; About<br>
+    </span>Will display a message box similar to the one below. If you
+    wish to report a bug, this is very helpful.<br>
+    <img style="width: 420px; height: 146px;" alt=""
+      src="./sp_menubar_about.gif"><br>
+    <br>
+    <span style="font-weight: bold;">Uploading to a website</span><br>
+    Detailed instructions may be obtained from the page <a
+      href="./spxl_website_guide.html">AIS Data Analysis Website Upload
+      Guide</a> <br>
+    <br>
+    <span style="font-weight: bold;">Changing the Layout of the
+      Worksheets</span><br>
+    <br>
+    You should not change the layout of the Graph or Data worksheets.<br>
+    You may change the layout of the Summary Sheet, or add other Sheets
+    including Graphs, that link to any other worksheet.<br>
+    <br>
+    <span style="font-weight: bold;">Changing the Summary</span><br>
+    The Summary sheet is a normal Excel pivot table linked to the Data
+    worksheet. I have included it as a "sample"<br>
+    <span style="color: rgb(255, 0, 0);">Click on any cell within the
+      summary table</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> Right click and select wizard</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> Click on Layout</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> Drag the Headings into the
+      table &amp; Finish</span><br>
+    <span style="text-decoration: underline;"><img style="width: 594px;
+        height: 346px;" alt="" src="./sp11_pivotlayout.jpg"></span><br>
+    If you <span style="color: rgb(255, 0, 0);">double click on any
+      total</span> you will get a new sheet created containing only the
+    rows off the <small><span style="font-weight: bold;">Data</span></small>
+    <span style="color: rgb(51, 204, 255);"></span>worksheet making up
+    the total.<br>
+    You can use pivot tables to summarise any data held on an Excel
+    worksheet. It is an extremely powerful way of not only listing
+    totals but also splitting values into ranges and graphically showing
+    the result. For example you can simply plot a Graph of the Speeds of
+    ships in bands of say 5kn and the graph will be updated each time
+    the worksheet is updated. Or you could plot a Graph of Range vs
+    Bearing.<br>
+    For more information I suggest you Google Pivot Tables.<br>
+    <br>
+    <span style="font-weight: bold;">Changing the VBA Code</span><br>
+    See&nbsp;<a href="./spxl_vba_guide.html">here</a> more information
+    about altering the VBA code<br>
+  </body>
+</html>

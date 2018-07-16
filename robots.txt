@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.htm
+Sitemap: http://arundale.com/sitemap.xml
+Disallow: /docs/test.shtml
+Disallow: /cgi-bin
+Disallow: /docs/js

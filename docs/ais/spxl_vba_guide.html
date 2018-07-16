@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<!--#include virtual="aishead.htmlf" -->
+  <meta name="keywords"
+ content="ShipPlotter, Excel, AIS, reception, performance, graph, compare, Google maps, XML, KML, VBA">
+  <meta name="description" content="AIS Reception Data Analysis">
+  <title>ShipPlotter.xls - VBA Guide</title>
+</head>
+<body>
+<!--#include virtual="navbar.htmlf" -->
+<div style="text-align: center;">
+<h2><span class="descr">ShipPlotter AIS Data Reception Analysis &amp;
+Website Upload Spreadsheet/Program</span></h2>
+<h2>ShipPlotter.xls VBA Guide <small><small>by Neal
+Arundale</small></small></h2>
+</div>
+<div style="text-align: center;"><big style="color: rgb(255, 0, 0);"><span
+ style="font-weight: bold;">In course of preparation</span></big><br>
+</div>
+<span style="font-weight: bold;"></span><br>
+<div style="text-align: center;"><big><span style="font-weight: bold;">VBA
+Introduction</span></big><br>
+<span style="font-weight: bold;"></span></div>
+<span style="font-weight: bold;">Why VBA ?</span><br>
+The programs I have seen to extract the data from the ShipPlotter
+program into spreadsheets use VBScript to write out a file which is
+then imported into a spreadsheet, or the script writes the data
+directly into a spreadsheet..<br>
+<br>
+Visual Basic (VB) comes in three flavours. VBS is basically a subset of
+VB whereas VBA has almost all of the features of &nbsp;VB plus
+access to the components of the host application. As my end goal was to
+graphically display message rate, number of ships and maximum range, it
+made sense to use VBA rather than VBS. A side benefit was the ability
+of VBA to reschedule itself at a time in the future, whereas VBS only
+has a weak wait function and so requires setting up as a scheduled
+task. In addition the debugging features in VBS are
+minimal but VBA comes with a good debugging editor (VBE). <br>
+<span style="font-weight: bold;"><br>
+Visual Basic Editor<br>
+<big style="color: rgb(255, 0, 0);">First stop the
+scheduler</big></span><big style="color: rgb(255, 0, 0);"><small>
+<span style="color: rgb(0, 0, 0);">, if you don't you may
+get an unexpected copy of Excel startup later.</span></small></big><br>
+You only need to install VBE if you want to change the VBA
+code.<span style="font-weight: bold;"><br>
+</span>With Excel 97/2000 installing VBE is an option when Excel
+is installed (I don't know about later versions).<br>
+When invoked by Tools &gt; Macro &gt; Visual Basic Editor (when
+in Excel) you should see a screen something like<br>
+<img style="width: 871px; height: 531px;" alt=""
+ src="./sp11_vbe.jpg"><br>
+If you wish to change the format or data reported on I suggest you
+create a new module &amp; worksheet (even if you copy an existing
+one), you can keep a separate
+copy of&nbsp;your module by exporting it. If I change the existing
+code to fix bugs etc, you
+will simply be able to import your code module and eveything will
+continue to work ok.<br>
+As my initial interest was to display the message rate etc graphically,
+this is where most of my effort has been spent, the other sheets I've
+done were mainly to demonstrate the feasability of the techniques
+employed rather than to produce relevant data. I've also used more than
+one method of achieving the same end result for the same reason.<br>
+<span style="font-weight: bold;"></span><br>
+<br>
+<span style="font-weight: bold;"><br>
+</span><br>
+<br>
+</body>
+</html>

@@ -1,0 +1,48 @@
+
+
+BODY { margin: 5px; font-family: verdana, arial, helvetica, sans-serif; color: #000000;
+background-color: #575757; width: 95%; }	/*White*/
+/* note Mozilla does not appear to action many of the BODY comands */
+A:visited { color: #0000FF; }	/*Blue*/
+A:hover { color: #FF0000; }	/*Red*/
+.container {background-color: #FFFFFF; font-size: small; font-family: verdana, arial, helvetica, sans-serif; width: 100%; }
+.header {background-color: #FFFFFF; width: 100%; }
+.breadcrumb { margin: 0px; background-color: #d3d3d3; line-height: 20px; vertical-align: middle; width: 100%; }
+.navigation { margin: 0px; background-color: #d4d4d4; line-height: 20px; vertical-align: middle; width: 100%; }
+.topspace { background-color: #FFFF00; line-height: 4px; vertical-align: middle; width: 100%; }
+.marquee { color: #FF0000; vertical-align: middle; font-weight: bolder; margin-left: 10%; width: 80%; text-align: center; background-color: #F0FFFF; }
+IMG.usedphoto {width: 400px; }
+IMG.usedmontage {width: 130px; }
+.page {background-color: #FFFFFF; width: 100%; }
+.pagetitle { margin: 0px; width: 100%; background-color: #FFFFFF; font-size: 200%; color: #000099; font-weight: bold; text-align: center; }
+.section {background-color: #FFFFFF; vertical-align: text-top; width: 100%; }
+.sidebar { margin: 5px; width: 20%; background-color: #FFFFFF; vertical-align: top; text-align:center }
+.sidebarcontents { width: 150px; margin: 5px; background-color: #F0FFFF; vertical-align: top; border: 1px solid; }
+.sidebarselect { border-bottom: 1px solid; border-color: #d3d3d3; }
+.content { margin: 5px; background-color: #FFFFFF; vertical-align: top; width: 100%; }
+/* subhead & section title are used on the content pages only */
+.subhead { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11pt; color: #000099 ; font-weight: bold; background-color: #FFFF99}
+.sectiontitle { font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 9pt; color: #000099 ; font-weight: bold }
+.basespace { background-color: #FFFF00; line-height: 4px; vertical-align: middle; width: 100%; }
+.footer  { background-color: #F0FFFF; width: 100%; }
+.nodisplay { display: none; }
+
+IMG.photomontage {width: 150px; }
+.montage { background-color: #FFFFFF; font-size: xx-small; font-family: verdana, arial, helvetica, sans-serif; width: 100%; }
+.montageexample { display: none; background-color: #FFFFFF; font-size: xx-small; font-family: verdana, arial, helvetica, sans-serif; width: 100%; }
+.fourcar { width: 170px; }
+a.tickl{font-family:Verdana,Arial,Helvetica,sans-serif;font-size:11px;line-height:12px;text-decoration:none;color:#FF0000;font-weight:bold;}
+a.tickl:hover{color:#0000FF;text-decoration:none;}
+.ticki{width:629px;height:13px;overflow:hidden;}
+.ticko{width:629px;border-top:1px solid #FFFFFF;border-bottom:1px solid #990000;padding:1px 0 4px 0;margin:4px 0 0px 0;display:block;}
+.tickls{color:#444444;}
+.tickh{display:none;}
+/* elements must be at the end, but don't know why bug? */
+.left-element { float: left; width: 50%; }
+.right-element { float: right; width: 48%; text-align: right; }
+
+<style type="text/css" media="print">
+<!--
+/* .breadcrumb { display: none; } */
+-->
+</style>

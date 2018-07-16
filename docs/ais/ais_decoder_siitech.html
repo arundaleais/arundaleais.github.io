@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <meta name="keywords" content="AIS, AisDecoder, Interface, SiiTech">
+  <meta name="description"
+ content="How To Interface AisDecoder with SiiTech">
+  <title>Ais Decoder</title>
+<!--#include virtual="aishead.htmlf" -->
+</head>
+<body>
+<!--#include virtual="navbar.htmlf" -->
+<div style="text-align: center;">
+<h2><span class="descr">AisDecoder</span></h2>
+</div>
+<div style="text-align: center;"><big style="color: rgb(255, 0, 0);"><span
+ style="font-weight: bold;"><span style="color: rgb(0, 0, 0);">Interfacing
+with
+SiiTech
+Ais
+Server
+Lite</span></span></big><br>
+<div style="text-align: left;"><font size="-1"><span
+ style="font-weight: bold; font-family: Verdana;"><span
+ style="font-weight: bold;">Introduction<br>
+</span></span><span style="font-family: Verdana;"><span
+ style="font-family: Verdana;"></span></span></font><font
+ style="font-family: Verdana;" size="-1">Some confusion exists on how
+to interface with <a href="http://www.siitech.com/prod_as.htm">SiiTech
+Ais Server Lite</a>, this page should help to clarify or just confuse.<br>
+</font><font size="-1"><span
+ style="font-weight: bold; font-family: Verdana;"><span
+ style="font-weight: bold;"><br>
+Client-Server ?</span></span></font><br>
+<font style="font-family: Verdana;" size="-1"><span
+ style="font-weight: bold;">TCP</span> is a connection orientated
+protocol. Handshaking between the sender and receiver ensures data sent
+is actually received.<br>
+With TCP all communication is 2-way - like a phone call, and like a
+phone call one party has to initiate the conversation. The party
+initiating the conversation is the client, because the called party has
+to react to a request made by the client (eg answer the phone call) and
+then respond back to the caller ("Hello").<br>
+</font><font style="font-family: Verdana;" size="-1"><br>
+A program which receives data from one source and forwards it to
+another can act as both a client and a server. It will initiate a
+connection to start receiving data (ie is a client) than send this data
+to another program if asked (ie is a server).<br>
+<br>
+</font><font style="font-family: Verdana;" size="-1"><span
+ style="font-weight: bold;">UDP</span> is a connectionless protocol,
+there is no handshaking, a packet sent is not guaranteed to be received.<br>
+It is like a broadcast radio signal - you don't have to listen to it.
+Is the transmitter or the receiver the server ?<br>
+<br>
+The answer appears to depend on your point of view. Microsoft clearly
+regard the receiver as the client, however others<br>
+regard the receiver as the server because the program receiving the
+data reacts to data initiated by the sender.<br>
+<br>
+<span style="font-weight: bold;">Clear as mud ?</span></font><br>
+<font style="font-family: Verdana;" size="-1">Microsoft regard a UDP
+receiver as a client, SiiTech regard a UDP receiver as a server.</font><br>
+<pre wrap=""><font style="font-family: Verdana;" size="-1">My thanks to Chris Gray for the following information and Screen Shots<br></font><br>I setup a new UDP client in AIS Server Lite - screenshot at<br><span
+ style="text-decoration: underline;"><img alt=""
+ src="./siitech_1.jpg"></span><br><br>I've got AIS Server Lite configured as per this screenshot -<br><span
+ style="text-decoration: underline;"><br><img
+ style="width: 559px; height: 454px;" alt=""
+ src="./siitech_2.jpg"><br></span><br>I get AIS data from my own program, called sp2trax.  This program creates<br>AIS NMEA messages based on the ships it can see in the ShipPlotter ship<br>list, using the OLE/COM interface.  It outputs position reports every 10<br>seconds, ship name/destination/etc. every 6 minutes, SAR aircraft every 10<br>seconds, and Groundstations every 10 seconds.<br><br>I then use AIS Server Lite to send that data to:<br>1. COM1 serial port, via. VSP, for onward use in Airnav ShipTrax (beta<br>testing) to simulate hardware on COM2.<br>2. TCP server on port 15151, for use on my internal network where I have<br>another PC running ShipTrax configured for TCP input beta testing.<br>3. UDP client on port 29421 to send to your program.<br><br>Your program is proving useful to check what messages are being created by<br>sp2trax.<br></pre>
+<font style="font-family: Verdana;" size="-1"><br>
+My thanks to Chris Gray for the information and Screen Shots<br>
+<br>
+<br>
+</font></div>
+</div>
+</body>
+</html>

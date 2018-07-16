@@ -1,0 +1,764 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <!--#include virtual="aishead.htmlf" -->
+    <meta name="keywords" content="AIS,Ais Decoder,AIS
+      Parser,Parser,Decoder, Binary, Ais Viewer, NMEA, !AIVDM, !AIVDO,
+      !BSVDM, !ABVDM, IEC 62320-1">
+    <meta name="description" content="Decodes all the NMEA VDM content
+      (!AIVDM !AIVDO !BSVDM !ABVDM etc)of all 27 AIS mesage types in
+      plain English">
+    <title>Ais Decoder</title>
+  </head>
+  <body>
+    <!--#include virtual="navbar.htmlf" -->
+    <div style="text-align: center; font-family: Verdana;">
+      <h2><span class="descr"><img alt="AisDecoder"
+            src="AisDecoder_110x20.jpg" width="110" height="20"></span>
+        <small>by Neal
+          Arundale</small></h2>
+    </div>
+    <div style="text-align: center;"><big style="color: rgb(255, 0, 0);
+        font-family: Verdana;"><span style="font-weight: bold;"><span
+            style="color: rgb(0, 0, 0);">Decodes
+            All 27 AIS message types</span></span></big><br
+        style="font-family: Verdana;">
+      &nbsp; <span style="font-weight: bold; font-family: Verdana;"><font
+          size="-1"><span style="font-weight: bold;">and 50 Binary
+            Messages</span></font></span><br>
+      <div style="text-align: left;">
+        <div style="text-align: center; font-family: Verdana;"><font
+            size="-1"><span style="font-weight: bold;"><span
+                style="font-weight: bold;"><span style="color: rgb(255,
+                  0, 0);"><big><span style="font-weight: bold;"><br>
+                    </span></big></span></span></span></font><font
+            size="-1"><span style="font-weight: bold;"><span
+                style="font-weight: bold;"></span></span></font></div>
+        <font size="-1"><span style="font-family: Verdana;"><span
+              style="font-family: Verdana;">The decoder will decode all
+              the NMEA
+            </span></span></font><font size="-1"><span
+            style="font-family: Verdana;"><span style="font-family:
+              Verdana;">VDM or VDO </span></span></font><font size="-1"><span
+            style="font-family: Verdana;"><span style="font-family:
+              Verdana;">content
+              of
+              all 27 AIS message types including !AIVDM, !BSVDM and
+              !ABVDM, <br>
+              The decoder has been tested on an XP PC, and believe it
+              should work on
+              all Windows PC's after 98. Other users report it works on
+              Vista, Win 7,
+              Win 7-64, Win 8, Win 8.1 and Linux (Wine).<br>
+            </span></span></font><font size="-1"><span
+            style="font-family: Verdana;"></span></font><font
+          style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;"><br>
+              </span></span></span></font>
+        <table style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; text-align: center;"><span
+                  style="font-weight: bold;">Lower Manhattan</span><br>
+              </td>
+              <td style="vertical-align: top; text-align: center;"><span
+                  style="font-weight: bold;">Immingham UK Docks</span><br>
+              </td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><font size="-1"><span
+                    style="font-weight: bold;"><span style="font-weight:
+                      bold;"><span style="color: rgb(255, 0, 0);"><big><span
+                            style="font-weight: bold;"><img title="Lower
+                              Manhattan" style="width: 500px; height:
+                              308px;" alt=""
+                              src="AisDecoder-lower-manhattan.jpg"></span></big></span></span></span></font></td>
+              <td style="vertical-align: top;"><font size="-1"><span
+                    style="font-weight: bold;"><span style="font-weight:
+                      bold;"><span style="color: rgb(255, 0, 0);"><big><span
+                            style="font-weight: bold;"><img
+                              title="Immingham Docks" style="width:
+                              439px; height: 480px;" alt=""
+                              src="./immingham.gif"></span></big></span></span></span></font></td>
+            </tr>
+          </tbody>
+        </table>
+        <font style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;">Introduction</span></span></span></font><br>
+        <font size="-1"><span style="font-family: Verdana;">Ais Decoder
+            accepts
+            AIS data from an AIS Receiver, the Internet or a Local
+            Network
+            connection, decodes the data and presents the decoded data
+            in a form
+            suitable for display and analysis by mapping program (eg
+            Google Earth
+            or Google Maps), or for analysis using Excel, or by a
+            database (eg
+            MySql).<br>
+            <br>
+          </span></font><font style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;">Main
+                Features<br>
+              </span></span></span></font>
+        <table style="text-align: left; width: 535px; height: 117px;"
+          cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Input:</font></td>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Serial or USB from AIS receiver, UDP or TCP
+                  from network,
+                  Log File</font></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Input Filter:</font></td>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">AIS Message type, DAC, FI, ID, MMSI</font></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Output:</font></td>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Display, File, FTP, UDP<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Output Frequency<br>
+                </font></td>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">As received or at Scheduled intervals<br>
+                </font></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Output Filter:</font></td>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Lat/Lon or any other decoded field</font></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Output Formats:</font></td>
+              <td style="vertical-align: top; font-family: Verdana;"><font
+                  size="-1">Text, CSV, HTML, XML, KML, KMZ, NMEA </font></td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <font size="-1"><span style="font-family: Verdana;"></span></font>
+        <font size="-1"><span style="font-family: Verdana;"><br>
+          </span></font>
+        <table style="text-align: left; width: 476px; height: 58px;"
+          cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top;"><font size="-1"><span
+                    style="font-family: Verdana;">Self-extracting
+                    installation
+                    file, including help</span></font><font size="-1"><span
+                    style="font-family: Verdana;"></span></font></td>
+              <td style="vertical-align: top;"><font size="-1"><span
+                    style="font-family: Verdana;"><a
+                      href="./ais_decoder_v3_downloads.html"> <img
+                        alt="" src="./download.gif" style="border: 0px
+                        solid ; width: 88px; height: 16px;"></a></span></font></td>
+            </tr>
+            <tr>
+              <td style="vertical-align: top;"><font style="font-family:
+                  Verdana;" size="-1">PDF Help Manual</font></td>
+              <td style="vertical-align: top;"><font style="font-family:
+                  Verdana;" size="-1"><span style="font-weight: bold;"><span
+                      style="font-weight: bold;"><span
+                        style="font-weight: bold;"><a
+                          href="./AisDecoderHelp.pdf"
+                          onclick="javascript:
+                          pageTracker._trackPageview('/docs/ais/AisDecoderHelp.pdf');
+                          "><img alt="" src="pdf.gif" style="border: 2px
+                            solid ; width: 16px; height: 16px;"></a> </span></span></span></font></td>
+            </tr>
+          </tbody>
+        </table>
+        <font size="-1"><span style="font-family: Verdana;"></span></font><font
+          style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"></span></span></font><font
+          style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;"></span></span></span></font><font
+          style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;"><br>
+                AIS<br>
+              </span></span></span>AIS is primarily transmitted by ships
+          for
+          collision avoidance. Ships over 200 tons must carry an AIS
+          transponder
+          which both transmits and receives AIS data, enabling vessels
+          to see the
+          speed and course (and other information) of vessels </font><font
+          style="font-family: Verdana;" size="-1">within around 20 miles
+          of one
+          another. It is also used by the Coast Guard and port
+          authorities to
+          monitor vessel movements. Other uses are becoming more common,
+          such as
+          Virtual Navigation Aids, weather and sea state reporting,
+          control of
+          inland waterways such as canals and locks. Anyone with a
+          suitable
+          receiver can receive this data.</font><br>
+        <font style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;"><br>
+                AisDecoder Specification<br>
+              </span></span></span></font>
+        <ul>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Decodes <a
+                    href="./ais_message_types.html">all
+                    27 Ais Messages</a> types</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Decodes VDM or VDO
+                  sentences (!AIVDM,
+                  !AIVDO, !BSVDM,
+                  !ABVDM etc) messages<br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Decodes <a
+                    href="./ais_decoder_binary.html">50
+                    Binary message</a> types</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">All fields are fully
+                  decoded on <a href="#detail">Detail display</a><br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Input Logging with
+                  optional daily
+                  roll-over</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Decodes messages at 40k-200k/min
+                  on 2GHz
+                  XP PC (dependant on options selected)<br>
+                </span></span></font></li>
+          <li><a href="#nmeainput"><font size="-1"><span
+                  style="font-family: Verdana;"><span
+                    style="font-family: Verdana;">NMEA
+                    input monitor</span></span></font></a></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">UDP TCP, USB and Serial
+                  (RS232) Input<br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Input filtering by AIS
+                  message type
+                  and/or binary message DAC/FI/ID</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Input filteriing by MMSI<br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">GPS NMEA (time stamp)
+                  sentences decoded<br>
+                </span></span></font></li>
+          <li><a href="#summary"><font size="-1"><span
+                  style="font-family: Verdana;"><span
+                    style="font-family: Verdana;">Message
+                    Summary
+                    display</span></span></font></a></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Dual Channel Output to
+                  File or UDP</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;"><a
+                    href="#CSV_Output_All_Fields_-_Display">Display file
+                    and/or UDP output<br>
+                  </a></span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">NMEA or Formatted Output<br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Batch (Scheduled) Output
+                  by MMSI for web
+                  site upload</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Batch output of latest
+                  messages by UDP</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Automatic FTP upload to
+                  web site</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;"><a
+                    href="#CSV_Output_All_Fields_-_File">Decoded
+                    CSV
+                    Output</a> for import to <a
+                    href="#CSV_Output_Selected_Fields_-_Excel">Excel</a></span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;"><a href="#GoogleEarth">Display
+                    Ships on
+                    Google Earth</a></span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;"><a href="#GoogleMaps">Display
+                    Ships on
+                    Google Maps</a><br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;"><a href="#GoogleMaps">KML</a>,
+                  KMZ or <a href="#xml">XML Output</a> to
+                  Google Earth
+                  or Google Maps<br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;"><a href="#html">HTML
+                    output</a> to
+                  website<br>
+                </span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Output format may be
+                  tailored to
+                  individual requirements</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Output filtering by
+                  individual AIS
+                  Message Fields</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Output filtering by any
+                  Field value (for
+                  example Area by Latitude and Longitude)</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Reads NMEA log files</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Filters NMEA AIS log
+                  files by all
+                  message types and all AIS fields</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Reads <a
+                    href="#SPNMEA_input_file">ShipPlotter
+                    spnmea
+                    log</a> files</span></span></font></li>
+          <li><font size="-1"><span style="font-family: Verdana;"><span
+                  style="font-family: Verdana;">Can be run like a Server</span></span></font></li>
+        </ul>
+        <font style="font-family: Verdana;" size="-1"><span
+            style="font-weight: bold;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;">
+              </span></span></span>There is a comprehensive Help file
+          distributed
+          with the installation file<br>
+          There is also a PDF extraction of this file <a
+            href="./AisDecoderHelp.pdf">here</a>.<br>
+          <br>
+          <span style="font-weight: bold;">How AIS data is Encoded</span><br>
+          AIS data is encapsulated within the Marine Standard NMEA
+          protocol,
+          which defines </font><font style="font-family: Verdana;"
+          size="-1">Standands
+          for
+          communication
+          between
+          wired
+          electonic
+          ship
+          devices.
+          NMEA
+          defines
+          many
+          different
+          sentences,
+          two
+          of
+          which
+          are
+          normally
+          used
+          for
+          containing AIS data named !AIVDM
+          and !AIVDO. The content of both these sentences are identical
+          (!AIVDM
+          is transmitted, !AIVDO is on board).<br>
+          <font size="-2"><span style="font-weight: bold;"><font
+                size="-1">&nbsp;&nbsp;&nbsp;
+                Transmission</font></span></font><br>
+          For transmission the !AIVDM sentences are sent in individual
+          packets
+          using a system called TDMA (Time Division Multiple Access). If
+          two
+          transmitters sent data at exactly the same time, a receiver
+          with range
+          of both transmitters would pick up garbled packets. TDMA
+          organises AIS
+          transmitters in such a way that each AIS transmitter does not
+          try and
+          transmit their own data packets at exactly the same time as
+          another
+          transmitter within range. Each packet transmitted lasts for
+          exactly
+          26.670 milliseconds and is transmitted on a VHF channel within
+          the
+          marine radio band. The transmission of one packet is called a
+          slot,
+          during which time exactly 168 bits of data can be sent. If a
+          NMEA
+          sentence contains more than 168 bits, multiple slots are used,
+          the
+          complete message being re-assembled by the AIS receiver. This
+          splitting
+          of a AIS message into packets for transmission and the
+          re-assembly by
+          the receiver is transparent to AisDecoder, however the control
+          of
+          the slots uses specific AIS messages, which are decoded.<br>
+          &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">NMEA
+            Sentences</span><br>
+          NMEA sentences are split into words separated by a comma, and
+          have a
+          maximum length of 80 characters.<br>
+          eg&nbsp;&nbsp;&nbsp; <span style="font-weight: bold;">!AIVDM,1,1,,B,13PRrB0000OvbS@NhA9=oPbr0&lt;0u,0*58</span><br>
+          The first word !AIVDM is the name of the sentence, the last 2
+          characters are the checksum.<br>
+        </font><font style="font-family: Verdana;" size="-1">The AIS
+          Payload is
+          the 6th word - </font><font style="font-family: Verdana;"
+          size="-1"><span style="font-weight: bold;">13PRrB0000OvbS@NhA9=oPbr0&lt;0u</span></font><br>
+        <font style="font-family: Verdana;" size="-1">As the maximum
+          size of
+          the whole sentence is 80 characters, the payload can be no
+          longer than
+          51 characters, and may be shorter.<br>
+          Because the permitted characters in a NMEA sentence are a
+          subset of the
+          8-bit ASCII character set, and the payload must be able to
+          contain all
+          bits, each 8 bit character in the payload can only represent 6
+          bits of
+          data. Every 6 bits of AIS data has to be encoded into one 8
+          bit ASCII
+          character, prior to transmission. One NMEA AIS sentence can
+          only
+          contain a maximum of 306 bits.<br>
+          If an AIS message is longer than 306 bits, each AIS message
+          must be
+          split into "multi-part" NMEA sentences. Words 2,3 and 4 are
+          the no of
+          parts, this part and a part id. The 5th word is the AIS radio
+          channel
+          which has been used for transmission. <br>
+          &nbsp;&nbsp;&nbsp; <a href="./ais_message_types.html"><span
+              style="font-weight: bold;">AIS Messages</span></a><br>
+          AIS messages are contained entirely in the payload (6th) word
+          of a NMEA
+          sentence or in the case of multi-part messages in multiple
+          payloads,
+          after re-assembly by the decoder. The messages, of which there
+          are 27
+          basic types, are split into separate fields. Each field
+          contains a
+          number of bits. These fields are also encoded as they could
+          represent
+          numerical data (eg speed) or textual data (eg vessel's name)
+          or require
+          conversion from a numeric code to a meaningful description (eg
+          type of
+          vessel where 50 = Pilot Vessel). AisDecoder decodes around
+          1500
+          separate fields.<br>
+          The first 3 fields of AIS messages are always Message type,
+          Repeat
+          indicator and MMSI.<br>
+          &nbsp;&nbsp;&nbsp; <span style="font-weight: bold;"><a
+              href="./ais_decoder_binary.html">Binary
+              AIS
+              Messages</a><br>
+          </span>AIS messages 6,8, 25 and 26 are called binary messages
+          because
+          the content of the decoded message can in itself contain
+          binary data.
+          In the case of the first two (6 and 8) these messages are
+          further
+          subdivided to a further two or three sub levels of different
+          types
+          messages.<br>
+          The first sub level is by </font><font style="font-family:
+          Verdana;" size="-1">Designated Area Code (DAC) for example
+          where DAC=1 is for
+          international messages.<br>
+          The next sub level is by Function Identifier (FI) for example
+          where 2 =
+          Vessel/Lock scheduling <br>
+          The next sub level is by Identifier (ID) for example where 1 =
+          Lockage
+          order</font><font style="font-family: Verdana;" size="-1"> <br>
+          <br>
+        </font>
+        <div style="text-align: center;"><span style="font-family:
+            Verdana;"><span style="font-weight: bold;"><span
+                style="font-weight: bold;">Sample
+                Displays and Outputs</span></span></span><br>
+          <font size="-1"><span style="font-family: Verdana;"><span
+                style="font-weight: bold;"></span></span></font></div>
+        <font size="-1"><span style="font-family: Verdana;"><span
+              style="font-weight: bold;">NMEA Input (Time Stamp
+              Appended)</span><a name="nmeainput"></a></span></font><br>
+        <span style="font-weight: bold;"></span><font size="-1"><span
+            style="font-family: Verdana;"><img style="width: 467px;
+              height: 178px;" alt="" src="./ais_decoder_v3_nmea.gif"><br>
+          </span></font><a name="summary"></a><font size="-1"><span
+            style="font-weight: bold;"><span style="font-family:
+              Verdana;">Summary
+              Display</span></span></font> <br>
+        <font size="-1"><span style="font-family: Verdana;"><span
+              style="font-weight: bold;"><img style="width: 851px;
+                height: 357px;" alt=""
+                src="./ais_decoder_v3_summary.gif"></span></span></font><br>
+        <font size="-1"><span style="font-family: Verdana;"></span></font><font
+          size="-1"><span style="font-family: Verdana;"><a name="detail"></a><span
+              style="font-weight: bold;">Detail Display</span><br>
+            <img style="width: 394px; height: 505px;" alt=""
+              src="./ais_decoder_v3_detail.gif"><br>
+            <a name="GoogleEarth"></a><span style="font-weight: bold;">Google
+              Earth
+              Display</span><br>
+          </span></font><small><img style="width: 702px; height: 615px;"
+            alt="" src="./ais_decoder_v3_googleearth.jpg"><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;"></span></small><a
+          name="html"></a><br>
+        <span style="font-weight: bold;">HTML Browser Display</span><br>
+        <font style="color: rgb(51, 51, 255);" size="-1"><span
+            style="font-family: Verdana;">You can output any message
+            fields - this
+            is a simple example</span></font><br>
+        <img style="width: 359px; height: 75px;" alt=""
+          src="ais_decoder_v3_output_html.gif"><br>
+        <pre id="line1"><span class="doctype"><span style="font-weight: bold;">Source of HTML Browser Display</span><br></span><font size="-2"><span style="font-family: Verdana;">(Browser may wrap lines)<br></span></font><span class="doctype"><font size="-1">&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"&gt;</font></span><font size="-1"><br>&lt;<span class="start-tag">html</span>&gt;&lt;<span class="start-tag">head</span>&gt;<br>&lt;<span class="start-tag">title</span>&gt;Ais Decoder&lt;/<span class="end-tag">title</span>&gt;<br>&lt;<span class="start-tag">meta</span><span class="attribute-name"> http-equiv</span>=<span class="attribute-value">"Content-Type" </span><span class="attribute-name">content</span>=<span class="attribute-value">"text/html; charset=iso-8859-1"</span>&gt;<br>&lt;<span class="start-tag">style</span><span class="attribute-name"> type</span>=<span class="attribute-value">"text/css"</span>&gt;<br>&lt;!--<br>.html_head {font-size: 10px; color: #000000; font-family: arial, sans-serif; }<br>.content_header {color: #ff0000; }<br>--&gt;<br>&lt;/<span class="end-tag">style</span>&gt;<br>&lt;/<span class="end-tag">head</span>&gt;<br>&lt;<span class="start-tag">body</span>&gt;<br>&lt;<span class="start-tag">table</span><span class="attribute-name"> class</span>=<span class="attribute-value">"html_head"</span>&gt;<br>&lt;<span class="start-tag">tr</span><span class="attribute-name"> class</span>=<span class="attribute-value">"content_header"</span>&gt;&lt;<span class="start-tag">td</span>&gt;Name&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;Position&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;Course&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;Speed&lt;/<span class="end-tag">td</span>&gt;&lt;/<span class="end-tag">tr</span>&gt;<br>&lt;<span class="start-tag">tr</span>&gt;&lt;<span class="start-tag">td</span>&gt;PUCCINI&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;54&amp;<span class="entity">#176;</span> 4.3101&amp;<span class="entity">apos;</span> N, 0&amp;<span class="entity">#176;</span> 19.6000&amp;<span class="entity">apos;</span> E&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;165.0&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;11.4&lt;/<span class="end-tag">td</span>&gt;&lt;/<span class="end-tag">tr</span>&gt;<br></font></pre>
+        <pre id="line56"><font size="-1">&lt;<span class="start-tag">tr</span>&gt;&lt;<span class="start-tag">td</span>&gt;KEY FIGHTER&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;53&amp;<span class="entity">#176;</span> 38.0090&amp;<span class="entity">apos;</span> N, 0&amp;<span class="entity">#176;</span> 11.3053&amp;<span class="entity">apos;</span> W&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;190.0&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;0.0&lt;/<span class="end-tag">td</span>&gt;&lt;/<span class="end-tag">tr</span>&gt;<br>&lt;<span class="start-tag">tr</span>&gt;&lt;<span class="start-tag">td</span>&gt;CITY OF WESTMINSTER&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;53&amp;<span class="entity">#176;</span> 44.7599&amp;<span class="entity">apos;</span> N, 0&amp;<span class="entity">#176;</span> 17.6800&amp;<span class="entity">apos;</span> W&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;142.0&lt;/<span class="end-tag">td</span>&gt;&lt;<span class="start-tag">td</span>&gt;0.1&lt;/<span class="end-tag">td</span>&gt;&lt;/<span class="end-tag">tr</span>&gt;<br>&lt;/<span class="end-tag">table</span>&gt;&lt;/<span class="end-tag">body</span>&gt;&lt;/<span class="end-tag">html</span>&gt;</font><span style="font-weight: bold;"><font size="-1"><br></font></span><span style="font-weight: bold;"><font size="-1"><span style="font-family: Verdana;"><a name="GoogleMapsXml"></a>Google Maps XML Display Simple Example</span></font></span><br><img style="width: 500px; height: 556px;" alt="" src="sp_google_maps.gif"><br><span style="font-weight: bold;"><a name="xml"></a><br>XML Example Source of Google Maps Display</span><br></pre>
+        <font size="-2"><span style="font-family: Verdana;">(Browser may
+            wrap
+            lines)<br>
+            &nbsp;
+          </span></font><font size="-1">&lt;markers&gt;<br>
+          &lt;marker lat="53.648310" lon="-0.208423" name="FS
+          PHILIPPINE"
+          dx="0.000" dy="0.000" type="Tanker-carrying DG,HS,MP,IMO haz
+          or
+          pollutant X"
+          ais="228320800!9310305!FMDU!IMMINGHAM!0222:0930!0.0!79.0!!Under
+          way
+          sailing (Rule 25)!140!23!8.8!22/02/2011 17:40:57!Ship and
+          Voyage
+          Report"/&gt;<br>
+          &lt;marker lat="54.035500" lon="0.206833" name="" dx="0.000"
+          dy="0.000"
+          type="" ais="250000962!!!!:!13.3!135.0!!Under way using engine
+          (Rule
+          23(a) or Rule 25(e))!!!!22/02/2011 17:40:57!"/&gt;<br>
+          &lt;marker lat="53.738860" lon="-0.260938" name="" dx="0.000"
+          dy="0.000" type="" ais="304970000!!!!:!0.0!285.0!!Under way
+          using
+          engine (Rule 23(a) or Rule 25(e))!!!!22/02/2011
+          17:41:03!"/&gt;<br>
+          &lt;marker lat="54.441670" lon="0.698505" name="" dx="0.000"
+          dy="0.000"
+          type="" ais="419504000!!!!:!11.0!139.0!!Under way using engine
+          (Rule
+          23(a) or Rule 25(e))!!!!22/02/2011 17:40:59!"/&gt;<br>
+          &lt;/markers&gt;</font><br>
+        <a name="GoogleMaps"></a><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;">Google Maps
+              KML Server
+              Simple Example</span></font></span><br>
+        <img style="width: 600px; height: 431px;" alt=""
+          src="sp_google_kml.gif"><br>
+        <span style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><a
+                name="CSV_Output_All_Fields_-_File"></a>CSV
+              Output
+              All
+              Fields
+              -
+              File<br>
+            </span></font></span><font size="-2"><span
+            style="font-family: Verdana;">(Browser
+            may
+            wrap
+            lines)<br>
+            23/02/2011
+10:43:36,,!AIVDM,1,1,,1,0,235475000,235,0,0,0.0,0,-0.294167,53.746000,39.0,272,33,0,0,0,0,0,4,1394<br>
+            23/02/2011
+10:43:36,,!AIVDM,1,1,,1,0,235475000,235,0,0,0.0,0,-0.294167,53.746000,39.0,272,33,0,0,0,0,0,4,1394<br>
+            23/02/2011
+10:43:36,AMANDINE,!AIVDM,2,2,4,5,0,253047000,253,1,9424871,LXAM,AMANDINE,71,146,49,195,15,15,30,1,02,23,07,00,7.2,KILLINGHOLME,0,0<br>
+            23/02/2011
+10:43:36,,!AIVDM,1,1,,1,0,232079000,232,0,0,15.8,0,0.257683,53.836980,335.0,332,38,0,0,1,0,0,0,2253<br>
+            23/02/2011
+10:43:36,CORAGGIO,!AIVDM,1,1,,1,0,247188200,247,0,0,0.1,0,-0.230233,53.666580,144.0,144,35,0,0,0,0,0,1,10,43<br>
+            23/02/2011
+10:43:37,,!AIVDM,1,1,,1,0,232003329,232,0,-128,3.4,0,0.625418,53.970200,20.0,511,38,0,0,0,0,0,7,18<br>
+            23/02/2011 10:43:37,AMUR
+2524,!AIVDM,1,1,,1,0,273324000,273,0,-127,6.7,0,0.452878,54.147750,150.0,156,39,0,0,0,0,0,0,2294<br>
+            23/02/2011
+10:43:37,,!AIVDM,1,1,,1,0,236263000,236,0,16,13.7,0,0.400488,54.035790,324.0,323,38,0,0,1,0,0,2,1450<br>
+            23/02/2011 10:43:37,SIGAS
+CHAMPION,!AIVDM,1,1,,1,0,564120000,564,0,0,11.4,0,-0.137148,54.574670,327.0,326,39,0,0,0,0,0,5,1<br>
+            23/02/2011
+10:43:37,,!AIVDM,1,1,,1,0,308583000,308,0,-127,2.5,0,0.548317,54.574230,175.0,176,40,0,0,1,0,1,1,24,60</span></font><span
+          style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><br>
+            </span></font></span><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;"><a
+                name="CSV_Output_All_Fields_-_Display"></a>CSV
+              Output
+              All
+              Fields
+              -
+              Display<br>
+            </span></font></span><font size="-2"><span
+            style="font-family: Verdana;">(for
+            clarity
+            the
+            first
+            2
+            columns
+            are
+            removed)</span></font><br>
+        <span style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><img style="width: 829px;
+                height: 199px;" alt="" src="sp_csv_output_all.gif"><br>
+            </span></font></span><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;"><a
+                name="CSV_Output_All_Fields_-_Excel"></a>CSV
+              Output
+              All
+              Fields
+              -
+              Excel<br>
+            </span></font></span><font size="-2"><span
+            style="font-family: Verdana;">(for
+            clarity
+            the
+            first
+            2
+            columns
+            are
+            removed)</span></font><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;"></span></font></span><br>
+        <span style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><img style="width: 1028px;
+                height: 275px;" alt="" src="sp_csv_excel_all.gif"><br>
+            </span></font></span><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;"></span></font></span><span
+          style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><a
+                name="CSV_Output_Selected_Fields_-_File"></a>CSV Decoded
+              Output
+              Selected Fields - File<br>
+            </span></font></span><font size="-2"><span
+            style="font-family: Verdana;">(Browser
+            may
+            wrap
+            lines)<br>
+          </span></font><font size="-2"><span style="font-family:
+            Verdana;">247188200,CORAGGIO,53°
+            39.9950'
+            N,0°
+            13.8140'
+            W,0.0,144.0<br>
+            253047000,,53° 40.1143' N,0° 13.9960' W,0.0,324.0<br>
+            253310000,,53° 39.9479' N,0° 13.8860' W,0.0,144.0<br>
+            273324000,AMUR 2524,54° 11.4175' N,0° 24.2075' E,6.7,148.0<br>
+            308282000,TOISA DEFIANT,54° 15.6109' N,0° 19.2650'
+            E,11.1,335.0<br>
+            308583000,OCEAN SPRITE,54° 35.5371' N,0° 32.7160'
+            E,2.0,176.0<br>
+            319402000,STOLT SHEARWATER,54° 2.4300' N,0° 26.7200'
+            E,10.1,147.0<br>
+            477720300,STAR SEA BULKER,53° 38.2599' N,0° 11.7100'
+            W,0.0,33.0<br>
+            518408000,SWAN DIANA,54° 11.1028' N,0° 0.0398' E,7.7,316.0<br>
+            564120000,SIGAS CHAMPION,54° 30.0817' N,0° 3.4236'
+            W,11.1,328.0</span></font><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;"><br>
+            </span></font></span><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;"><a
+                name="CSV_Output_Selected_Fields_-_Display"></a>CSV
+              Output Selected
+              Fields - Display<br>
+              <img style="width: 528px; height: 199px;" alt=""
+                src="sp_csv_output.gif"><br>
+            </span></font></span><span style="font-weight: bold;"><font
+            size="-1"><span style="font-family: Verdana;"><a
+                name="CSV_Output_Selected_Fields_-_Excel"></a>CSV Output
+              Selected
+              Fields - Excel<br>
+            </span></font></span><img style="width: 533px; height:
+          343px;" alt="" src="sp_csv_excel.gif"><br>
+        <span style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><a name="SPNMEA_input_file"></a>SPNMEA
+input
+              file</span></font></span><br>
+        <font size="-2"><span style="font-family: Verdana;">!AIVDM,1,1,,A,13;5&lt;D001L00&lt;t8NwVI5ATEF08Kc,0*7A</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">$GPZDA,123047,14,08,2010,+00,00*6E</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">!AIVDM,1,1,,A,13Pi8L0P00023hjNrlsA8?wP0&lt;0F,0*02</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">!AIVDM,1,1,,A,14WU7D0OiqOwteBNw@5L`awP0D0D,0*78</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">$GPZDA,123048,14,08,2010,+00,00*61</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">!AIVDM,1,1,,A,14Uumt0Oi:00GQ0O;Ab6FTuR0L0&gt;,0*36</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">!AIVDM,1,1,,A,14QsCa002Gww&gt;8LO1T6&lt;A9uP0D0A,0*64</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">!AIVDM,2,1,1,A,58UQ&lt;802@Vj9TaIWV20pE@PE8h4pB1@T@F22220l2Hk8865E0&lt;Tm&lt;p8888888888,0*46</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">!AIVDM,2,2,1,A,8888880,2*25</span><br
+            style="font-family: Verdana;">
+          <span style="font-family: Verdana;">$GPZDA,123049,14,08,2010,+00,00*60</span><br
+            style="font-family: Verdana;">
+        </font><span style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;">SPNMEA input file, File
+              Output All
+              Fields - Display<br>
+            </span></font></span><font size="-2"><span
+            style="font-family: Verdana;">(for
+            clarity
+            the
+            first
+            2
+            columns
+            are
+            removed)</span></font><br>
+        <img style="width: 811px; height: 199px;" alt=""
+          src="sp_csv_output_all_spnmea.gif"><br>
+        <span style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><a
+                name="SPNMEA_input_file_CSV_Output_Selected"></a>SPNMEA
+              input file,
+              CSV Output Selected Fields
+              - Display<br>
+              <img style="width: 528px; height: 183px;" alt=""
+                src="sp_csv_output_selected_spnmea.gif"><br>
+            </span></font></span><font size="-2"><span
+            style="font-family: Verdana;"></span></font><span
+          style="font-weight: bold;"><font size="-1"><span
+              style="font-family: Verdana;"><a
+                name="SPNMEA_input_file_CSV_Output_Selected_"></a>SPNMEA
+              input file,
+              CSV Output Selected Fields
+              - Excel</span></font></span><br>
+        <img style="width: 798px; height: 275px;" alt=""
+          src="sp_csv_excel_selected_spnmea.gif"><br>
+        <span style="text-decoration: underline;"><br>
+        </span><span style="text-decoration: underline;"><br>
+        </span><br>
+      </div>
+    </div>
+  </body>
+</html>

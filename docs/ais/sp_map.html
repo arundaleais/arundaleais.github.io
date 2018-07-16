@@ -1,0 +1,374 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta content="AIS, Ships, Yorkshire, Scarborough, Bridlington">
+    <meta name="description" content="Ships off the Yorkshire Coast">
+    <title>Ships off the Yorkshire Coast</title>
+    <!--#include virtual="aishead.htmlf" -->
+    <style>#overlay img {position: absolute; left:100px;}</style><!-- for shipais view -->
+    <script type="text/javascript">
+ 	width=700; //the width of the embedded map in pixels or percentage
+	height=400; //the width of the embedded map in pixels or percentage
+	border=1; //the width of border around the map. Zero means no border
+	notation=true; //true or false to display or not the vessel icons and options at the left
+	latitude=54.1625; //the latitude of the center of the map in decimal degrees
+	longitude=0.2000; //the longitude of the center of the map in decimal degrees
+	zoom=8; //the zoom level of the map. Use values between 2 and 17
+	trackvessel=0; //the MMSI of the vessel to track, if within the range of the system
+  </script><!-- Start Google Earth Scripts -->
+    <script src="http://www.google.com/jsapi?key=ABQIAAAAbKrAnPgRnyLVBCMzYuqffRTtIDN88clTnzI5Op30TpcItBXyRxQRjHzxoQOhRLiL-lR-E3pawQy6fA" type="text/javascript"></script>
+    <script type="text/javascript">
+function addSampleButton(caption, clickHandler) {
+var btn = document.createElement('input');
+btn.type = 'button';
+btn.value = caption;
+
+if (btn.attachEvent)
+btn.attachEvent('onclick', clickHandler);
+else
+btn.addEventListener('click', clickHandler, false);
+
+// add the button to the Sample UI
+document.getElementById('sample-ui').appendChild(btn);
+}
+
+function addSampleUIHtml(html) {
+document.getElementById('sample-ui').innerHTML += html;
+}
+  </script>
+    <script type="text/javascript">
+var ge;
+
+google.load("earth", "1");
+
+function init() {
+google.earth.createInstance('map3d', initCallback, failureCallback);
+
+addSampleButton('Create a Network Link!', buttonClick);
+}
+
+function initCallback(instance) {
+ge = instance;
+ge.getWindow().setVisibility(true);
+
+// add a navigation control
+ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
+
+// add some layers
+ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
+ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
+
+createNetworkLink();
+
+document.getElementById('installed-plugin-version').innerHTML =
+ge.getPluginVersion().toString();
+}
+
+function failureCallback(errorCode) {
+}
+
+function createNetworkLink() {
+var networkLink = ge.createNetworkLink("");
+networkLink.setDescription("NetworkLink open to fetched content");
+networkLink.setName("Open NetworkLink");
+networkLink.setFlyToView(true);
+
+// create a Link object
+var link = ge.createLink("");
+var secs = 10.0; 
+//link.setHref("http://kml-samples.googlecode.com" +
+//"/svn/trunk/kml/NetworkLink/placemark.kml");
+link.setHref("http://web.arundale.co.uk" +
+"/docs/ais/yorkshirecoast.kmz");
+link.setRefreshMode(ge.REFRESH_ON_INTERVAL);
+link.setRefreshInterval(300.0); 
+// attach the Link to the NetworkLink
+networkLink.setLink(link);
+
+// add the NetworkLink feature to Earth
+ge.getFeatures().appendChild(networkLink);
+}
+
+function buttonClick() {
+createNetworkLink();
+}
+
+  </script><!-- End Google Earth Scripts -->
+  </head>
+  <body onload="init()" style="border: 0pt none ; font-family:
+    arial,sans-serif;">
+    <!-- <body style="font-family: Helvetica,Arial,sans-serif;">
+
+
+
+
+
+<body onload="init()"
+
+
+
+
+
+style="border: 0pt none ; font-family: arial,sans-serif; font-size: 13px;">
+
+
+
+
+
+ -->
+    <!--#include virtual="navbar.htmlf" -->
+    <div style="text-align: center;">
+      <h2>Yorkshire Coast AIS from Scarborough</h2>
+      <small><span style="font-weight: bold;"> Brought to you by Neal
+          Arundale</span></small><br>
+      <br>
+      <!-- start VesselFinder --> <a
+        href="http://www.vesselfinder.com/">VesselFinder</a> view <br>
+      <iframe
+src="http://www.vesselfinder.com/aismap?zoom=8&amp;lat=54.0&amp;lon=1.0&amp;width=800&amp;height=500&amp;names=true&amp;track=false&amp;fleet=false&amp;clicktoact=false&amp;store_pos=false&amp;ra=http://www.vesselfinder.com/embed"
+        height="500px" width="800px">Your browser does not support
+        iframes</iframe>
+      <!--      <script type="text/javascript">
+// Map Size
+var width='800';  // width of the embedded map in pixels (min. 600 px) or percentage (default=600px)
+var height='500'; // height of the embedded map in pixels (min. 400 px) (default=400px)
+// Map View (does not work if Ship Selection is used)
+var latitude='54.0'; // coordinates of the map center in decimal degrees (not mandatory)
+var longitude='1.0';
+var zoom='8';        // map zoom level (between 2 and 17)
+// Auxiliary parameters
+var names=true; // always display ship names (default is false)
+var click_to_activate=false; //true= user has to click on the map before zooming with mouse wheel
+var store_position=false; // store the last position of the map (default is false, does not work when ship selection is used
+</script>
+      <script type="text/javascript" src="http://www.vesselfinder.com/aismap.js"></script>
+-->
+      <!-- finish VesselFinder --><br>
+      <table style="text-align: left; width: 100%;" cellpadding="2"
+        cellspacing="2" border="0">
+        <tbody>
+          <tr>
+            <td style="text-align: center; vertical-align: bottom;"><a
+                href="./sp_list.html">ShipPlotter view (only my data)<img
+                  title="Click for list of ships" alt="ShipPlotter view
+                  not available" src="./shipplotter.jpg" style="border:
+                  0px solid ; width: 592px; height: 496px;"></a></td>
+            <td style="vertical-align: top;"><br>
+              <iframe src="./sp_list.html" height="496" width="100%">Your
+
+
+
+
+
+
+
+
+                browser does not support iframes</iframe> </td>
+          </tr>
+        </tbody>
+      </table>
+      <table style="text-align: center; width: 100%;" border="0">
+        <tbody>
+          <tr>
+            <td style="width: 10%;"><br>
+            </td>
+            <td style="text-align: center;"><!-- <div>AisDecoder - Google Earth Version: <span
+
+
+
+
+
+id="installed-plugin-version" style="font-weight: bold;">Loading...</span></div> -->
+              <div id="map3d" style="height: 400px; width: 600px;
+                text-align: center; background-position: center center;"><a
+                  href="./ais_decoder.html">AisDecoder</a> - Google
+                Earth View (only my data)<br>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <br>
+      <div style="text-align: center;"><br>
+        <a href="http://www.marinetraffic.com/ais/">Marine Traffic</a>
+        view (click on ship for details)<br>
+      </div>
+      <script type="text/javascript" alt="Downloading - please wait" src="http://www.marinetraffic.com/ais/embed.js"></script><br>
+      <br>
+      <a href="http://www.shipais.com/currentmap.php?map=Scarborough">ShipAis</a>
+      view<br>
+      <div id="overlay" style="height: 600px; width: 750px; text-align:
+        center;"> <img
+          src="http://www.shipais.com/maps/scarborough2_o.jpg"
+          alt="Scarborough" title=""><img
+          src="http://www.shipais.com/tmp/mapcache/scarborough2.png"
+          alt="Ship overlay" title=""></div>
+      <!-- <img style="width: 750px; height: 600px;" alt="ShipAis view" src="http://www.shipais.com/currentmap_im.php?map=Scarborough&amp;rand=1349445777&amp;print=1"> -->
+      <!-- img style="width: 750px; height: 600px;" alt="Ais Liverpool view" src="http://www.beta.shipais.com/currentmap_im.php?map=Scarborough&amp;rand=1349445777&amp;print=1"><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Beta.ShipAis view<br> --><br>
+      <iframe
+src="http://www.aishub.net/live-map.html?rrdname=2025&amp;sname=Scarborough"
+        height="600px" width="750px">Your browser does not support
+        iframes</iframe> <br>
+      <br>
+      Data currently being received<br>
+      <a href="./sp_list.html"><img title="Click to list current ships"
+          alt="Graph" src="./sp_graph.gif" style="border: 0px solid ;
+          width: 599px; height: 220px;"></a></div>
+    <br>
+    <small>In addition to this site I also send data to<br>
+    </small>
+    <table style="text-align: left; width: 663px; height: 275px;"
+      cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td style="vertical-align: top; font-weight: bold;"><small>Site<br>
+            </small></td>
+          <td style="vertical-align: top; font-weight: bold;"><small>Coverage<br>
+            </small></td>
+          <td style="vertical-align: top; font-weight: bold;"><small>Cost<br>
+            </small></td>
+          <td style="vertical-align: top; font-weight: bold;"><small>Feed<br>
+            </small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://www.aishub.net/">AIS Hub</a></small></td>
+          <td style="vertical-align: top;"><small>Worldwide</small></td>
+          <td style="vertical-align: top;"><small>Free paid enhancements</small></td>
+          <td style="vertical-align: top;"><small>UDP/NMEA</small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://www.aislive.com/">AisLive</a></small></td>
+          <td style="vertical-align: top;"><small>Worldwide<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Subscription<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>TCP/NMEA<br>
+            </small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+href="http://www.digital-seas.com/fleet_tracking/regions/northsea_gbir.html">Digital
+
+
+
+
+
+
+
+
+
+
+                Seas</a></small></td>
+          <td style="vertical-align: top;"><small>Worldwide</small></td>
+          <td style="vertical-align: top;"><small>Free</small></td>
+          <td style="vertical-align: top;"><small>UDP/NMEA</small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://www.marinetraffic.com/ais/">Marine Traffic</a></small></td>
+          <td style="vertical-align: top;"><small>Worldwide<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Free<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>UDP/NMEA<br>
+            </small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://www.shipais.com/">ShipAis (also known as
+                AISLiverpool)</a></small></td>
+          <td style="vertical-align: top;"><small>UK &amp; Ireland<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Free<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>UDP/NMEA<br>
+            </small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://www.shippingexplorer.net/">Shipping
+                Explorer</a><br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Worldwide<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Subscription<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>UDP/NMEA<br>
+            </small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://www.coaa.co.uk/shipplotter.htm">ShipPlotter</a></small></td>
+          <td style="vertical-align: top;"><small>Worldwide<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Shareware<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>TCP<br>
+            </small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://ais3.siitech.net/VTSLite/AView.aspx">SiiTech</a></small></td>
+          <td style="vertical-align: top;"><small>Worldwide<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Free paid enhancements<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>UDP/NMEA<br>
+            </small></td>
+        </tr>
+        <tr>
+          <td style="vertical-align: top;"><small><a
+                href="http://www.vesseltracker.com/en/Port/immingham/Map.html">VesselTracker</a></small></td>
+          <td style="vertical-align: top;"><small>Worldwide<br>
+            </small></td>
+          <td style="vertical-align: top;"><small>Free paid enhancements</small></td>
+          <td style="vertical-align: top;"><small>TCP<br>
+            </small></td>
+        </tr>
+      </tbody>
+    </table>
+    <small><br>
+    </small><br>
+  </body>
+</html>

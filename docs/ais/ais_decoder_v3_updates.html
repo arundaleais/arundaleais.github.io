@@ -1,0 +1,849 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+  <!--#include virtual="aishead.htmlf" -->
+  <meta name="keywords" content="AisDecoder, Updates">
+  <meta name="description" content="AisDecoder Updates">
+  <title>Ais Decoder Updates</title>
+</head>
+
+<body style="font-family: Verdana; font-size: small;">
+<!--#include virtual="navbar.htmlf" -->
+
+<div style="text-align: center; font-family: Verdana;">
+<h2><span class="descr">Ais Decoder</span> <small>by Neal Arundale</small></h2>
+<span style="font-weight: bold;"></span><span
+style="font-weight:         bold;"><span style="font-weight: bold;"><span
+style="font-family: Verdana;">Revision History</span></span></span><br>
+<br>
+
+
+<div style="text-align: left;">
+
+<div style="text-align: left;">
+<!-- <b><span style="color: rgb(255,
+0, 0);"></span></b><b>Vista and Windows 7,8 users, <a
+href="./vistaand7.html">please read this note</a></b> -->
+
+<p><span style="font-weight:bold;">3.5.151</span><br>
+W7 Source<br>
+<b>3.5.150<br>
+</b>Vessels.dat output in MMSI order to help integration with other
+applications<br>
+Local date format corrected<br>
+<b>3.5.149</b><br>
+<a href="ais_decoder_v3_downloads.html"><img
+style="border:               0px solid ; width: 88px; height: 16px;"
+src="download.gif" alt="" width="88" height="16" border="0"></a><br>
+New Minor version(5)<br>
+<b>3.4.149</b><br>
+!AIBRM,$PTHAJ,!PTHAR,$AIALR  (used by True Heading RX Pro) decoded &amp; added
+to default filter<br>
+!PTHAR filtered as CRC error<br>
+$AIABM decoded except binary data &amp; added to default filter<br>
+!__VDO &amp; !__VDM added to default filter<br>
+Received time stamp when reading log file not always recognised [fixed]<br>
+<b>3.4.148</b><br>
+Lat/Lon precision [fixed]<br>
+Versioning system for output file names introduced to resolve file name
+conflicts when multiple copies of AisDecoder running.<br>
+<b>3.4.147</b><br>
+Not responding on exit bug in V146 [fixed]<br>
+TCP client input logon with username/password enabled <br>
+<b>3.4.146</b><br>
+Comm Poll timer error (buffer overflow) changed to non fatal <br>
+Possible error 457 (Duplicate key in collection) [fixed]<br>
+<b>3.4.145</b><br>
+Msg 8-367-33-10 updated<br>
+Possibility of input log file not rolling over [fixed]<br>
+Minor changes to make csv output compatible with V129 group sentences<br>
+<b>3.4.144</b><br>
+If File input did not contain a NMEA encapsulated terminator (*), program could
+loop [fixed]<br>
+All numeric output file name caused error 5 ! [fixed]<br>
+<b>3.4.143</b><br>
+Auto-Version Updater on test<br>
+Programmatical termination could fail (eg in batch file) [fixed]<br>
+Vessels.dat could lose data [fixed]<br>
+<b>3.3.143</b><br>
+New version checks written to start up log<br>
+Option to suppress sentence rejection if NMEA AIS fill bits incorrect added
+(ask me how)<br>
+<b>3.3.142</b><br>
+Terminating AisDecoder could cause "Program Not Responding" error [fixed]<br>
+<b>3.3.141<br>
+</b> Nmea sentence prefix with invalid time stamp caused NMEA sentence not to
+be processed [fixed]<br>
+<b><b>3.3.140<br>
+</b></b> Non existent input file caused error [fixed]<br>
+Form unloading changed<br>
+<b><b>3.3.139<br>
+</b></b> <meta http-equiv="Content-Type"
+content="text/html;             charset=windows-1252">
+Static Vessel Data now cached and output with all Tagged and CSV<br>
+Note: Cached Static Data will be lost if Tags are changed<br>
+Allow non integer for number of parts in encapsulated sentence (eq 2.0000)<br>
+Licence info blacked out Win7 + only [fixed]<br>
+<b>3.3.138<br>
+</b>Administrator Privilege no longer required to access Options (please email
+me if you require this restriction)<br>
+<b>3.2.138 </b><br>
+Non existent Serial Port in .ini file, incorrectly caused invalid format error
+(could cause program crash) [fixed] <br>
+Serial port input/settings changed to use NmeaRouter api's<br>
+Serial ports no's over 16 now supported<br>
+Autobaud rate detection added<br>
+<b>3.2.137</b><br>
+Output File Rollover without output file caused error [fixed]<br>
+Text string @ suppression removed (except cached vessel name)<br>
+Incorrect no of fields in VD* sentence could cause error [fixed]<br>
+<b>3.2.136</b><br>
+Unix Time added in description of received time, allowing filtering by time<br>
+Msg 25,26 ambiguities in M1371-5 coding changed<br>
+<b>3.2.135</b><br>
+File input did not always pause<br>
+Allow non-null nmea single part sequential ID<br>
+Option to disable OwnShip (VDO) display<b><br>
+</b>Replace any nulls in sentence pre-fix<br>
+GPS sentences not always tagged correctly<b><br>
+3.2.134</b> <br>
+Live website moved from NmeaRouter.com to Arundale.com<br>
+Update code re-written, to report new version when available<br>
+<b>3.1.0.133</b><br>
+Font changed to fix formatting on recent windows installations<br>
+IFM 1-0 Text Telegram incorrect with Msg 25/26 [fixed]<br>
+Input filter by MMSI to added<br>
+GIS &amp; LatLon filter re-written<br>
+<b>3.1.0.132 </b><br>
+MMSI definitions updated<br>
+Input filter definitions changed (nmea &amp; dac/fi)<br>
+Input filter walk changed<br>
+TCP client timeout increased to 5 secs, before trying as server<br>
+<b>3.1.0.131 </b><br>
+Major performance increase now &gt; 200k sentences per min on average PC<br>
+(dependant on complexity of output)<br>
+Support for all files larger than 2GB increased to approx to 400TerraBytes<br>
+TCP Client not always disconnecting [fixed]<br>
+Encryption of FTP password changed, will need re-entering if using an earlier
+version<br>
+Create Tag GUI could setup incorrect Tag [fixed]<br>
+Name of AtoN now shown as Vessel Name<br>
+7 new MID's added<br>
+<b>3.1.0.130<br>
+</b>User Tag name not saved from V128 [fixed]<br>
+<b>3.1.0.129</b><br>
+High receive rates (&gt; 30k sentences/min) causing errors [fixed]<br>
+Tags not synchronised when profile first loaded [fixed]<br>
+<b>3.1.0.128</b><br>
+IEC Encapsulated sentences added<br>
+Large numbers of sequential CRC errors could cause crash [fixed]<br>
+Nmea log file size is limited to 2GB - WIP<br>
+<b>3.1.0.127</b><br>
+Program terminates unexpectedly when Input Log File exceeded 4GB [fixed] <br>
+<b>3.1.0.126</b><br>
+Overflow error, Maximum message statistics increased from 2Giga to 400Terra<br>
+Named Vessels statistic included some vessels for which name had not been
+received [fixed] <br>
+<b>3.1.0.125</b><br>
+Provision to filter through non-NMEA sentences added<br>
+<b>3.1.0.124</b><br>
+Input Filter Settings may not be saved if synchronise filter set with no tags
+[fixed]<br>
+Msg26 decoding changed to reflect specification change in ITU-R M.1371-5<br>
+$GPRMC decoded to assist time stamping<br>
+Deleting current .ini file could cause AisDecoder to abort [fixed]<br>
+<b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>3.1.0.123
+</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><br>
+Output all Ais message fields as CSV did not work [fixed]<br>
+Msg 8-367-33 minor field name changes<br>
+NMEA output available without using Scheduler<br>
+Range Filtering by Lat/Lon now uses vessels last known position for all AIS
+sentence types<br>
+Minor improvements to display windows<br>
+Cancelling selecting a file name could cause program to exit
+[fixed]<b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><br>
+3.1.0.122<br>
+</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b>Enhanced
+identification of embedded Time Stamps<br>
+<b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>3.1.0.121</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><br>
+<b><b><b><b><b><b><b><b></b></b></b></b></b></b></b></b>Nmea sentences $--TXT
+and $--ALR parsed out &amp; error code descriptions reported<br>
+Nmea esc ^ handled<br>
+<b><b><b><b><b><b><b><b><b><b><b><b><b><b><b><b>3.1.0.120</b></b></b></b></b></b></b></b></b></b></b></b></b></b></b></b><br>
+ExactEarth Comment block Group Parameter-Code parsing bug [fixed]<br>
+Bad MID could cause program to crash [fixed]<br>
+<b><b><b><b><b><b><b><b>3.1.0.119</b></b></b></b></b></b></b></b><br>
+Shell on Output File Close function added to enable another program to process
+the output file<br>
+<b><b><b><b><b><b><b><b>(<b><font color="#ff0000">Please backup any user
+created initialisation files created prior to V118</font></b>)<br>
+3.1.0.118<br>
+</b></b></b></b></b></b></b></b>Significant changes to Initialisation File
+formats (Input Filter and Field Tags)<br>
+Default and all sample initialisation files changed, to support fast MMSI input
+filter<br>
+Individual fields on any type of NMEA sentence may now be tagged.<br>
+Tags for AIS payload fields common to all AIS payloads (Msg Type, MMSI &amp;
+repeat) in<br>
+    addition to received time no longer need specifying for individual AIS
+message types<br>
+Time Stamps now also displayed and also taggable in unix time format<br>
+Support for $PGHP sentence encapsulation<br>
+Bug in multi-part sentence payload re-combiner when part1 missing, fixed <br>
+Changed links and email contact to new web server<br>
+<b><b><b><b><b><b><b><b>3.1.0.117<br>
+</b></b></b></b></b></b></b></b>Major re-write of non-AIS NMEA sentence and
+Comment Block handling<br>
+    Tags on NMEA sentence fields and Comment Block parameters now allowed<br>
+    Duplicated Field Tags purged<br>
+    Synchronisation of Input Filter to Output Tags now handles NMEA sentence
+tags<br>
+    More support for unix style Time Stamps<br>
+    Sentences prefixed with Time Stamps can be tagged.<br>
+Multiple sentence delimiters on File Input could cause duplicated output
+[fixed]<br>
+Output File could be overwritten with "No Data" on file closure [fixed]<br>
+Enumeration of serial ports now same as NmeaRouter<b><b><b><b><br>
+3.1.0.116<br>
+</b></b></b></b>Output of bit map in ASM 6/8-1-22 for debugging (temporary) <br>
+Test DAC 0 May be mapped to a User specified DAC (email me for how to do
+this)<br>
+Enumeration of Serial Ports could fail with More data available [fixed]<br>
+<b><b>3.1.0.115 </b></b><b>   </b><b><br>
+</b>If no filtered data since last scheduled output, output file will contain
+"No Data"<br>
+If Time To Live is 0, all filtered data received since last scheduled will be
+output<br>
+If no data received since last scheduled, scheduler will still run<br>
+Auto-detection of TCP Client/Server improved<br>
+<b><b>3.1.0.114<br>
+</b></b>Asynchronous user message display implemented<br>
+Detect NMEA sentence delimiter error<br>
+Split TCP sentences re-assembled<br>
+If TCP Client fails, TCP server is attempted<b><b><b><b><br>
+</b></b>3.1.0.113<br>
+</b></b>!**VDO sets MyShip position and range<br>
+Input filter by range from MyShip<br>
+<b><b>3.1.0.112<br>
+</b></b>Passive FTP now the default client<br>
+<b>3.1.0.111</b><b><br>
+</b>ASM 1-31 minor decoding errors [fixed]<br>
+Allow Dot in FTP directory name<br>
+<b>3.1.0.110</b><b><br>
+</b>FTP could time out if server login was very slow [fixed] <br>
+Zip using GE Overlay could fail [fixed]<br>
+Range Filter not always applied with NMEA Output [fixed]<br>
+Suppress Template Output if no tags replaced<br>
+<b>3.1.0.109   </b><b><b>    </b> <br>
+</b>If CSV field contains delimiter and double-quote ("), escapes double-quote
+with double-quote ("") RFC4180 <br>
+ASM 367/33 added (13Aug2012 replaces ASM 366/33)<br>
+Precision field added to ASM 366/33 (V1.5 12Apr11-1May13)<br>
+ASM 366 defaults corrected<br>
+<b>3.1.0.108</b><br>
+Enumeration of COM ports on start up could cause error [fixed]<br>
+<b>3.1.0.107    </b><br>
+Incorrectly formatted initialisation file could cause error on start up
+[fixed]<br>
+<b>3.1.0.106<br>
+</b>Attempts auto-detection of Serial Baud rate<br>
+Slow serial data could be lost during reset [fixed]<br>
+Serial Input buffer terminator identifier must be &lt;CR&gt;&lt;LF&gt;<br>
+<b>3.1.0.104</b><br>
+Type error possible with invalid Nmea format of !AI sentence [fixed]<br>
+If only one serial port - option not enabled, problem introduced in V103
+[fixed]<br>
+<b>3.1.0.103</b><b></b><br>
+Overflow error at very high message rates &gt; 60,000/min [fixed]<br>
+Enumeration of PC Serial ports changed<br>
+<b>3.1.0.102</b><b><br>
+</b>Characters prior to $ or ! are not removed if NMEA is Output<br>
+<b>3.1.0.101<br>
+</b>!AIVDO added as filter option<br>
+Special Tag nmea_lat and nmea_lon created to reformat lat/lon in GPS format<br>
+CSV header prefixed with ~ to enable Excel to distinguish between header and
+data<b><br>
+</b>Spoofing of $GPHDT &amp; $GPRMC tags from !AIVDM<br>
+<b>3.1.0.100</b><br>
+Undecoded Binary Hex output base incorrect [Fixed]<br>
+$GPGGA with null time field caused Error 13 [Fixed]<br>
+<b>3.1.0.99</b><br>
+Optionally Allow User without Administrator rights to Edit Options<br>
+Property error on start-up [fixed]<br>
+Changing installation folder could cause file not found error [fixed]<b><br>
+3.1.0.98<br>
+</b>If PC had no serial ports connected, decoder failed to load [fixed]<br>
+DBCS (Japanese) in date format could cause decoder to stop [fixed]<br>
+Timing issue could cause partial sentence loss on serial input [fixed]<br>
+<b>3.1.0.97  </b><br>
+IEC 61162 Comment Block parsed and parameter values output<br>
+<b>3.1.0.96<br>
+</b>IEC Comment Block Stripped out<br>
+<b>3.1.0.95 </b><br>
+Msg type 25 could cause decoder to stop [fixed] <br>
+<b>3.1.0.94<br>
+</b>DAC 1, FI 31 Meteorolgical and Hydrographic Data decoded  <br>
+<b>3.1.0.93<br>
+</b>Time at midnight output to log file was blank [fixed] <br>
+<b>3.1.0.92<br>
+</b>Binary Message 8 with no data could cause AisDecoder to stop [fixed]<br>
+GoogleEarth scaled closeup of vessels <br>
+<b>3.1.0.90 </b><br>
+Occasional overflow error on file rollover [fixed]<br>
+Now accepts all talker ID's defined in IEC 62320-1 as valid AIS sentences<br>
+<b>3.1.0.89<br>
+</b>Changes to scheduling to allow local processing while upload in progress<br>
+Changes to try to ensure web server does not serve a partial file, if big.<br>
+<b>3.1.0.87 </b><br>
+TCP input option added<b><br>
+</b>Default CSV separator is changed to | if decimal separator is comma
+(European)<br>
+<b>3.1.0.86<br>
+</b>Complete rewrite of FTP upload module <br>
+New FTP Window added to make user debugging of website upload problems
+easier<br>
+<b>3.1.0.85</b><b></b><br>
+KMZ Zip DLL not extracted by installer in some Windows versions<br>
+FTP status added at bottom of Control/Stats window<br>
+Local Time Zone description truncated if very long [fixed]<br>
+FTP upload could fail if password contained multi-lingual characters [fixed]<br>
+<b>3.1.0.84</b><br>
+FTP upload could fail if output file name contained spaces [fixed]<br>
+Minor change to Google Earth Template<b><span
+style="color:               rgb(51, 51, 255);"></span></b><span
+style="color: rgb(51,             51, 255);"><span
+style="color: rgb(0, 0, 0);"></span></span><b><span
+style="color: rgb(51, 51, 255);"><span
+style="color:                 rgb(0, 0, 0);"></span><br>
+<a href="./AisDecoderHelp.pdf">Help last updated at V83</a></span><br>
+</b><b>3.1.0.83</b><br>
+Time now logged as UTC<br>
+Optional display of file locations &amp; names<br>
+Major rewrite of file handling<br>
+Output files may be rolled over to a new name daily (if not scheduled) <br>
+<b><span style="color: rgb(51, 51, 255);"></span>3.1.0.82</b><b></b><br>
+Now decodes !BSVDM and !BSVDO messages<br>
+Option to output a CSV header added<br>
+Temperature decode error fixed<br>
+!AIVDO messages not always being accepted by input filter fixed<br>
+Various Google Earth issues fixed<br>
+<b>3.1.0.79</b><br>
+Bug fixes to v76-8 Cached Vessel Names<br>
+<b>3.1.0.76</b><br>
+Saves vessel names between sessions.<br>
+Checks an startup and every hour to see if a new update is available (if
+enabled).<br>
+Another fix to settings not being saved.<br>
+Minor changes to stats display.<br>
+<b>3.1.0.75</b><br>
+Another internationalisation<b></b>issue causing some settings not to be saved
+fixed.<br>
+<b>3.1.0.74</b><br>
+Minor performance enhancements.<br>
+Startup log file now created.<br>
+Internationalisation (language) problem could cause Path not found error on
+startup fixed.<br>
+Badly formatted messages very occasionally could cause program to crash now
+fixed<b>.<br>
+</b>Serial Input settings not always retained fixed.<br>
+<b>3.1.0.73<br>
+</b>Further changes to example files and transfer to User Accounts.<br>
+<b>3.1.0.72<br>
+</b>Sample Initialisation files updated<br>
+<b>3.1.0.71<br>
+</b>Help file updated<br>
+New option to output CSV heading added<br>
+Sample Excel initialisation file added<br>
+Help now includes details on how to configure Google Earth for Automatic
+updates.<br>
+Output display options moves to Control/stats window<br>
+Not retaining settings on Msg 24 Class B fixed<br>
+Not retaining Input source fixed<br>
+<b>3.1.0.70</b>  <br>
+User defined date/time formats for output added<br>
+Time stamp format now uses PC's locale setting<br>
+Command line option to force initialisation file<b><span
+style="font-weight: bold;"></span></b>added<b><span
+style="font-weight: bold;"></span><br>
+</b>HTML Character substitution split between UDP and File output <br>
+Not all sample initialisation files had been included with the setup
+distribution<br>
+Help updated - spnmea added, several issues clarified (I hope!)<br>
+<b>3.1.0.69<br>
+</b>When ALL fields were output as CSV, NMEA sentences that were not !AIVDM or
+!AIVDO were not being output. Fields are now output exactly the same as the
+rows in column 2 on the detail display. This differs from the column order in
+Version 68.<br>
+Problem with NMEA GPS tags and synchronisation fixed.<br>
+<b><span style="color: rgb(255, 0, 0);"></span>3.1.0.68</b><br>
+<span style="font-weight: bold;"><span
+style="font-weight:               bold;">    Help File<br>
+</span></span>There is now a "Windows Style" help file (AisDecoder.chm), which
+is downloaded on installation to your Program Files directory. When press the
+Help button, you will be using this file. The new Help can be viewed
+independently of AisDecoder by locating this file and clicking on it.The Web
+Help File is out of date, but still on the Web Site for users who are using
+older versions (access from download page). <br>
+<span style="font-weight: bold;"><span
+style="font-weight:               bold;"></span></span>Installer now checks to
+ensure AisDecoder is not running prior to installing a later version<br>
+<font size="-1"><span style="font-weight: bold;">3.1.0.67<br>
+</span><span style="font-weight: bold;"><span
+style="font-weight: bold;"></span></span></font><span
+style="color: rgb(255, 0, 0); font-weight: bold;">There are some incompatible
+changes with previous versions.<br>
+The installed executable is now named AisDecoder - not AisDecoder_V3.</span><br>
+<span style="color: rgb(255, 0, 0); font-weight: bold;"></span><span
+style="color: rgb(255, 0, 0); font-weight: bold;">The installation executable
+is now AisDecoder_setup_3.1.0.67.exe (and will change with each
+version).</span><br>
+<span style="font-weight: bold;"><span
+style="font-weight:               bold;"></span></span><span
+style="font-weight: bold;">    Downloading New Versions</span><br>
+I have changed the complete download mechanism to<br>
+1.    To try and make it more robust<br>
+2.    To create a unique install executable file with each version<br>
+3.    To as far as is possible allow multiple users on the same PC to have
+their own settings files<br>
+4.    Removed the Automatic Download of new versions.<br>
+On start-up AisDecoder will (if there is an internet connection) check if there
+is a later version.<br>
+If so, it will enable the Update button on the Control/Stats window (the Update
+text will cease to be "greyed out").<br>
+On clicking the Update button AisDecoder will close and your browser will start
+with the release notes. Having read the notes, you should click the link on the
+Release Notes to go to the Download page.<br>
+You cannot install AisDecoder unless you have Administrator privileges.<br>
+<span style="font-weight: bold;">    Sample and Settings Files</span><br>
+For AisDecoder to start, it must have a valid initialisation file (.ini).<br>
+The current user's files are kept in the "Current User" profile.<br>
+There are a number of Sample or Example files to demonstrate some of the
+possible options. These are explained in Help.<br>
+<span style="font-weight: bold;">    Other Changes</span><br>
+Any user who is not an Administrator, will not be able to access the Options
+Window so can only change settings on the Control/Stats Window, cannot save
+these settings and will not be prompted to save changes on exit.<br>
+If the Input Window was clicked, when no input sentences displayed, AisDecoder
+stopped. This has been fixed.<br>
+The Decoder will now output all decoded value fields as CSV, if CSV output is
+selected and <span style="font-weight:             bold;">NO</span> field Tags
+are selected.<br>
+The sample file CsvAll.ini is preset to do this. <br>
+The Ouput format is:-<br>
+Received Timestamp (if it exists) , Vessel Name (blank if not received) , NMEA
+Payload field , Delimited Decoded Payload Fields.<br>
+The order in which the Delimited Decoded Payload Fields are output is the same
+as in the Detail Window.<br>
+KMZ output files are now supported for Google Earth. Just name the output file
+*.KMZ<br>
+Msg 21 (AtoN), if there is a name extension, the decoder now displays in the
+Detail Window the number of fill bits (if any).<br>
+If the Payload within a NMEA AIS message is too short to hold all the required
+bits to decode the whole message, the number of bits short are displayed at the
+bottom of the detail window. Any fields past the actual payload length will
+have all bits set to 0 (zero).<br>
+When you exit the program, if you have not saved your settings &amp; they have
+changed, you will be prompted to save them. This will not happen for
+non-administrators as they cannot save their settings anyway.<br>
+If an AIS NMEA sentence had a valid CRC but insufficent words Ais Decoder could
+crash, this is now reported as an error.<br>
+<span style="font-weight: bold;">    Profiles</span><br>
+If you are the only user on your PC and you installed AisDecoder you do not
+need to worry about Profiles.<br>
+When the Ais Decoder Setup program downloaded user file files (including sample
+files) are now placed into the "All Users" profile. <br>
+The <span style="font-weight: bold;">first</span> time AisDecoder is run by any
+user, <span style="font-weight:             bold;">all </span>files currently
+existing in  "\All Users\Application Data\Arundale\AisDecoder" are copied to
+"Current User\Application Data\Arundale\AisDecoder". This will include all the
+above list of sample files as well as any additional files the Administrator
+may have placed in the All Users profile.<br>
+Although the Current User does have access to their own files, by default,
+files in \Application Data\ are hidden, unless you are an Administrator.<br>
+If the current user requires directory access to any of the AisDecoder folders
+or files, create a shortcut in the user's "My Documents".<br>
+After re-installing a new version of AisDecoder (or you have Adminstrator
+priviledge), when you first run the new version, you will be prompted as to
+whether you require any of the above sample files which differ from those in
+your own profile, being overwriten.<br>
+If you are not an administrator, they will be overwritten anyway.<br>
+The first time a user runs a new version, default.ini is always overwritten in
+the Current Users profile.<br>
+The uninstaller will only remove the downloaded files (in All Users), the
+"Current User" files will be automatically removed if you delete the "Current
+User" profile.<br>
+<font size="-1"><span style="font-weight: bold;">3.1.0.66<br>
+</span>Code to output fill bits when added at the end of variable length
+messages to fill message to next 8 bit boundary has been re-written, to
+correctly decode when fill bits are tagged. This is used by message 20 (Shore
+Station Data Link Management).<br>
+Note a significant no of shore stations transmit incorrect message length.<br>
+An Out of memory error fixed, caused by under certain circumstances a Microsoft
+size limit being exceeded.<br>
+An occasional Subscript error fixed.<br>
+There were a number of problems in the decoding of the Communications State,
+due to the variability of the bit positions. I believe the decoding is now
+correct. Some shore stations appear to transmit incorrect data, for example
+Next Slot Offset of 2250 - the maximum permitted slot is 2249 (these may be
+test transmissions).<span style="font-weight:               bold;"><br>
+3.1.0.65<br>
+</span>The MMSI decoding has been split into MMSI and MID<br>
+The MMSI description is the type of MMSI (for example Shore Station, SART
+etc)<br>
+The MID description is the Country.<br>
+Where the MMSI does not contain a MID (for example SART) ,the MID is output as
+0 (not blank).<br>
+<span style="font-weight: bold;">3.1.0.64</span><br>
+The special Tag &lt;IconHeading&gt; will output 511 if neither COG or HDG is
+available.<br>
+Internal changes to scheduled output, speed improvement of about 30%.<br>
+</font><span style="font-weight: bold;"><font size="-1"><span
+style="font-weight: bold;">3.1.0.63</span></font></span><br>
+</p>
+</div>
+<font size="-1">The special Tag &lt;IconHeading&gt; will always be in whole
+degrees even if COG is used. This is for compatibility between Google Maps and
+Google Earth.<br>
+If FTP fails, error messages now written to /logs/error.log to enable error to
+be recovered when running in nowindow mode.<br>
+</font></div>
+</div>
+
+<div>
+<font size="-1"><span style="font-weight: bold;">3.1.0.62</span><br>
+The current version number on the Control/Stats window can be "clicked" to
+bring up a list of all version changes.  <br>
+Suppress error messages on FTP, if command option noWindow is set. If nowindow
+is set FTP errors will no longer trigger an error window.<br>
+</font><font size="-1">I will be changing my Tags from &lt;tag&gt; to [Tag], ie
+() to [] shortly.<br>
+This is to enable a kml template to be compatible with an XML parser, before
+the Tag is substituted. This will necessitate you changing all your tags (not
+Google Tags) in your kml template files.<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.61</span><br>
+Added a special Tag &lt;IconHeading&gt; which may be used to align Vessel Icon
+on a GIS display with North relative to COG if HDG is not available. This is
+only available on Tagged output when GIS<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.60</span><br>
+If a range has been set for a Tag and no messages has been received containing
+the Tag the MMSI will now fail the range check and no output will occur for
+this MMSI.<br>
+This check is only done if Tags are output on MMSI Change, otherwise if all
+Tagged messages are being output separately (ie not on a change of MMSI) and
+Tags are set on different AIS message types, no output would occur, as there
+would always be blank Tags on every message.<br>
+</font><font size="-1"><span style="font-weight: bold;"></span></font><font
+size="-1"><span style="font-weight: bold;">3.1.0.59</span><br>
+Another minor change to try and ensure the correct column is selected when
+adding a new Tag<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.58</span><br>
+Yet another try at making the Automatic Version Updater work properly, next
+time.<br>
+When Field Tag was selected on Detail Window, intermittently incorrect column
+was selected to output. The effect was instead of Tag value being output, Tag
+description was output.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.57</span><br>
+Input Field Window, previous fix to retain focus resulted in changed tag name
+being "lost".<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.56</span><br>
+If serial port failed to open, Decoder kept trying even after stop pressed. Max
+&amp; Min Range tag not always output<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.55</span><br>
+Serial Input from Com Port added<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.54</span><br>
+Improvements to Accept Input Filter when ticking deep sub items.<br>
+Note you do not have to tick sub items - they are assumed to be ticked.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.53</span><br>
+Problems with FTP upload output file location, hopefully fixed<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.52</span><br>
+Added FTP client to upload Output file to Web Server<br>
+The file is FTP'd to the server whenever the Output file is closed, this would
+normally be after the scheduler has created the file.<br>
+The Server logon password is held encrypted in the .ini file using some of the
+PC's parameters as a key. This means, if you save the .ini file on one PC then
+transfer it to another, you will have to re-enter your Server logon password.
+It does however mean you can send the .ini file to another user without
+revealing your password.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.51</span><br>
+When outputting all Tag messages (not on MMSI change) each part of multipart
+AIS messages was output. This was incorrect and has been fixed.<br>
+GPS NMEA sentences were not given a unique default Tag, the default Tag is now
+unique<br>
+Tag Template File re-read on exiting Options Window, to ensure if min or max
+range is changed, and used as a Tag, they are replaced in the Template<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.50</span><br>
+Option added to output Tags/CSV after each message rather than on change of
+MMSI.<br>
+This is to allow, when reading a log file, to output the history of one
+vessel.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.49</span><br>
+Alterations to directory options when selecting new files.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.48</span><br>
+Downloaded initialisation files were retaining my directory paths.<br>
+Slight cleanup of display of $GPxxx NMEA sentence tags.<br>
+Additional sample template file GoogleMaps.xml now supplied with the
+download.<br>
+This template will output a XML file which is compatible with the widely used
+sample webpage Curt Deegan's vbship4.zip which can be downloaded from the files
+section (vbscripts) of the ShipPlotter forum.<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.47</span><br>
+Limited processing of $GPZDA and $GPGGA messages added to allow GPS time
+stamping.<br>
+The default tags are the type of NMEA sentence (eg $GPZDA).<br>
+Note if trying to output tag values (including CSV), the Tag Value is only
+output when the<br>
+MMSI changes, as GPS sentences will not have a MMSI, you will not get any
+output until an AIS sentence with an MMSI is output. As with all tagged output,
+the decoder will only output the latest Tag value, if more than one message
+with the same Tag has been received, since the previous Tag was output.<br>
+If you require to see all messages, you should use NMEA output.<br>
+The above required adding additional input filter options in the sample
+initialisation files - default.ini,GoogleEarth.ini and udptagsrange.ini.<br>
+These files are overwritten each time you download a new version.<br>
+If you are using your own "save as" initialisation files, you will not see
+these additional Input Filter Options.    <br>
+If the Output File Name ends in .htm*, the content is now written to the output
+file WITHOUT a line terminator (crlf). This is to try and avoid browsers
+replacing the &lt;crlf&gt; with a space.<br>
+(This may cause other problems, so may have to be changed again).<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.46</span><br>
+You can insert the minimum or maximum Range value into a Tagged Output File by
+appending _min or _max to the name on the tag. Eg &lt;lat_min&gt; wil insert
+the minimum value of the lat tag into the output file.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.45</span><br>
+Problem changing Output file with tag template file fixed<br>
+Some minor changes to output display<br>
+Download moved to ./aisdecoder_setup_v3.exe<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.44</span><br>
+Bug NMEA UDP with Range filtering and not Scheduled not outputting fixed<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.43</span><br>
+Download error bug fixed<br>
+Options window would not close bug fixed<br>
+Stats updating fixed<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.42</span><br>
+Help file button now links to V3 User Guide - which is progressively being
+updated.<br>
+GIS button added to Control/Stats window to automatically display KML file on
+Google Earth<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.41</span><br>
+Options Display format changed slightly again<br>
+Output routines altered to try and ensure output is split correctly (as the
+expense of some speed)<br>
+More comprehensive checking of options settings with improved user messages<br>
+(there is scope for improving these messages).<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.40</span><br>
+Options Display format changed slightly<br>
+Csv Delimiter selection coded<br>
+Duplicated message output bug fixed<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.39</span><br>
+Another significant code cleanup on output options.<br>
+Option Layout changed to further clarify and allow display of output without
+actually outputting data.<br>
+Both File and UDP output now displayed in separate windows.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.38</span><br>
+Download timeout increased for 60 to 90 seconds.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.37</span><br>
+Fixed bug that could result in a valid tag value not being output<br>
+If the CSV delimiter if found in the value of a tag, the value is output as a
+quoted string for example if the delimiter is a comma:---<br>
+244387000,20/10/2010 14:15:19,PRIDE OF BRUGES,"Passenger-carrying DG,HS,MP,IMO
+haz or pollutant X"<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.36</span><br>
+Fixed bug that could result in nmea and tagged output intermingled<br>
+Main and Options Display layout and terminology changed<br>
+Raw called NMEA and NMEA called Time Stamped<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.35</span><br>
+Output Options and display re-structured to be clearer<br>
+You can now set the same Options independently for both File or UDP output<br>
+Some combination of Options can result in no output if they are mutually
+exclusive<br>
+Before Output all sentences are Input Filtered.<br>
+Sentences can then be Scheduled and/or Range Filtered.<br>
+When Output they can be NMEA, CSV or Tagged.<br>
+The Scheduler holds the latest AIS sentence, by message type, for the Time to
+Live.<br>
+After the Scheduled Time has elapsed, all the buffered sentences are released
+in MMSI order.<br>
+A Tag is a name + value allocated to an AIS Message field. The same Tag (eg
+MMSI or Latitude) can be allocated to different AIS message types. This is
+necessary if the same data for example a vessel's position, can be extracted
+from more than one AIS message type. <br>
+The Range Filter extracts the value of any Field (defined in the Output Fields
+and Tags on the Options Display), keeping the latest value received.<br>
+A From-To Range may be set for the Tag (defined in the Output Tags and Range on
+the Options Display).<br>
+AIS messages are checked if they are within Range for Output in groups by
+MMSI.<br>
+Any Group of messages (having the same MMSI), not containing an AIS message
+which has a Tag Range set, will be output. This is because it is indeterminate
+at the time whether the MMSI is or not within the range. <br>
+Likewise a message without a Tag, not previously rejected by the Input Filter,
+will be output.<br>
+<span style="font-weight: bold;">NMEA</span>    If "Raw" is ticked, the NMEA
+sentence will have the Time Stamp removed.<br>
+<span style="font-weight: bold;">CSV</span>      If a Tag has no value, or has
+not been seen, a null will be output at the Tag's position. <br>
+           If no Tags have been specified, nothing will be output.<br>
+<span style="font-weight: bold;">Tagged</span>    If "GIS" is ticked, only
+messages containing both a Latitude and Longitude will be output, as outputing
+data to Geographic Information Systems, without a position is meaningless.   
+ <br>
+I have set three sample initialisation (.ini) files.<br>
+<span style="font-weight: bold;">default.ini</span> is a basic file to just
+ouput received data<br>
+<span style="font-weight: bold;">UdpTagsRange.ini</span> has UDP output, Common
+Vessel data, and Lat/lon Range pre-set. You will need to reset the lat/lon to
+get any output.<br>
+<span style="font-weight: bold;">GoogleEarth.ini</span>    Creates a
+GoogleEarth KML file.<br>
+Once a minute Data.kml should be created in the Output directory. Provided you
+have Google Earth installed on your PC, if you clickon the data.kml file, you
+should see all received vessels on GoogleEarth. The template file (in the
+Templates directory) is about a simple as it can be to still work. <br>
+I have tested this using the data from AisHub, receiving around 6000 messages a
+minute, Outputting around 6000 vessels to a 1Mb file in around 10 seconds, on
+my XP pc. You can of course alter any of these files if you wish, but bear in
+mind if you do not rename them, I'll overwrite them when you upload a later
+version of my decoder.<br>
+I still need to do some work on the actual displays, this is rather time
+consuming and I wish to ensure the basic engine is working as expect, without
+bugs, and with all the main options in place.<br>
+As there are now a large number of output options, it's impossible for myself
+to test all the options so if you find any bugs, I would appreciate you letting
+me know.<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.34</span><br>
+Additional UDP output option CSV added<br>
+Renamed the UDP Output Options, Raw Scheduled to Raw, Scheduled to Tagged.
+These will not be renamed unless you re-create any saved .ini files <br>
+The new default.ini and udptagsrange.ini that are downloaded to your PC with
+this version are already fixed.<br>
+On installation, I have placed in the Files directory "Output Options
+Schematic.pdf" which should help you to understand how the options should
+work.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.33</span><br>
+The Tag Template File being used was not retained between restarts if a Tagged
+file was selected for output.<br>
+There is a minor change to the code but it also requires the file name to be
+loaded first in the initialisation process.<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.32</span><br>
+Tag range filter changed from OR to AND, all range conditions (if set) must be
+met otherwise no output will happen for the current MMSI. <br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.31</span><br>
+Well there were some bugs, in particular with selecting different output
+combinations<br>
+Hopefully these are mainly fixed - if you find any more where it does not seem
+to be doing what your expecting, please let me know.<br>
+There was also a mistake in the example.aspx<br>
+I have added an example.html and a data.kml file in the templates directory,
+and a UdpTagsRange.ini file in the Settings directory.<br>
+If you select the UdpTagsRange.ini file (Options &gt; Open) it can create a
+file, provided your Ships are within the pre-set Latitude range, which will
+contain the Tags required for the HTML or KML file. The HTML file can be opened
+with any browser and the KML file<br>
+can be opened with Google Earth (you can also upload it to Google Maps
+server).<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.30</span><br>
+Option Added If you Right Click on Detail display the content will be placed on
+the Clip Board as CSV. You may Paste the contents into Notepad and open it with
+Excel.<br>
+I would like to try and concentrate for a while on fixing any bugs (which there
+will be) and getting it stable before adding any additional features, unless
+anyone has any relatively simple issues. There are so many different options
+now that I cannot check all of them, so if anything does not work as you or I
+expect, I need to sort these out as well.<br>
+In addition, I would like to make a start on documentation, as this would help
+understanding what it will and won't do at the moment.<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.29</span><br>
+Program may not start if default initialisation file not set.<br>
+The startup initialisation file is now reset to default after new version
+downloaded.<br>
+This is caused by changes I'm still making to the initialisation file format,
+which is not yet stable. I now make an attempt to recover and if you save the
+file, save it in the "new" format. You may however loose some of the settings,
+if I've madean incompatible change.<br>
+Scroll added to Splash Display (version changes on startup)<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.28</span><br>
+Note:--- Any existing .ini files will probably fail.<br>
+Option to output "Raw" Log file (without time stamp) added<br>
+Option to output filtered UDP "Raw" sentences added<br>
+Option to Output UDP Scheduled "Raw" - allowing you to only output those
+sentences that pass the Tag output range filtering. For example Vessels within
+a defined geographic area. You do not have to create a Tagged file to do this,
+but you must create the tags<br>
+because the range is set by Tag and not individual AIS message no fields.<br>
+Option to merge the Tags with a "Tagged" template file enabling you to create,
+for example, a HTML, XML, KML, CSV or aspx etc file. The Template file should
+be in the Ais Decoder/Templates directory. The output file will have the same
+name but will be placed in the Ais Decoder/Output directory. There should be a
+simple example file in the directory. I have also included a more complicated
+setup file.<br>
+Major rewrite of Open, Save and SaveAs routine error trapping and informing
+users of problems opening or saving initialisation and log files.<br>
+I have tried to cover all angles including:---<br>
+    Files or directories not existing.<br>
+    Files being deleted<br>
+    Incorrectly formatted files<br>
+    ReadOnly files<br>
+Next up - Fixing bugs permitting !<br>
+    Save Option on Detail Display<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.27</span><br>
+UDP output of Tagged output enabled.<br>
+You must set the IP address and port no on the Options Display while the
+decoder is STOPed.<br>
+Clicking the Nmea List Display will Display the Detail of the Nmea Sentence, in
+the same manner as clicking the Ais List Display.<br>
+Hour Glass mousepointer fixed again (mistake last time)<br>
+More changes to display layouts<br>
+Clicking on a Tag in Options &gt; Output Tags will delete all fields in Options
+&gt; Output Fields containing the same Tag.<br>
+Next up (apart from fixing any bugs you find) is Outputting a file to your
+template with embedded values in the tags.<br>
+<span style="font-weight: bold;"></span></font><font size="-1"><span
+style="font-weight: bold;">3.1.0.26</span><br>
+Inform Users of changes since last version - Like this !<br>
+Main Display Screen Layout changed<br>
+Please note:-<br>
+I will be making some changes to the Initialisation (.ini) files which will be
+incompatible with any existing files, so please don't create loads of
+individual settings as they may not work until I've stabalised the format.<br>
+When you download a new version, the existing default.ini file will be
+overwritten.<br>
+Options I'm about to implement are "Greyed Out".<br>
+I'm Experimentally outputting the Scheduled Output on UDP data on port 39421,
+to allow me to test it over the internet.<br>
+If you wish to re-read this message (you'll only see it once), the file should
+be in the directory (\Files\) as displayed on the bottom of the main
+display.<br>
+</font><font size="-1"><span style="font-weight: bold;">3.1.0.25</span><br>
+Hour Glass fixed<br>
+Save As File filename corrected on Options display</font><br>
+</div>
+<br>
+
+<ul>
+  <li><br>
+  </li>
+  <li><br>
+  </li>
+</ul>
+<ul>
+  <li><br>
+  </li>
+</ul>
+</body>
+</html>

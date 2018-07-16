@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <meta name="keywords" content="AIS, Receiver,performance, SR162,
+      Nasa, Comar AIS-2-USB, compare">
+    <meta name="description" content="AIS Receiver Performance
+      Comparison">
+    <title>AIS Receiver Performance Comparisons</title>
+    <!--#include virtual="aishead.htmlf" -->
+  </head>
+  <body>
+    <!--#include virtual="navbar.htmlf" -->
+    <div style="text-align: center;">
+      <h2>Actual Performance Comparison of SR162 with Comar AIS-2-USB</h2>
+    </div>
+    <div style="text-align: center;"><a href="./sp_map.html"><img
+          title="Click to list current ships" alt="Graph"
+          src="./comar_sr162a.gif" style="border: 0px solid ; width:
+          598px; height: 219px;"></a><br>
+    </div>
+    <div style="text-align: center;"><a href="./sp_map.html"><img
+          title="Click to list current ships" alt="Graph"
+          src="./comar_sr162b.gif" style="border: 0px solid ; width:
+          598px; height: 219px;"></a><br>
+    </div>
+    Occasional dropouts on top graph are caused by ShipPlotter stalling
+    because a server it is uploading to is stalling. This PC is using
+    ShipPlotter to upload to 5 servers. The other PC running the second
+    graph is not feeding data to any server.<br>
+    You can <a href="./spxl.html">download the spreadsheet</a> that
+    will produce these graphs automatically (if ShipPlotter is running).<br>
+    <span style="font-weight: bold;"></span>
+    <div style="text-align: center;">
+      <h2>Actual Performance Comparison of SR162 with Nasa AIS Engine</h2>
+    </div>
+    <table>
+      <tbody>
+        <tr>
+          <td style="width: 620px;"><img style="width: 620px; height:
+              280px;" alt="" src="sr162.gif"></td>
+          <td><a href="sr162_img.jpg"><img style="border: 0px solid ;
+                width: 435px; height: 280px;" title="Click to enlarge"
+                alt="" src="sr162_img_small.jpg"></a></td>
+        </tr>
+        <tr>
+          <td style="width: 620px;"><img style="height: 280px; width:
+              620px;" alt="" src="nasa.gif"></td>
+          <td><a href="nasa_img.jpg"><img style="border: 0px solid ;
+                width: 435px; height: 280px;" title="Click to enlarge"
+                alt="" src="nasa_img_small.jpg"></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <table>
+      <tbody>
+        <tr>
+          <td><a href="sat_19feb08.jpg"><img style="border: 0px solid ;
+                width: 450px; height: 338px;" alt="" title="Click to
+                enlarge" src="sat_19feb08_small.jpg"></a></td>
+          <td><a href="surface_analysis_19feb08.jpg"><img style="border:
+                0px solid ; width: 450px; height: 298px;" alt=""
+                title="Click to enlarge"
+                src="surface_analysis_19feb08_small.jpg"></a></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <h3>How was it done ?</h3>
+    Both receivers were fed simutaneously with the same signal from the
+    same aerial.<br>
+    A&nbsp;passive (non frequency dependant) 50 ohm splitter was used.<br>
+    The splitter will degrade the signal in both recievers by a minimum
+    of 3dB (halved).<br>
+    Each receiver was connected to separate PC's running ShipPlotter.<br>
+    The ole/com interface drove an identical vbs script on each PC,
+    dynamically using Excel to draw the graphs..<br>
+    ShipPlotter was purged immediately prior to starting the vbs script.<br>
+    At the end of 60 mins the graph was saved, and a screen image
+    captured.<br>
+    I'll let you draw your own conclusions.<br>
+    You can <a href="./spxl.html">download the spreadsheet</a> that
+    will produce these graphs automatically (if ShipPlotter is running)
+    without using vbs.<br>
+    <span style="font-weight: bold;"></span><span style="font-weight:
+      bold;">Notes</span><br>
+    Propagation was exceptionally good due to the high pressure over
+    Europe.<br>
+    The range rings are set at 50 miles maximum.<br>
+    Ships are "the total number of active ships (that would appear on
+    the chart)".<br>
+    Grey Ships was set at 10, and Omit Ships was set at 30<br>
+    Msgs are as the counter at the bottom of the ShipPlotter screen.<br>
+    The large blips on the graphs are probably caused by ShipPlotter
+    buffering the messages while waiting on the sharing servers.<br>
+    <span style="font-weight: bold;"><br>
+      Link to my</span><br>
+    <a href="./aerial.html"> AIS Collinear Aerial Page </a>&amp; <a
+      href="./horizon.html">VHF horizon Page</a> &amp; <a
+      href="./sr162_nasa.html">AIS Receiver Comparison Page</a> &amp; <a
+      href="./spxl.html">Graph Plotter Page</a><br>
+    See also <a href="http://www.mike-willis.com/Tutorial/PF6.htm">Beyond
+the
+
+      Horizon Propagation</a>
+  </body>
+</html>

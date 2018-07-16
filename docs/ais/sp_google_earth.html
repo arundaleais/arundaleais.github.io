@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Google Earth API Sample</title>
+  <script
+ src="http://www.google.com/jsapi?key=ABQIAAAAbKrAnPgRnyLVBCMzYuqffRTtIDN88clTnzI5Op30TpcItBXyRxQRjHzxoQOhRLiL-lR-E3pawQy6fA"
+ type="text/javascript"></script>
+  <script type="text/javascript">
+      function addSampleButton(caption, clickHandler) {
+        var btn = document.createElement('input');
+        btn.type = 'button';
+        btn.value = caption;
+        
+        if (btn.attachEvent)
+          btn.attachEvent('onclick', clickHandler);
+        else
+          btn.addEventListener('click', clickHandler, false);
+
+        // add the button to the Sample UI
+        document.getElementById('sample-ui').appendChild(btn);
+      }
+      
+      function addSampleUIHtml(html) {
+        document.getElementById('sample-ui').innerHTML += html;
+      }
+    </script>
+  <script type="text/javascript">
+    var ge;
+    
+    google.load("earth", "1");
+    
+    function init() {
+      google.earth.createInstance('map3d', initCallback, failureCallback);
+    
+      addSampleButton('Create a Network Link!', buttonClick);
+    }
+    
+    function initCallback(instance) {
+      ge = instance;
+      ge.getWindow().setVisibility(true);
+    
+      // add a navigation control
+      ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
+    
+      // add some layers
+      ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
+      ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
+    
+      createNetworkLink();
+    
+      document.getElementById('installed-plugin-version').innerHTML =
+        ge.getPluginVersion().toString();
+    }
+    
+    function failureCallback(errorCode) {
+    }
+    
+    function createNetworkLink() {
+      var networkLink = ge.createNetworkLink("");
+      networkLink.setDescription("NetworkLink open to fetched content");
+      networkLink.setName("Open NetworkLink");
+      networkLink.setFlyToView(true);
+    
+      // create a Link object
+      var link = ge.createLink("");
+//link.setHref("http://kml-samples.googlecode.com" +
+//"/svn/trunk/kml/NetworkLink/placemark.kml");
+	link.setHref("http://web.arundale.co.uk" +
+	"/docs/ais/yorkshirecoast.kmz");
+    
+      // attach the Link to the NetworkLink
+      networkLink.setLink(link);
+    
+      // add the NetworkLink feature to Earth
+      ge.getFeatures().appendChild(networkLink);
+    }
+    
+    function buttonClick() {
+      createNetworkLink();
+    }
+    
+    </script>
+</head>
+<body onload="init()"
+ style="border: 0pt none ; font-family: arial,sans-serif; font-size: 13px;">
+<br>
+<div>Installed Plugin Version: <span id="installed-plugin-version"
+ style="font-weight: bold;">Loading...</span></div>
+<div id="map3d" style="height: 400px; width: 600px;"> Google earth
+</div>
+</body>
+</html>

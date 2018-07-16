@@ -1,0 +1,19 @@
+#/home/stfinge1/public_html/.htaccess
+RewriteEngine on
+
+Options +Includes
+AddType text/html .html
+AddOutputFilter INCLUDES .html
+AddHandler server-parsed .html
+AddType text/html .shtml
+AddOutputFilter INCLUDES .shtml
+AddHandler server-parsed .shtml
+AddType text/html .htmlf
+AddOutputFilter INCLUDES .htmlf
+AddHandler server-parsed .htmlf
+
+RewriteCond %{HTTP_HOST} ^arundale\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.arundale\.com$
+#RewriteRule ^/?$ "http\:\/\/arundale\.com\/docs\/ais\/nmearouter\.html" [R=301,L]
+RewriteRule ^/?$ "http\:\/\/arundale\.com\/docs\/ais\/ais_decoder\.html" [R=301,L]
+

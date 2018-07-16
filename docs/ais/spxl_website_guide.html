@@ -1,0 +1,480 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;
+      charset=windows-1252">
+    <!--#include virtual="aishead.htmlf" -->
+    <meta name="keywords" content="ShipPlotter, Excel, AIS, reception,
+      performance, graph, compare, Google maps, XML, KML">
+    <meta name="description" content="ShipPlotter.xls AIS Reception
+      Website Upload Guide">
+    <title>ShipPlotter.xls AIS Reception Website Upload Guide</title>
+  </head>
+  <body>
+    <!--#include virtual="navbar.htmlf" -->
+    <div style="text-align: center;">
+      <h2>AIS Data Analysis</h2>
+      <h2>AIS Reception Website Upload Guide for ShipPlotter.xls<br>
+      </h2>
+    </div>
+    <div style="text-align: center;">
+      <div style="text-align: left;"><span style="font-weight: bold;"><span
+            style="font-weight: bold;"><span style="color: rgb(255, 0,
+              0);">Please note my new <a href="./ais_decoder.html">AisDecoder</a>
+              will also upload AIS data (much easier) to Websites</span></span><br>
+          <br>
+          Introduction</span><br>
+        The ShipPlotter Data Analysis Spreadsheet will create a number
+        of files that can be uploaded to a website. The XML and KML
+        files will integrate with Google Maps to display a map with the
+        positions of the ships you are receiving overlayed on the map.
+        For more information on Google maps go to <a
+          href="http://code.google.com/apis/maps/">http://code.google.com/apis/maps/</a><br>
+        <br>
+        <span style="font-weight: bold;"><span style="font-weight:
+            bold;">Quickstart<br>
+          </span></span>ShipPlotter &gt; Options<span
+          style="font-weight: bold;"><br>
+        </span><img style="width: 482px; height: 164px;" alt=""
+          src="./sp_menubar_options.gif"><br>
+        <br>
+        The Options box will be displayed<span style="font-weight:
+          bold;"></span><br>
+        <table style="text-align: left; width: 100%;" border="0"
+          cellpadding="2" cellspacing="2">
+          <tbody>
+            <tr>
+              <td style="vertical-align: top; width: 325px;"><img
+                  style="width: 325px; height: 497px;" alt=""
+                  src="./sp_options_kml.gif"><br>
+              </td>
+              <td style="vertical-align: top;"><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                Tick KML <small><span style="font-weight: bold;">Process</span></small>
+                and KML <small style="font-weight: bold;">Upload<br>
+                </small><br>
+                <br>
+                Set URL Path, Username, and Password<br>
+                <br>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <span style="font-weight: bold;"><br>
+        </span>Open a browser &amp; goto&nbsp;<span style="color:
+          rgb(51, 51, 255);"> <span style="font-weight: bold;">http://maps.google.com/maps?q=mywebsite/myaisdirectory/data.kml
+
+            <span style="color: rgb(0, 0, 0);">Substitute your actual
+              website/directory</span><br>
+          </span><span style="color: rgb(0, 0, 0);"></span></span>and
+        you should see something like below<br>
+        <span style="font-weight: bold;"><img style="width: 530px;
+            height: 376px;" alt="" src="./sp_google_kml.gif"><br>
+        </span><span style="font-weight: bold;"><br>
+          What are the Files ?</span><br>
+        A reception <a style="font-weight: bold;" href="./sp_graph.gif">Graph</a>,
+        a <a style="font-weight: bold;" href="./data.csv">CSV</a> of
+        ships &amp; received data, a customised <a style="font-weight:
+          bold;" href="./sp_list.html">HTML</a> list of ships &amp;
+        associated data, a customised <a style="font-weight: bold;"
+          href="./data.xml">XML</a> list of ships &amp; associated data,
+        &amp;/or a <a style="font-weight: bold;" href="./data.kml">KML</a>
+        list.<br>
+        <br>
+        To view the live files currently being generated from the AIS
+        data I am receiving in Scarborough, click on the links above.
+        Depending on your browser &amp; settings, you may have to set
+        your browser to View &gt; Source to see the actual file without
+        the browser interpreting the file..<br>
+        <br>
+        The XML or KML files have to be integrated with Google Maps to
+        create a meaningful ("rendered") display on your website.<br>
+        The original way Google rendered your ships on their map
+        necessitated you placing a XML file on your (or ISP's) server,
+        registering with Google, and creating a custom webpage. It is
+        the custom webpage you view to see your ships on Google's map.
+        To view my current XML list of ships overlaid on Google maps<br>
+        click <a style="font-weight: bold;" href="./sp_google.html">View
+
+          XML file rendering</a>.<br>
+        <br>
+        Google now have another method which which allows you to see
+        your ships overlaid on their map, without you needing a custom
+        webpage data. This requires a KML file and will not work with a
+        XML file, the KML file does need to be on a webserver. The same
+        method (using a KML file) is used to render your data using
+        Google Earth rather than Google maps. To use a KML file you
+        simply upload the KML file and in your browser enter <br>
+        http://maps.google.com/maps?q=<span style="color: rgb(51, 51,
+          255);">mywebsiteurl<span style="color: rgb(0, 0, 0);">.<br>
+            For example to view my current data click </span></span><a
+          style="font-weight: bold;"
+href="http://maps.google.com/maps?q=http://web.arundale.co.uk/docs/ais/data.kml?">http://maps.google.com/maps?q=http://web.arundale.co.uk/docs/ais/data.kml</a><br>
+        <br>
+        If you have looked at both the XML and KML renditions, you will
+        have noticed the XML version contains mich more information
+        about the ships than the KML version. This is because XML
+        version I have of the actual webpage I an using is to make it
+        compatible with the widely used sample webpage vbship4.zip which
+        can be downloaded from the files section (vbscripts) of the <a
+href="http://groups.yahoo.com/group/shipplotter/files/VB%20Scripts/">ShipPlotter
+
+          forum</a>. The KML version I have kept simple so that you can
+        see the wood from the trees. You can alter this later.<br>
+      </div>
+    </div>
+    <span style="text-decoration: underline;"> <br>
+    </span><span style="font-weight: bold;"><span style="font-weight:
+        bold;"></span></span><span style="font-weight: bold;">How the
+      files are produced</span><br style="font-weight: bold;">
+    The data received from the COAA ShipPlotter program is transferred
+    to the Graph &amp; Data worksheets. The messages from each ship are
+    combined with the layout held on the HTML, XML and/or KML
+    worksheets, the resultant file(s), optionally, uploaded to your
+    webserver. The process is repeated at preset intervals set by you in
+    the Options form. There is a considerable amount of VBA code working
+    behind the scenes which you can view (or change) using the VBA
+    editor supplied with Excel.<br>
+    &nbsp;<br>
+    <span style="font-weight: bold;">Changing the format of the HTML,
+      XML or KML files</span><span style="text-decoration: underline;"><br>
+    </span>You may change the layout and the data you display on any of
+    the above files by changing the appropriate worksheet.. Only change
+    the Graph or Data if you have looked carefully at both the formulae
+    and the VBA code behind the Excel workbook. You should stop the
+    scheduler before making any alterations to the worksheets or
+    invoking the VBA editor with ShipPlotter &gt; Options &gt; Controls
+    &gt; Stop.<br>
+    <span style="font-weight: bold;"></span><span style="font-weight:
+      bold;"><br>
+      The Graph</span><br>
+    If you are uploading the graph, do not allow the browser to resize
+    it as the image will become unclear. Instead, resize the Graph on
+    the worksheet, find the actual size by examining the properties of
+    the saved image, and specify this as the actual size on the webpage.
+    Do not try and move the Graph to it's own sheet, as it must be
+    embedded within the Graph worksheet to be uploaded. Gif seems to be
+    better than jpeg. <br>
+    <br>
+    <span style="font-weight: bold;">The HTML file</span><br>
+    The colouring is for explanatory purposes only<span
+      style="font-weight: bold;"><br>
+    </span><span style="font-weight: bold;"><img style="width: 785px;
+        height: 469px;" alt="" src="./sp_html.gif"><br>
+      <br>
+    </span>A lines and cells are output exactly as entered on the sheet
+    to the html file set in Options (default name sp_html.html) which is
+    the uploaded to the web server. If a cell contains a formula, the
+    formula will be evaluated by Excel as normal. For example cell C14
+    actually contains the formula =Data!$B$1. On the Data worksheet cell
+    B1 contains the heading <span style="font-weight: bold;">Name</span>,
+    hence when the HTML sheet is output to a file, <span
+      style="font-weight: bold;">Name</span> will be output. On my
+    sample sheet cells containing formulae have been coloured Dark Green
+    or Yellow, so that you do not wipe out the formula by mistake.<br>
+    <br>
+    The exception is line 15 that contains the tag <span
+      style="font-weight: bold; color: rgb(255, 0, 0);">&lt;tr&gt;</span><span
+      style="color: rgb(255, 0, 0);"> </span>,this is the placeholder
+    for the html table containing the list of ships which will be
+    generated from the "Data" worksheet. In this special case (any cells
+    in line 15, because column A contains <span style="font-weight:
+      bold; color: rgb(255, 0, 0);">&lt;tr&gt;</span>) <span
+      style="font-weight: bold; color: rgb(0, 0, 0);">Name </span><span
+      style="color: rgb(0, 0, 0);">will be replaced with the contents of
+      the Name column on the second row of the data worksheet. In the
+      example below this is Humber Coastguard. This is repeated for each
+      column in line 15. If the contents of the cell do not resolve to
+      an identical header cell on the Data worksheet, the contents of
+      the cell on the HTML sheet will be output.<br>
+      This process is repeated for the third, fourth etc lines on the
+      Data worksheet until all lines on the Data worksheet have been
+      exhausted.<br>
+    </span>The header text must be exactly as in the header on the Data
+    worksheet - the easiest way to ensure this is the case is to enter
+    the formula refering to the "source" column (eg =Data!$B$1) as shown
+    in the example above. You can include or exclude as many columns as
+    you wish from the "Data" worksheet.<br>
+    <br>
+    <span style="color: rgb(0, 0, 0);">The rest of the HTML worksheet is
+      then output.<br>
+    </span>The lines left white (1-4,11-14,16-18) are "normal" html
+    &nbsp;tags to set-up the page.<br>
+    The light green lines set the style of the text for the header line
+    and the rest of the table. The table is output with a class of
+    sp_html, and the header with a class of sp_html_header as below.<br>
+    <span style="color: rgb(255, 0, 0);"><br>
+      &lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+      "http://www.w3.org/TR/html4/loose.dtd"&gt;</span><br style="color:
+      rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;html&gt;&lt;head&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;title&gt;ShipPlotter
+      Monitoring&lt;/title&gt;</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;meta
+      http-equiv="Content-Type" content="text/html;
+      charset=iso-8859-1"&gt;</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;style type="text/css"&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;!--</span><br style="color:
+      rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">.sp_html {font-size: 10px;
+      color: #000000; font-family: arial, sans-serif; }</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">.sp_html_header {color:
+      #ff0000; }</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">--&gt;</span><br style="color:
+      rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;/style&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;/head&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;body&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;table class="sp_html"&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;tr
+      class="sp_html_header"&gt;</span><br style="color: rgb(255, 0,
+      0);">
+    <span style="color: rgb(255, 0, 0);">&lt;td&gt;Name&lt;/td&gt;&lt;td&gt;Position&lt;/td&gt;&lt;td&gt;Course&lt;/td&gt;&lt;td&gt;Speed&lt;/td&gt;&lt;td&gt;Heading&lt;/td&gt;&lt;td&gt;Type&lt;/td&gt;&lt;td&gt;Length&lt;/td&gt;&lt;td&gt;Destination&lt;/td&gt;&lt;td&gt;Date
+
+      &amp;
+Time&lt;/td&gt;&lt;td&gt;Range&lt;/td&gt;&lt;td&gt;Bearing&lt;/td&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;/tr&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;tr&gt;&lt;td&gt;Humber
+      Coastguard&nbsp;&nbsp; &lt;/td&gt;&lt;td&gt;54°7&amp;#039;5.0"N,
+      0°5&amp;#039;12.4"W&lt;/td&gt;&lt;td&gt;0°&lt;/td&gt;&lt;td&gt;.0kn&lt;/td&gt;&lt;td&gt;0°&lt;/td&gt;&lt;td&gt;Shore
+Station&lt;/td&gt;&lt;td&gt;0m&lt;/td&gt;&lt;td&gt;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      &lt;/td&gt;&lt;td&gt;2008-04-14
+13:48:00UTC&lt;/td&gt;&lt;td&gt;14.0nm&lt;/td&gt;&lt;td&gt;128°&lt;/td&gt;&lt;/tr&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;tr&gt;&lt;td&gt;PRIDE OF
+      ROTTERDAM&nbsp; &lt;/td&gt;&lt;td&gt;53°44&amp;#039;25.4"N,
+      0°16&amp;#039;40.6"W&lt;/td&gt;&lt;td&gt;102°&lt;/td&gt;&lt;td&gt;.0kn&lt;/td&gt;&lt;td&gt;102°&lt;/td&gt;&lt;td&gt;Passenger&lt;/td&gt;&lt;td&gt;214m&lt;/td&gt;&lt;td&gt;EUROPOORT-HULL
+
+      VV&nbsp;&nbsp; &lt;/td&gt;&lt;td&gt;2008-04-14
+13:45:23UTC&lt;/td&gt;&lt;td&gt;31.6nm&lt;/td&gt;&lt;td&gt;172°&lt;/td&gt;&lt;/tr&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;tr&gt;&lt;td&gt;ARCO
+      HUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      &lt;/td&gt;&lt;td&gt;54°13&amp;#039;5.5"N,
+      0°10&amp;#039;7.5"E&lt;/td&gt;&lt;td&gt;309°&lt;/td&gt;&lt;td&gt;10.7kn&lt;/td&gt;&lt;td&gt;511°&lt;/td&gt;&lt;td&gt;UnderWater
+ops&lt;/td&gt;&lt;td&gt;107m&lt;/td&gt;&lt;td&gt;TEES&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      &lt;/td&gt;&lt;td&gt;2008-04-14
+13:48:00UTC&lt;/td&gt;&lt;td&gt;20.2nm&lt;/td&gt;&lt;td&gt;97°&lt;/td&gt;&lt;/tr&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;/table&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;/body&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;/html&gt;</span><span
+      style="font-weight: bold;"><br>
+    </span><span style="font-weight: bold;"><br>
+    </span><span style="font-weight: bold;">How to Change the XML file</span><br>
+    The colouring is for explanatory purposes only<br>
+    <img style="width: 785px; height: 236px;" alt="" src="./sp_xml.gif"><br>
+    A lines and cells are output in the same order as entered on the
+    worksheet to the xml file set in Options (default name data.xml)
+    which is the uploaded to the web server. Each line on the worksheet
+    is a separate line in the xml file, the contents of each cell are
+    concanated into the contenls of each xml line.<br>
+    Line 1&nbsp;&nbsp; &lt;markers&gt; is output<br>
+    Line 2 contains the tag <span style="font-weight: bold; color:
+      rgb(255, 0, 0);">&lt;marker&nbsp;</span><span style="color:
+      rgb(255, 0, 0);"> </span>,this is the placeholder for the xml
+    table containing the list of ships which will be generated from the
+    "Data" worksheet. Although the next line also has a <span
+      style="font-weight: bold; color: rgb(255, 0, 0);">&lt;marker </span>tag,
+
+    only the first one on the worksheet will be used to generate the
+    table of the list of ships.<br>
+    The cells in Yellow contain a header for each column in the Data
+    worksheet (eg <span style="font-weight: bold; color: rgb(0, 0, 0);">Latitude</span>).
+
+    The header text must be exactly as in the header on the Data sheet -
+    the easiest way to ensure this is the case is to enter the formula
+    refering to the "source" column (eg =Data!$B$1) as shown in the
+    example above. You can include or exclude as many columns as you
+    wish from the "Data" worksheet. The contents of&nbsp; the same
+    column and the current row on the Data worksheet will be output.<br>
+    Cells that do not contain the same text as a header column on the
+    Data worksheet are output as the text in the cell on the xml
+    worksheet (these are coloured blue for clarity)..<br>
+    Working across row 2 - Column B. We wish to output&nbsp; lat=' This
+    will be output as plain text, except there is a problem insofar as
+    the apostrophe (') is a reserved character in Excel if it is the
+    first character in a cell. You must enter two apostrophes as the
+    first one tells Excel the content of the cell are text..<br>
+    There is one other reserved character problem. In html and xml
+    ampersand (&amp;), less than (&lt;), greater than (&gt;), quote (")
+    and apostrophe (') are all reserved characters. These are not
+    reserved characters in AIS and in particular they are used in ships
+    names and destinations. For example ferries often put their
+    destination as Dover &lt;&gt; Calais. All the ais data on the Data
+    worksheet is checked for these reserved characters, if found they
+    are replaced with the html named entity. For example &gt; will be
+    replaced with &amp;gt; When viewed using a browser, the browser will
+    replace the named entity (&amp;gt;) with &gt;.<br>
+    Line 3 This output one <span style="font-weight: bold; color:
+      rgb(255, 0, 0);">&lt;marker&nbsp;</span> tag containing the
+    location of the "home" station. If not required just delete this
+    line, otherwise change the lat, long and your home station name are
+    recovered from the values you enter on the Option form..<br>
+    Cell AK3 calls a complicated macro to obtain the current data and
+    time in UTC - this does not work on win98 but does on winXP. On win
+    98 you can change the formula to =NOW() Local (I may do this
+    automatically for you later!)<br>
+    Line 4 &lt;/markers&gt; is output.<br>
+    <br>
+    The XML file should look something like<br>
+    <span style="color: rgb(255, 0, 0);">&lt;markers&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='51.3107'
+      lon='4.32206' name='TUG 86' dx='0.000' dy='0.000' type='52'
+      ais='205257290!0!OT2572!!***00 00:00!.0!341!15!30!8!.0!2009-09-14
+      15:26:36UTC!j0!63'/&gt;</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='51.3442'
+      lon='4.29086' name='TUG 70' dx='0.000' dy='0.000' type='52'
+      ais='205251490!0!OT2514!!***00 00:00!.3!99!!29!10!.0!2009-09-14
+      15:26:40UTC!j0!63'/&gt;</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='51.3499'
+      lon='4.26767' name='JAGUAR' dx='0.000' dy='0.000' type='78'
+      ais='205391090!0!OT3910!BAZEL ANTWERPEN!Oct14
+      06:01!.0!302!15!110!12!.0!2009-09-14 15:26:34UTC!j0!63'/&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='51.9222'
+      lon='3.56804' name='SANTA ELENA' dx='0.000' dy='0.000' type='70'
+      ais='371309000!9329837!3ECD4!ROTTERDAM!Sep08
+      03:00!.2!288!!190!32!11.1!2009-09-14 15:26:37UTC!hW!63'/&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='54.1443'
+      lon='9.34914' name='WESTERWALD' dx='0.010' dy='0.008' type='35'
+      ais='211211870!0!DRKT!KIEL!Sep14
+      22:00!8.6!51!!105!14!4.1!2009-09-14 15:27:01UTC!o0!63'/&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='52.152'
+      lon='3.69337' name='NORDSTRENGTH' dx='0.002' dy='0.000' type='80'
+      ais='212587000!9144067!P3YK7!ROTTERDAM ANCH!Sep09
+      10:00!1.0!100!1!248!42!8.5!2009-09-14 15:26:38UTC!p0!63'/&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='51.3475'
+      lon='4.24999' name='ARGUS' dx='0.000' dy='0.000' type='56'
+      ais='245323000!8404185!PBVR!ANTWERPEN!Sep18
+      15:00!.1!102!15!33!7!1.7!2009-09-14 15:26:54UTC!e0!63'/&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='51.3442'
+      lon='4.27486' name='UNION 7' dx='0.000' dy='0.000' type='31'
+      ais='205188000!9120164!ORKU!ANTWERP!***00
+      00:00!.0!96!!30!10!6.3!2009-09-14 15:26:38UTC!j0!63'/&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;marker lat='54.262'
+      lon='-0.402' name='MY HOME AIS' dx='0' dy='0' type='132' ais=' ! !
+      ! ! ! ! !Active! ! ! !14/09/2009 17:06:32 UTC!a0!L'/&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);">&lt;/markers&gt;</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="font-weight: bold;"><br>
+      How to Change the KML file</span><br>
+    The colouring is for explanatory purposes only<br>
+    <img style="width: 785px; height: 298px;" alt="" src="./sp_kml.gif"><br>
+    <br>
+    If you have not read the explanation HTML and XML (above) please do
+    so first as the principle is identical the only difference is the
+    placeholder at the point the table of ship is constructed is <span
+      style="font-weight: bold; color: rgb(255, 0, 0);">&lt;Placemark&gt;</span>.
+    Note that case is important. &amp;#032; will insert a space if
+    placed in a blank cell (otherwise a blank cell will not be output).<br>
+    <br>
+    The KML file output should look something like below. <span
+      style="color: rgb(0, 0, 0);"></span><br>
+    <pre style="color: rgb(255, 0, 0);" id="line1"><span class="pi">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span><br>&lt;<span class="start-tag">kml</span><span class="attribute-name"> xmlns</span>=<span class="attribute-value">"http://earth.google.com/kml/2.0"</span>&gt;<br>&lt;<span class="start-tag">Document</span>&gt;<br>&lt;<span class="start-tag">name</span>&gt;kml Scarborough&lt;/<span class="end-tag">name</span>&gt;<br>&lt;<span class="start-tag">description</span>&gt;Ships cached by Google at &amp;<span class="entity">#032;</span>29/09/2009 16:37:38&lt;/<span class="end-tag">description</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;KATJA&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;309313000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-0.98277,54.7,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;Ravenscar&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;2320780&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-0.505973,54.397,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;DONIZETTI&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;253217000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-0.1155,54.2195,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br></pre>
+    <pre style="color: rgb(255, 0, 0);" id="line9">&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;HEORTNESSE&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;232004106&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.05948,54.681,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;BW NANTES&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;635015000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.02404,54.6943,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;SIGAS LYDIA&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;565243000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-0.22753,54.4886,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;SKS TIETE&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;257578000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.083,54.7382,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;HAVELSTERN&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;234456000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.06885,54.6549,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br></pre>
+    <pre style="color: rgb(255, 0, 0);" id="line14">&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;AKTEA&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;240339000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-0.9889,54.6839,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;HELGA SPIRIT&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;311727000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.10834,54.7264,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;ALICE OLDENDORFF&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;636090432&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.00103,54.6816,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;JANA&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;218760000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-0.361947,54.427,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;HAVILA FORTUNE&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;311017400&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;0.343988,54.2804,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br></pre>
+    <pre style="color: rgb(255, 0, 0);" id="line19">&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;TRIDENS&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;244033000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-0.830333,54.8293,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;AUTEUIL&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;308992000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.08971,54.6566,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;<span class="start-tag">Placemark</span>&gt;&lt;<span class="start-tag">name</span>&gt;GREAT MAJESTY&lt;/<span class="end-tag">name</span>&gt;&lt;<span class="start-tag">description</span>&gt;477674000&lt;/<span class="end-tag">description</span>&gt;&lt;<span class="start-tag">Point</span>&gt;&lt;<span class="start-tag">coordinates</span>&gt;-1.06384,54.6935,0&lt;/<span class="end-tag">coordinates</span>&gt;&lt;/<span class="end-tag">Point</span>&gt;&lt;/<span class="end-tag">Placemark</span>&gt;<br>&lt;/<span class="end-tag">Document</span>&gt;<br>&lt;/<span class="end-tag">kml</span>&gt;<br></pre>
+    <br>
+    <span style="font-weight: bold;">Web Server Upload</span> <span
+      style="font-weight: bold;">Process</span><br>
+    <small><big>A Dos window is spawned to execute the command file <small
+          style="font-weight: bold;">ftp.dat</small></big></small><b><small><big>
+          <br>
+        </big></small></b><small><big>A log of the session is created in</big><span
+        style="font-weight: bold;"> ftp.log</span></small><b><small><big><br>
+        </big></small></b><small style="font-weight: bold;">ftp.dat</small>&nbsp;should
+look
+something
+
+    like:-<br>
+    <span style="color: rgb(255, 0, 0);"> open my.ftp.domain</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> mywebserver</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> mypassword</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> binary</span><br style="color:
+      rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> cd /myaisdirectory/</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> put sp_graph.gif</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> close</span><br style="color:
+      rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> bye</span><br style="color:
+      rgb(255, 0, 0);">
+    <small style="font-weight: bold;">ftp.log</small>&nbsp;should look
+    something like:-<br>
+    <span style="color: rgb(255, 0, 0);"> ftp&gt; Connected to
+      my.domain.open my.domain</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 220 (vsFTPd 2.0.1)</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> User (my.domain:(none)): </span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 331 Please specify the
+      password.</span><br style="color: rgb(255, 0, 0);">
+    <br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 230 Login successful.</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> ftp&gt; ftp&gt; </span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> binary</span><br style="color:
+      rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 200 Switching to Binary mode.</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> ftp&gt; cd /myaisdirectory/</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 250 Directory successfully
+      changed.</span><br style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 150 Ok to send data.</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 226 File receive OK.</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> ftp: 37318 bytes sent in
+      0.06Seconds 621.97Kbytes/sec.ftp&gt; close</span><br style="color:
+      rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> 221 Goodbye.</span><br
+      style="color: rgb(255, 0, 0);">
+    <span style="color: rgb(255, 0, 0);"> ftp&gt; bye<br>
+    </span>There should be no errors reported in the log file<span
+      style="font-weight: bold;"><br>
+    </span><span style="font-weight: bold;"><br>
+    </span><span style="font-weight: bold;">Changing the VBA Code</span><br>
+    See&nbsp;<a href="./spxl_vba_guide.html">here</a> more information
+    about altering the VBA code<br>
+    <br>
+  </body>
+</html>

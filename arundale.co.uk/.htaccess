@@ -1,0 +1,38 @@
+#/home/stfinge1/public_html/arundale.co.uk/.htaccess
+RewriteEngine on
+Options +Includes
+AddType text/html .html
+AddOutputFilter INCLUDES .html
+AddHandler server-parsed .html
+AddType text/html .shtml
+AddOutputFilter INCLUDES .shtml
+AddHandler server-parsed .shtml
+AddType text/html .htmlf
+AddOutputFilter INCLUDES .htmlf
+AddHandler server-parsed .htmlf
+
+#redirects arundale.co.uk... to http://nmearouter.com...
+# Redirect to a URL on a different host
+# ## removed
+Redirect / http://nmearouter.com/
+# 28/10/15 tried this by causes loop through arundale.com and nmearouter Redirect / http://arundale.com/
+
+#<If "%{HTTP_HOST} != 'web.arundale.co.uk'">
+#	Redirect / http://arundale.co.uk/
+#</If>
+
+#Change the host
+##RewriteCond %{HTTP_HOST} ^web\.arundale\.co\.uk$
+#RewriteRule ^/?$ "http\:\/\/arundale\.co\.uk" [R=301,L]
+##RewriteRule ^/?$ "http\:\/\/nmearouter\.com" [R=301,L]
+
+#then With Redirect
+#Redirect /docs/ http://nmearouter.com/docs/
+
+#Works if no page is specified
+##RewriteCond %{HTTP_HOST} ^arundale\.co\.uk$ [OR]
+##RewriteCond %{HTTP_HOST} ^www\.arundale\.co\.uk$
+##RewriteRule ^/?$ "http\:\/\/nmearouter\.com\/docs\/ais\/ais_decoder\.html" [R=301,L]
+
+#RewriteCond %{HTTP_HOST} ^web\.arundale\.co\.uk$
+#RewriteRule ^/?$ "http\:\/\/nmearouter\.com" [R=301,L]

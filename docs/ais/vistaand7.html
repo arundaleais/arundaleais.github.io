@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <meta http-equiv="content-type"
+ content="text/html; charset=ISO-8859-1">
+  <title>Vista and Windows 7</title>
+<!--#include virtual="aishead.htmlf" -->
+</head>
+<body>
+<!--#include virtual="navbar.htmlf" --><br>
+Note for Windows Vista users. (Thanks to Jeff Richards)<br>
+=============================<br>
+<br>
+This note may also apply to Windows 7 users, depending on security
+configuration.<br>
+<br>
+AIS Decoder must be run with administrator privileges enabled. If AIS
+Decoder starts with the Options button disabled, then it is likely that
+you are not running the program with administrator privileges.<br>
+<br>
+Running as administrator is required because AIS Decoder requires write
+access to the installation folder. User Access Control (UAC) in Vista
+prevents write access to the Program Files folder and all its
+sub folders, as part of the process of protecting the computer against
+malicious software. To run with write access to the Program Files
+folder, the program must be run by a user who has administrator
+privileges, and it must be run with those privileges enabled.<br>
+<br>
+Running AIS Decoder with administrator privileges enabled does not
+compromise the security of the computer. It simply means that you need
+to confirm that it is OK to run AIS Decoder each time it starts.<br>
+<font size="-1"><span style="font-family: Verdana;"><br>
+<span style="font-style: italic;">A further note from Neal Arundale.</span><br
+ style="font-style: italic;">
+<span style="font-style: italic;">Although AisDecoder does require
+administrator privileges to install, it should not require them to run,
+however, if the user does not have administrator privilege, I
+intentionally disable the Options button. This is so that if AisDecoder
+is run in a networked environment, the administrator can stop a user
+altering the settings, although they can alter the display. Normally a
+single user would run their PC with administrator privilege so it is
+not an issue. However there could be a situation where an administrator
+would like to give a non-privileged user the option to alter the
+settings.</span><br style="font-style: italic;">
+<span style="font-style: italic;">This can be done by by the
+administrator running a .REG script after installation. If you require
+further details, please contact myself.&nbsp;</span> <br
+ style="font-style: italic;">
+</span></font><br>
+To enable AIS decoder to run with administrator privileges enabled you
+need to modify the start menu item. <br>
+1. Click Start and All Programs, and select AIS Decoder from the list<br>
+2. Right-click the AIS Decoder item and choose properties<br>
+3. Click the Advanced button and tick the 'Run as administrator' check
+box<br>
+4. Click OK and then click Apply and OK in the Properties dialogue. You
+will be asked to confirm these changes.<br>
+<br>
+You can create a desktop shortcut to AIS Decoder.<br>
+1. Click Start and All Programs, and select AIS Decoder from the list<br>
+2. Press and hold the right mouse button over the AIS Decoder menu
+entry and drag the entry onto a blank part of the desktop<br>
+3. Before releasing the right mouse button, press and hold the Control
+key.
+The message 'Copy to desktop' will appear. <br>
+4. Release the right mouse button, then release the Control key<br>
+5. You may get another dialogue with options. If so, select the 'Copy
+to here' option.<br>
+<br>
+If you haven't already set the start menu shortcut to run with
+administrator privileges enabled,
+you can change the setting for the desktop icon.<br>
+1. Right click on the desktop icon and choose Properties from the menu
+that appears<br>
+2. Select the Shortcut tab and click the Advanced button<br>
+3. Tick the 'Run as administrator' check box<br>
+4. Click OK and then click Apply and OK in the Properties dialogue.<br>
+<br>
+You can now click the menu item or the desktop icon to start
+AIS-Decoder.
+If you have enabled administrator privileges you will be asked to
+confirm execution of the program: running as administrator has not
+disabled UAC, it has simply provided the user with the necessary
+permissions, but approval to use that permission is still required.<br>
+<br>
+<br>
+Serial Port Numbers<br>
+===================<br>
+<br>
+AIS Decoder supports serial port (COM) numbers from 1 to 16 <br>
+<br>
+Some versions of Windows allow for many more than 16 serial ports. When
+you are using USB to serial port adapters, it is easy to have more than
+16 serial port numbers used, either a result of using different
+adapters, or simply because of repeated attempts to get the adapter
+driver software properly installed. This frequently occurs while
+installing Blue-tooth devices, which can allocate a new serial port
+number each time they connect.<br>
+<br>
+To change the serial port number used by a particular adapter, follow
+the steps below.<br>
+<br>
+Vista
+<br>
+-----<br>
+1. Click the Start men and select Control Panel. <br>
+2. Select System and Maintenance (or just System in classic view) and
+Device Manager<br>
+3. Expand the 'Ports (COM and LPT)' item. Note which serial port (COM)
+numbers are unused<br>
+4. Double-click the port where you want to change the number. A
+Properties dialogue will open<br>
+5. Choose the Port Settings tab, and then select Advanced. An Advanced
+Settings dialogue will open<br>
+6. Select the new serial port number from the list in the drop-down at
+the bottom of the dialogue.<br>
+<br>
+Note: You may get a warning that this port number is already in use
+when you close the dialogue. This can happen even if the device is not
+listed in Device manager. This is because the number is 'allocated' to
+a device that is not currently connected (probably a USB to serial
+converter). If you really need to use this port number for this device,
+you can accept the warning and confirm the change to override the
+existing allocation.<br>
+<br>
+7. Click OK and OK to close the dialogues.<br>
+<br>
+You can choose Action / Scan for Hardware Changes to have the new port
+assignment displayed in Device Manager.<br>
+<br>
+Windows 7<br>
+---------<br>
+1. Click the Start men and select Control Panel. <br>
+2. Select 'Hardware and Sound' and 'Device Manager' (under 'Devices and
+Printers')<br>
+3. Expand the 'Ports (COM and LPT)' item<br>
+4. Double-click the port where you want to change the number. A
+Properties dialogue will open<br>
+5. Choose the Port Settings tab, and then select Advanced. An Advanced
+Settings dialogue will open<br>
+6. Drop down the list at the bottom of the dialogue. The ports are
+listed, and the port numbers already in use are indicated<br>
+7. Select the new serial port number from the list.<br>
+<br>
+Note: If you select a port that is marked as 'in use', You will get a
+warning that this port number is already in use when you click OK in
+the dialogue. This is because the number is 'allocated' to a device
+that is not currently connected (probably a USB to serial converter).
+If you really need to use this port number for this device, you can
+accept the warning and confirm the change to override the existing
+allocation.<br>
+<br>
+8. Click OK and OK to close the dialogues.<br>
+<br>
+You can choose Action / Scan for Hardware Changes to have the new port
+assignment displayed in Device Manager.
+</body>
+</html>
