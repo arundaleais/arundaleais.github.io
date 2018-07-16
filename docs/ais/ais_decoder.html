@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="content-type" content="text/html;
       charset=windows-1252">
-    <!--#include virtual="aishead.htmlf" -->
+    {% include_relative aishead.htmlf %}
     <meta name="keywords" content="AIS,Ais Decoder,AIS
       Parser,Parser,Decoder, Binary, Ais Viewer, NMEA, !AIVDM, !AIVDO,
       !BSVDM, !ABVDM, IEC 62320-1">
@@ -13,7 +13,7 @@
     <title>Ais Decoder</title>
   </head>
   <body>
-    <% include navbar.htmlf %}
+    {% include_relative navbar.htmlf %}
     <div style="text-align: center; font-family: Verdana;">
       <h2><span class="descr"><img alt="AisDecoder"
             src="AisDecoder_110x20.jpg" width="110" height="20"></span>
